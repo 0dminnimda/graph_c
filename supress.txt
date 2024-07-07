@@ -1,0 +1,10 @@
+{
+   ignore_android_linker64
+   Memcheck:Cond
+   obj:/apex/com.android.runtime/bin/linker64
+}
+{
+   ignore_android_linker64
+   Memcheck:Value8
+   obj:/apex/com.android.runtime/bin/linker64
+}
