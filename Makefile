@@ -19,7 +19,7 @@ else ifeq ($(SAN),1)
 endif
 
 BASIC = src/basic/str.c src/basic/read_line.c
-SRC = src/main.c
+SRC = src/main.c src/graph.c
 
 .PHONY: build
 build:
