@@ -48,15 +48,14 @@
     (self)->length = (len) \
 )
 
-#define array_append(self, item) ( \
+#define array_add(self) ( \
     (((self)->length >= (self)->capacity)? \
 	    array_expand((self), \
             (self)->capacity? \
                 (self)->capacity * 2: \
                 ARRAY_APPEND_INIT_CAP): \
         0), \
-    (self)->data[(self)->length] = (item), \
-    (self)->length++ \
+    &(self)->data[(self)->length++] \
 )
 
 #define array_remove_unordered(self, index) array_replace_by_last(self, index)

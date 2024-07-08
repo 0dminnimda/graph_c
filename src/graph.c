@@ -43,9 +43,11 @@ bool graph_add_edge(Graph *self, u32 source, u32 target, u16 weight) {
             return true;
     }
 
-    size_t index = array_append(&self->edges, ((GraphEdge){source, target, weight}));
-    array_append(&self->nodes.data[source].out, index);
-    array_append(&self->nodes.data[target].in, index);
+    GraphEdge *edge = array_add(&self->edges);
+    *edge = (GraphEdge){source, target, weight};
+    size_t index = edge - self->edges.data;
+    *array_add(&self->nodes.data[source].out) = index;
+    *array_add(&self->nodes.data[target].in) = index;
 
     return false;
 }
