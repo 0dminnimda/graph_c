@@ -93,20 +93,20 @@ bool graph_del_edge(Graph *self, u32 source, u32 target) {
     return false;
 }
 
-void graph_topsort(Graph *self, u32 root, array_u32 *ordering, array_u32 *back_edges) {
+void graph_topsort(const Graph *self, u32 root, array_u32 *ordering, array_u32 *back_edges) {
     (void)self;
     (void)root;
     (void)ordering;
     (void)back_edges;
 }
 
-bool longest_path_in_acyclic_graph(Graph *self, array_u32 *path) {
+bool longest_path_in_acyclic_graph(const Graph *self, array_u32 *path) {
     (void)self;
     (void)path;
     return true;
 }
 
-void graph_fprint_debug(Graph *self, FILE *stream) {
+void graph_fprint_debug(const Graph *self, FILE *stream) {
     fprintf(stream, "Graph(%zu nodes, %zu edges):\n",
             self->nodes.length, self->edges.length);
     GraphNode *node;

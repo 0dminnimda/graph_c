@@ -32,8 +32,8 @@ u32 graph_add_node(Graph *self);
 bool graph_add_edge(Graph *self, u32 source, u32 target, u16 weight);
 bool graph_replace_node_by_last(Graph *self, u32 id);
 bool graph_del_edge(Graph *self, u32 source, u32 target);
-void graph_topsort(Graph *self, u32 root, array_u32 *ordering, array_u32 *back_edges);
-bool longest_path_in_acyclic_graph(Graph *self, array_u32 *path);
-void graph_fprint_debug(Graph *self, FILE *stream);
+void graph_topsort(const Graph *self, u32 root, array_u32 *ordering, array_u32 *back_edges);
+bool longest_path_in_acyclic_graph(const Graph *self, array_u32 *path);
+void graph_fprint_debug(const Graph *self, FILE *stream);
 
 #endif  // GRAPH_H
