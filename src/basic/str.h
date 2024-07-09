@@ -26,4 +26,9 @@ bool str_startswith(const str *self, const str *other);
 str str_strip(str *self, char to_strip);
 str str_strip_whitespaces(str *self);
 
+#define str_for(self, name) \
+    for (size_t name##_index = 0; \
+        name##_index < (self)->length; \
+        ++name##_index, name = (self)->data[name##_index])
+
 #endif  // STR_H
