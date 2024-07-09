@@ -26,6 +26,9 @@ bool str_startswith(const str *self, const str *other);
 str str_strip(str *self, char to_strip);
 str str_strip_whitespaces(str *self);
 
+/* Returns slices. Several spaces are treated as one separator. */
+void str_partition_whitespace(str *self, str *pre, str *post);
+
 #define str_for(self, name) \
     for (size_t name##_index = 0; \
         name##_index < (self)->length; \

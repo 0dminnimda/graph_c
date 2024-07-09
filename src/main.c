@@ -4,8 +4,37 @@
 #include "basic/str.h"
 #include "graph.h"
 
+typedef struct {
+    bool debug;
+} Config;
+
+void handle_operation(Graph *g, Config *conf, str *line) {
+    if (str_compare(line, &str_lit("DEBUG")) == 0) {
+        conf->debug = !conf->debug;
+        return;
+    }
+
+    str stripped = str_strip_whitespaces(line);
+
+    printf("Stripped '" PRI_str "'\n", FMT_str(&stripped));
+
+    str command, args;
+    str_partition_whitespace(&stripped, &command, &args);
+
+    printf("Partitioned '" PRI_str "', '" PRI_str "'\n", FMT_str(&command), FMT_str(&args));
+
+    if (str_compare(&command, &str_lit("ADD_NODE")) == 0) {
+        (void)g;
+        printf("Got add_node with args '" PRI_str "'\n", FMT_str(&args));
+    } else {
+        printf("Unknown command '" PRI_str "'\n", FMT_str(&command));
+    }
+}
+
 int main(void) {
     printf("Hello seamen\n");
+
+    Config conf = {0};
 
     Graph g;
     graph_init(&g);
@@ -28,11 +57,9 @@ int main(void) {
 
     graph_fprint_debug(&g, stdout);
 
-    printf("deleted: %s\n", graph_del_edge(&g, n2, n2)? "success": "failure");
+    printf("deleted: %s\n", graph_del_edge(&g, n1, n2)? "failure": "success");
 
     graph_fprint_debug(&g, stdout);
-
-    graph_deinit(&g);
 
     while (1) {
         str line = read_line();
@@ -42,15 +69,17 @@ int main(void) {
             return 1;
         }
 
-        if (str_compare(&line, &str_lit("q")) == 0) {
+        if (str_compare(&line, &str_lit("END")) == 0) {
             str_deinit(&line);
             break;
         }
 
-        printf("Got string " PRI_str "\n", FMT_str(&line));
+        handle_operation(&g, &conf, &line);
 
         str_deinit(&line);
     }
+
+    graph_deinit(&g);
 
     return 0;
 }

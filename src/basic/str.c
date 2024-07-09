@@ -91,3 +91,31 @@ str str_strip_whitespaces(str *self) {
     }
     return (str){self->data + self->length, 0};
 }
+
+void str_partition_whitespace(str *self, str *pre, str *post) {
+    char c;
+    size_t pre_length = self->length;
+    str_for(self, c) {
+        if (isspace(c)) {
+            pre_length = c_index;
+            break;
+        }
+    }
+    *pre = (str){self->data, pre_length};
+
+    str rest = {self->data + pre_length, self->length - pre_length};
+    if (rest.length == 0) {
+        *post = rest;
+        return;
+    }
+
+    size_t space_length = rest.length;
+    str_for(&rest, c) {
+        if (!isspace(c)) {
+            space_length = c_index;
+            break;
+        }
+    }
+    *post = (str){rest.data + space_length, rest.length - space_length};
+    return;
+}
