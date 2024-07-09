@@ -22,4 +22,8 @@ void str_copy(const str *self, str *copy);
 int str_compare(const str *self, const str *other);
 bool str_startswith(const str *self, const str *other);
 
+/* Returns a slice */
+str str_strip(str *self, char to_strip);
+str str_strip_whitespaces(str *self);
+
 #endif  // STR_H

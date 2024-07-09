@@ -2,6 +2,7 @@
 
 #include <stdlib.h>
 #include <string.h>
+#include <ctype.h>
 
 char *string_duplicate(const char *source) {
     size_t len = strlen(source) + 1;
@@ -71,4 +72,22 @@ bool str_startswith(const str *self, const str *other) {
         return false;
     }
     return memcmp(self->data, other->data, other->length) == 0;
+}
+
+str str_strip(str *self, char to_strip) {
+    char c;
+    str_for(self, c) {
+        if (c != to_strip)
+            return (str){self->data + c_index, self->length - c_index};
+    }
+    return (str){self->data + self->length, 0};
+}
+
+str str_strip_whitespaces(str *self) {
+    char c;
+    str_for(self, c) {
+        if (!isspace(c))
+            return (str){self->data + c_index, self->length - c_index};
+    }
+    return (str){self->data + self->length, 0};
 }
