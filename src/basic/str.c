@@ -65,3 +65,10 @@ int str_compare(const str *self, const str *other) {
         return memcmp(self->data, other->data, self->length);
     }
 }
+
+bool str_startswith(const str *self, const str *other) {
+    if (self->length < other->length) {
+        return false;
+    }
+    return memcmp(self->data, other->data, other->length) == 0;
+}

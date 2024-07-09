@@ -4,6 +4,7 @@
 #define STR_H
 
 #include <stddef.h>
+#include <stdbool.h>
 
 typedef struct {
     char *data;
@@ -19,5 +20,6 @@ void str_deinit(str *self);
 #define FMT_str(self) (int)(self)->length, (self)->data
 void str_copy(const str *self, str *copy);
 int str_compare(const str *self, const str *other);
+bool str_startswith(const str *self, const str *other);
 
 #endif  // STR_H
