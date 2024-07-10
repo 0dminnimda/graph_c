@@ -33,4 +33,10 @@ typedef long double f80;
 #define PRI_u32 "%" PRIu32
 #define PRI_u64 "%" PRIu64
 
+/* Just in case if it's gonna be handy.
+ * You don't have to use them. */
+#define PRI_f32 "%f"
+#define PRI_f64 "%lf"
+#define PRI_f80 "%Lf"
+
 #endif  // TYPES_H
