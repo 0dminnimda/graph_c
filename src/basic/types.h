@@ -23,10 +23,10 @@ typedef float f32;
 typedef double f64;
 typedef long double f80;
 
-#define PRI_s8  "%" PRIi8
-#define PRI_s16 "%" PRIi16
-#define PRI_s32 "%" PRIi32
-#define PRI_s64 "%" PRIi64
+#define PRI_s8  "%" PRId8
+#define PRI_s16 "%" PRId16
+#define PRI_s32 "%" PRId32
+#define PRI_s64 "%" PRId64
 
 #define PRI_u8  "%" PRIu8
 #define PRI_u16 "%" PRIu16
