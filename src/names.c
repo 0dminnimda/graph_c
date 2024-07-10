@@ -6,15 +6,17 @@ str *names_find(const Names *self, const str *string) {
     return result;
 }
 
-str *names_insert(Names *self, const str *string) {
+bool names_insert(Names *self, const str *string, size_t *result) {
     str *item = names_find(self, string);
     if (item != NULL) {
-        return item;
+        *result = item - self->data;
+        return true;
     }
 
     str *next = array_add(self);
     *next = str_copy_and_return(string);
-    return next;
+    *result = next - self->data;
+    return false;
 }
 
 void names_copy(const Names *self, Names *copy) {
