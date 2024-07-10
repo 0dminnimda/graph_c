@@ -53,8 +53,8 @@ S2I_Result str_to_u##SIZE(const str *string, u##SIZE *value) { \
     return S2I_OK; \
 }
 
-#define MAKE_S2I(SIZE, MAX_DIGITS, MSD_MAX_VALUE) \
-S2I_Result str_to_i##SIZE(const str *string, i##SIZE *value) { \
+#define MAKE_S2S(SIZE, MAX_DIGITS, MSD_MAX_VALUE) \
+S2I_Result str_to_s##SIZE(const str *string, s##SIZE *value) { \
     (void)string; \
     (void)value; \
     return S2I_NOT_FOUND; \
@@ -65,7 +65,7 @@ MAKE_S2U(16, 5, 6)
 MAKE_S2U(32, 10, 4)
 MAKE_S2U(64, 20, 1)
 
-MAKE_S2I(8, 3, 1)
-MAKE_S2I(16, 5, 3)
-MAKE_S2I(32, 10, 2)
-MAKE_S2I(64, 19, 9)
+MAKE_S2S(8, 3, 1)
+MAKE_S2S(16, 5, 3)
+MAKE_S2S(32, 10, 2)
+MAKE_S2S(64, 19, 9)
