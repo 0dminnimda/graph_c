@@ -3,63 +3,70 @@
 #include "basic/read_line.h"
 #include "basic/str.h"
 #include "graph.h"
+#include "names.h"
 
 typedef struct {
-    bool debug;
-} Config;
+    Graph graph;
+    Names names;
+    bool in_debug;
+} Context;
 
-void handle_operation(Graph *g, Config *conf, str *line) {
+void handle_operation(Context *ctx, str *line) {
     if (str_compare(line, &str_lit("DEBUG")) == 0) {
-        conf->debug = !conf->debug;
+        ctx->in_debug = !ctx->in_debug;
+        printf("Debug mode: turned %s\n", ctx->in_debug? "on" : "off");
         return;
     }
 
     str stripped = str_strip_whitespaces(line);
 
-    printf("Stripped '" PRI_str "'\n", FMT_str(&stripped));
-
     str command, args;
     str_partition_whitespace(&stripped, &command, &args);
 
-    printf("Partitioned '" PRI_str "', '" PRI_str "'\n", FMT_str(&command), FMT_str(&args));
-
     if (str_compare(&command, &str_lit("ADD_NODE")) == 0) {
-        (void)g;
-        printf("Got add_node with args '" PRI_str "'\n", FMT_str(&args));
+        str node_name;
+        str_partition_whitespace(&args, &node_name, &args);
+
+        u32 index = names_insert(&ctx->names, &node_name) - ctx->names.data;
+        if (ctx->in_debug) {
+            printf("Name: '" PRI_str "', Index: " PRI_u32 "\n", FMT_str(&node_name), index);
+        }
     } else {
-        printf("Unknown command '" PRI_str "'\n", FMT_str(&command));
+        printf("Error: Unknown command '" PRI_str "'\n", FMT_str(&command));
     }
 }
 
 int main(void) {
     printf("Hello seamen\n");
 
-    Config conf = {0};
+    Context ctx;
+    ctx.in_debug = false;
 
-    Graph g;
-    graph_init(&g);
+    array_init(&ctx.names);
 
-    graph_fprint_debug(&g, stdout);
+    graph_init(&ctx.graph);
 
-    u32 n1 = graph_add_node(&g);
+    graph_fprint_debug(&ctx.graph, stdout);
 
-    graph_fprint_debug(&g, stdout);
+    u32 n1 = graph_add_node(&ctx.graph);
 
-    u32 n2 = graph_add_node(&g);
+    graph_fprint_debug(&ctx.graph, stdout);
 
-    graph_fprint_debug(&g, stdout);
+    u32 n2 = graph_add_node(&ctx.graph);
 
-    graph_add_edge(&g, n1, n2, 20);
+    graph_fprint_debug(&ctx.graph, stdout);
 
-    graph_fprint_debug(&g, stdout);
+    graph_add_edge(&ctx.graph, n1, n2, 20);
 
-    graph_add_edge(&g, n2, n1, 30);
+    graph_fprint_debug(&ctx.graph, stdout);
 
-    graph_fprint_debug(&g, stdout);
+    graph_add_edge(&ctx.graph, n2, n1, 30);
 
-    printf("deleted: %s\n", graph_del_edge(&g, n1, n2)? "failure": "success");
+    graph_fprint_debug(&ctx.graph, stdout);
 
-    graph_fprint_debug(&g, stdout);
+    printf("deleted: %s\n", graph_del_edge(&ctx.graph, n1, n2)? "failure": "success");
+
+    graph_fprint_debug(&ctx.graph, stdout);
 
     while (1) {
         str line = read_line();
@@ -74,12 +81,14 @@ int main(void) {
             break;
         }
 
-        handle_operation(&g, &conf, &line);
+        handle_operation(&ctx, &line);
 
         str_deinit(&line);
     }
 
-    graph_deinit(&g);
+    graph_deinit(&ctx.graph);
+
+    names_deinit(&ctx.names);
 
     return 0;
 }
