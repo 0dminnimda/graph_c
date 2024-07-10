@@ -57,6 +57,12 @@ void str_copy(const str *self, str *copy) {
     str_init_known_length(copy, self->data, self->length);
 }
 
+str str_copy_and_return(const str *self) {
+    str copy;
+    str_copy(self, &copy);
+    return copy;
+}
+
 int str_compare(const str *self, const str *other) {
     if (self->length < other->length) {
         return -1;

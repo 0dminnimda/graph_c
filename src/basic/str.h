@@ -19,6 +19,7 @@ void str_deinit(str *self);
 #define PRI_str "%.*s"
 #define FMT_str(self) (int)(self)->length, (self)->data
 void str_copy(const str *self, str *copy);
+str str_copy_and_return(const str *self);
 int str_compare(const str *self, const str *other);
 bool str_startswith(const str *self, const str *other);
 
