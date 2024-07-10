@@ -35,7 +35,6 @@
 
 #define array_deinit(self) free((self)->data)
 
-#define array_got_error(self) ((self)->capacity == ARRAY_ERROR_CAP)
 
 #define array_expand(self, cap) ( \
     (self)->data = realloc((self)->data, (cap) * array_item_size((self))), \
