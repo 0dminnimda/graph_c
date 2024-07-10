@@ -31,7 +31,7 @@ str fread_line(FILE *stream) {
 
 finish:
     buf[len] = '\0';
-    str_init_slice(&result, buf, len + 1);
+    str_init_slice(&result, buf, len);
     return result;
 
 empty:

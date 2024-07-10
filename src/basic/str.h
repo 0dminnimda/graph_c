@@ -14,7 +14,7 @@ typedef struct {
 void str_init(str *self, const char *data);
 void str_init_known_length(str *self, const char *data, size_t length);
 void str_init_slice(str *self, char *data, size_t length);
-#define str_lit(lit) (str){lit, sizeof(lit)}
+#define str_lit(lit) (str){lit, sizeof(lit) - 1 /* Don't count the \0 */ }
 void str_deinit(str *self);
 #define PRI_str "%.*s"
 #define FMT_str(self) (int)(self)->length, (self)->data
