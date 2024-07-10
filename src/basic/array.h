@@ -6,6 +6,11 @@
 #include <stddef.h>
 #include <stdlib.h>
 
+#if !defined(TOKENPASTE_) && !defined(TOKENPASTE)
+#define TOKENPASTE_(x, y) x ## y
+#define TOKENPASTE(x, y) TOKENPASTE_(x, y)
+#endif
+
 #define array(T) struct { \
     T *data; \
     size_t length; \
@@ -67,14 +72,14 @@
 
 #define array_for(self, name) \
     if ((name = (self)->data), 1) \
-        for (size_t name##_index = 0; \
-            name##_index < (self)->length; \
-            ++name##_index, ++name)
+        for (size_t TOKENPASTE(name, _index) = 0; \
+            TOKENPASTE(name, _index) < (self)->length; \
+            ++TOKENPASTE(name, _index), ++name)
 
 #define array_for__remove(self, name) \
-    array_replace_by_last((self), name##_index); \
+    array_replace_by_last((self), TOKENPASTE(name, _index)); \
     --name; \
-    --name##_index; \
+    --TOKENPASTE(name, _index); \
     continue;
 
 #endif // ARRAY_H
