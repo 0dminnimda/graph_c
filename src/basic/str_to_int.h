@@ -4,6 +4,7 @@
 #define STR_TO_INT_H
 
 #include "types.h"
+#include "str.h"
 
 typedef enum {
     S2I_OK,
