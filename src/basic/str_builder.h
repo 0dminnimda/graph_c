@@ -3,7 +3,7 @@
 #ifndef STR_BUILDER_H
 #define STR_BUILDER_H
 
-#include "string.h"
+#include "str.h"
 #include "array.h"
 
 typedef array(char) StrBuilder;

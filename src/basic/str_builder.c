@@ -1,5 +1,4 @@
 #include "str_builder.h"
-#include "array.h"
 
 void str_builder_add(StrBuilder *sb, const str *string) {
     array_extend_from(sb, string);
