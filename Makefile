@@ -25,4 +25,7 @@ SRC = src/main.c src/graph.c src/names.c
 build:
 	$(CC) -o main.out $(WARN) -O$(O) $(SRC) $(BASIC) $(FLAGS)
 
+.PHONY: record
+record:
+	./record_tests.sh ./main.out --no-glow
 
