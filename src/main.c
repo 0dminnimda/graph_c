@@ -2,6 +2,7 @@
 
 #include "basic/read_line.h"
 #include "basic/str.h"
+#include "basic/str_builder.h"
 #include "basic/str_to_int.h"
 #include "basic/macros.h"
 #include "basic/types.h"
@@ -172,20 +173,23 @@ int main(void) {
     graph_fprint_debug(&ctx.graph, stdout);
 */
 
+    StrBuilder sb;
+    array_init(&sb);
+
     while (1) {
         printf("\n> ");
         fflush(stdout);
 
-        str line = read_line();
+        sb.length = 0;  /* No need to collect all inputs, only this one. */
+        read_line_use_buffer(&sb);
+        str line = str_builder_get(&sb);
+
         if (line.data == NULL) {
             fprintf(stderr, "Error while reading the line\n");
-            str_deinit(&line);
             break;
         }
 
         Result res = handle_operation(&ctx, &line);
-
-        str_deinit(&line);
 
         if (res == FATAL_ERROR) {
             fprintf(stderr, "Fatal error occured, stopping.\n");
@@ -194,6 +198,8 @@ int main(void) {
             break;
         }
     }
+
+    array_deinit(&sb);
 
     graph_deinit(&ctx.graph);
     names_deinit(&ctx.names);
