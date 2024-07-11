@@ -126,3 +126,16 @@ void str_partition_whitespace(str *self, str *pre, str *post) {
     *post = (str){rest.data + space_length, rest.length - space_length};
     return;
 }
+
+/* TODO: find, replace, count, etc.
+ * SEE:
+ *   https://github.com/lattera/glibc/blob/master/string/strstr.c
+ *   https://github.com/python/cpython/tree/main/Objects/stringlib
+ *   https://stackoverflow.com/questions/3183582/what-is-the-fastest-substring-search-algorithm
+ *   https://smart-tool.github.io/smart/
+ *   https://web.archive.org/web/20200420024210/http://www.dmi.unict.it/~faro/smart/algorithms.php
+ *   https://www-igm.univ-mlv.fr/~lecroq/string/index.html
+ *   https://web.archive.org/web/20170829195535/http://www.stupros.com/site/postconcept/Breslauer-Grossi-Mignosi.pdf
+ *   https://www.cs.haifa.ac.il/%7Eoren/Publications/bpsm.pdf
+ *   https://www.cs.utexas.edu/~moore/publications/sustik-moore.pdf
+ */
