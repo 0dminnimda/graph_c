@@ -18,7 +18,10 @@ typedef struct {
  */
 
 #define PRI_str "%.*s"
+/* XXX: Do you really want to print longer than
+ * 100 character string to stdout? */
 #define FMT_str(self) (int)(self)->length, (self)->data
+#define FMT_str_max(self, max) ((self)->length > (max)? (max) : (int)(self)->length), (self)->data
 
 void str_init(str *self, char *data, size_t length);
 #define str_lit(lit) (str){ (lit), sizeof((lit)) - 1 /* Don't count the \0 */ }
