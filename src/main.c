@@ -3,6 +3,8 @@
 #include "basic/read_line.h"
 #include "basic/str.h"
 #include "basic/str_to_int.h"
+#include "basic/macros.h"
+#include "basic/types.h"
 #include "graph.h"
 #include "names.h"
 
@@ -90,9 +92,14 @@ bool handle_operation(Context *ctx, str *line) {
 
         u16 weight = 1;
         if (weight_s.length != 0) {
-            if (str_to_u16(&weight_s, &weight) != S2I_OK) {
-                printf(WARNING("failed to parse weight '" PRI_str "', "
-                               "continuing with default '1'\n"), FMT_str(&weight_s));
+            S2I_Result parse_result = str_to_u16(&weight_s, &weight);
+            if (parse_result != S2I_OK) {
+                if (parse_result == S2I_OUT_OF_RANGE) {
+                    printf(ERROR("weight must be in range [0, " STR(U16_MAX) "]\n"));
+                } else {
+                    printf(ERROR("failed to parse weight '" PRI_str "' as a number\n"), FMT_str(&weight_s));
+                }
+                return false;
             }
         }
 
