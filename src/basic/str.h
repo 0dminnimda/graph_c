@@ -26,6 +26,7 @@ typedef struct {
 #define FMT_str_max(self, max) ((self)->length > (max)? (max) : (int)(self)->length), (self)->data
 
 void str_init(str *self, char *data, size_t length);
+void str_cstr_view(str *self, char *data);
 #define str_lit(lit) (str){ (lit), sizeof((lit)) - 1 /* Don't count the \0 */ }
 void str_deinit(str *self);
 void str_copy_known_length(str *self, const char *data, size_t length);

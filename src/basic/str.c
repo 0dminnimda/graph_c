@@ -42,6 +42,11 @@ void str_init(str *self, char *data, size_t length) {
     self->data = data;
 }
 
+void str_cstr_view(str *self, char *data) {
+    self->data = data;
+    self->length = strlen(data);
+}
+
 void str_deinit(str *self) { free(self->data); }
 
 void str_copy_known_length(str *self, const char *data, size_t length) {
