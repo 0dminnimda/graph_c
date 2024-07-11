@@ -56,7 +56,44 @@ Command str_to_command(const str *string) {
 }
 #undef CMD_CASE
 
+bool str_to_node(Context *ctx, str *string, str *name, u8 arg_no, bool can_create, u32 *id, Result *result) {
+    /* We don't want to have spaces in names. */
+    str_partition_whitespace(string, name, string);
+
+    if (name->length == 0) {
+        printf(ERROR("You must provide a name of the node #" PRI_u8 "\n"), arg_no);
+        *result = OK;
+        return true;
+    }
+
+    size_t index;
+    if (can_create) {
+        if (names_insert(&ctx->names, name, &index)) {
+            printf(WARNING("Node '" PRI_str "' already exists\n"), FMT_str(name));
+        } else {
+            u32 id = graph_add_node(&ctx->graph);
+            if (index != id) {
+                printf(ERROR("Name index (%zu) does not match graph id (" PRI_u32 ")\n"
+                            "This is a bug in the program\n"), index, id);
+                *result = FATAL_ERROR;
+                return true;
+            }
+        }
+    } else {
+        if (!names_find(&ctx->names, name, &index)) {
+            printf(ERROR("Node #" PRI_u8 " '" PRI_str "' does not exist\n"), arg_no, FMT_str(name));
+            *result = OK;
+            return true;
+        }
+    }
+
+    *id = (u32)index;
+    return false;
+}
+
 Result handle_command(Context *ctx, Command cmd, str args) {
+    Result result;
+
     if (cmd == EMPTY) {
         /* If in debug mode let's print current state. */
         if (ctx->in_debug) {
@@ -75,110 +112,70 @@ Result handle_command(Context *ctx, Command cmd, str args) {
     } else if (cmd == ADD_NODE) {
         /* ADD_NODE <name> */
 
+        u32 id;
         str name;
-        /* We don't want to have spaces in names. */
-        str_partition_whitespace(&args, &name, &args);
-
-        if (name.length == 0) {
-            printf(ERROR("You must provide a name of the node\n"));
-            return OK;
-        }
-
-        if (args.length != 0) {
-            printf(WARNING("Junk in the back is ignored ('" PRI_str "')\n"), FMT_str(&args));
-        }
-
-        size_t index;
-        if (names_insert(&ctx->names, &name, &index)) {
-            printf(WARNING("node '" PRI_str "' already exists\n"), FMT_str(&name));
-        } else {
-            u32 id = graph_add_node(&ctx->graph);
-            if (index != id) {
-                printf(ERROR("name index (%zu) does not match graph id (" PRI_u32 ")\n"
-                            "This is a bug in the program\n"), index, id);
-                return FATAL_ERROR;
-            }
+        if (str_to_node(ctx, &args, &name, 1, true, &id, &result)) {
+            return result;
         }
 
         if (ctx->in_debug) {
-            printf(DEBUG("Name: '" PRI_str "', Index: %zu\n"), FMT_str(&name), index);
+            printf(DEBUG("Name: '" PRI_str "', Index: " PRI_u32 "\n"), FMT_str(&name), id);
         }
     } else if (cmd == ADD_EDGE) {
         /* ADD_EDGE <name1> <name2> [<weight>] */
 
-        str name1, name2, weight_s;
-        /* We don't want to have spaces in names. */
-        str_partition_whitespace(&args, &name1, &args);
-        str_partition_whitespace(&args, &name2, &weight_s);
-
-        if (name1.length == 0 || name2.length == 0) {
-            printf(ERROR("You must provide two node names, got %d\n"),
-                   (name1.length? 1:0) + (name2.length? 1:0));
-            return OK;
+        u32 id1, id2;
+        str name1, name2;
+        if (str_to_node(ctx, &args, &name1, 1, false, &id1, &result)) {
+            return result;
         }
-
-        size_t index1, index2;
-        if (!names_find(&ctx->names, &name1, &index1)) {
-            printf(ERROR("First node '" PRI_str "' does not exist\n"), FMT_str(&name1));
-            return OK;
-        }
-        if (!names_find(&ctx->names, &name2, &index2)) {
-            printf(ERROR("Second node '" PRI_str "' does not exist\n"), FMT_str(&name2));
-            return OK;
+        if (str_to_node(ctx, &args, &name2, 2, false, &id2, &result)) {
+            return result;
         }
 
         u16 weight = 1;
-        if (weight_s.length != 0) {
-            S2I_Result parse_result = str_to_u16(&weight_s, &weight);
+        if (args.length != 0) {
+            S2I_Result parse_result = str_to_u16(&args, &weight);
             if (parse_result != S2I_OK) {
                 if (parse_result == S2I_OUT_OF_RANGE) {
                     printf(ERROR("weight must be in range [0, " STR(U16_MAX) "]\n"));
                 } else {
-                    printf(ERROR("failed to parse weight '" PRI_str "' as a number\n"), FMT_str(&weight_s));
+                    printf(ERROR("failed to parse weight '" PRI_str "' as a number\n"), FMT_str(&args));
                 }
                 return OK;
             }
         }
 
-        if (weight_s.length != 0) {
-            printf(WARNING("Junk in the back is ignored ('" PRI_str "')\n"), FMT_str(&weight_s));
-        }
-
-        if (graph_add_edge(&ctx->graph, (u32)index1, (u32)index2, weight)) {
+        if (graph_add_edge(&ctx->graph, id1, id2, weight)) {
             printf(WARNING("edge between nodes '" PRI_str "' and '" PRI_str "' already exists\n"),
                        FMT_str(&name1), FMT_str(&name2));
         }
 
         if (ctx->in_debug) {
-            printf(DEBUG("Index1: %zu, Index2: %zu, Weight: " PRI_u16 "\n"),
-                   index1, index2, weight);
+            printf(DEBUG("Index1: " PRI_u32 ", Index2: " PRI_u32 ", Weight: " PRI_u16 "\n"),
+                   id1, id2, weight);
         }
+    } else if (cmd == REMOVE_NODE) {
+        /* REMOVE_NODE <name> */
+    } else if (cmd == REMOVE_EDGE) {
+        /* REMOVE_EDGE <name1> <name2> */
+
+        // printf("deleted: %s\n", graph_del_edge(&ctx.graph, n1, n2)? "failure": "success");
     } else if (cmd == ROOT) {
         /* ROOT <name> */
 
         str name;
-        str_partition_whitespace(&args, &name, &args);
-
-        if (name.length == 0) {
-            printf(ERROR("You must provide a name of the node\n"));
-            return OK;
+        if (str_to_node(ctx, &args, &name, 1, false, &ctx->root_node, &result)) {
+            return result;
         }
-
-        if (args.length != 0) {
-            printf(WARNING("Junk in the back is ignored ('" PRI_str "')\n"), FMT_str(&args));
-        }
-
-        size_t index;
-        if (!names_find(&ctx->names, &name, &index)) {
-            printf(ERROR("Node '" PRI_str "' does not exist\n"), FMT_str(&name));
-            return OK;
-        }
-
-        ctx->root_node = (u32)index;
 
         if (ctx->in_debug) {
-            printf(DEBUG("Index: %zu\n"), index);
+            printf(DEBUG("Index: " PRI_u32 "\n"), ctx->root_node);
         }
+    }
+
+    if (args.length != 0) {
+        printf(WARNING("Junk in the back is ignored ('" PRI_str "')\n"), FMT_str(&args));
     }
 
     return OK;
