@@ -3,6 +3,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <ctype.h>
+#include "types.h"
 
 char *string_duplicate(const char *source) {
     size_t len = strlen(source) + 1;
@@ -139,3 +140,11 @@ void str_partition_whitespace(str *self, str *pre, str *post) {
  *   https://www.cs.haifa.ac.il/%7Eoren/Publications/bpsm.pdf
  *   https://www.cs.utexas.edu/~moore/publications/sustik-moore.pdf
  */
+
+
+void str_debug_fprint(const str *self, FILE *stream) {
+    char c;
+    str_for(self, c) {
+        fprintf(stream, "[%zu] = '%c' (" PRI_u8 ")\n", c_index, c, (u8)c);
+    }
+}

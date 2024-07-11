@@ -5,6 +5,7 @@
 
 #include <stddef.h>
 #include <stdbool.h>
+#include <stdio.h>
 
 typedef struct {
     char *data;
@@ -44,5 +45,7 @@ void str_partition_whitespace(str *self, str *pre, str *post);
     for (size_t name##_index = 0; \
         name##_index < (self)->length; \
         ++name##_index, name = (self)->data[name##_index])
+
+void str_debug_fprint(const str *self, FILE *stream);
 
 #endif  // STR_H
