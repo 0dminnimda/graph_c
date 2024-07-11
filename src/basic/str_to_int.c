@@ -3,6 +3,17 @@
 #include <stdlib.h>
 #include "checked_arithmetic.h"
 
+/* TODO: ignore leading zeros,
+ * except leading 0b, 0o and 0x.
+
+ * Allow to pass in a target base.
+
+ * Allow to have leading + or -
+ * (no spaces between them and number allowed).
+
+ * Allow single underscores in the number
+ * (except the first and last characteres) */
+
 #define MAKE_S2U(SIZE, MAX_DIGITS, MSD_MAX_VALUE) \
 S2I_Result str_to_u##SIZE(str *string, u##SIZE *value) { \
     if (string->length == 0) return S2I_NOT_FOUND; \
