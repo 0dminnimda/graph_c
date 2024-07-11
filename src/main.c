@@ -6,6 +6,7 @@
 #include "basic/str_to_int.h"
 #include "basic/macros.h"
 #include "basic/types.h"
+#include "basic/main.h"
 #include "graph.h"
 #include "names.h"
 
@@ -201,7 +202,7 @@ Result handle_line(Context *ctx, str line) {
     return handle_command(ctx, cmd, args);
 }
 
-int main(void) {
+int Main(Clargs *clargs) {
     printf("Welcome to example graph program!\n");
 
     Context ctx;
@@ -268,3 +269,5 @@ int main(void) {
 
     return 0;
 }
+
+DEFINE_MAIN_CLARGS
