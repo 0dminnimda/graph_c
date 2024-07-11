@@ -44,6 +44,10 @@ bool handle_operation(Context *ctx, str *line) {
             return false;
         }
 
+        if (args.length != 0) {
+            printf(WARNING("Junk in the back is ignored ('" PRI_str "')\n"), FMT_str(&args));
+        }
+
         size_t index;
         if (names_insert(&ctx->names, &name, &index)) {
             printf(WARNING("node '" PRI_str "' already exists\n"), FMT_str(&name));
