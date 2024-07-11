@@ -13,7 +13,7 @@
 
  * Allow single underscores in the number
  * (except the first, last and characteres right after 0b,0o,0x).
- * Not allowed: _234, 456_, 0x_F
+ * Not allowed: _234, 456_, 0x_F, 0xF_
  * Allowed: 2_3_4, 0xF_A
  */
 
