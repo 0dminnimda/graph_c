@@ -56,9 +56,12 @@ u32 graph_remove_edge_to(Graph *self, u32 node, u32 to) {
     array_u32 *arr = &self->nodes.data[node].out;
     u32 *it;
     array_for(arr, it) {
-        if (self->edges.data[*it].target == to) {
+        u32 index = *it;
+        if (self->edges.data[index].target == to) {
             array_replace_by_last(arr, it_index);
-            return *it;
+            /* Must be a variables, because arrray_replace_by_last
+             * here will change the contents of *it */
+            return index;
         }
     }
     return -1;
@@ -68,9 +71,12 @@ u32 graph_remove_edge_from(Graph *self, u32 node, u32 from) {
     array_u32 *arr = &self->nodes.data[node].in;
     u32 *it;
     array_for(arr, it) {
-        if (self->edges.data[*it].source == from) {
+        u32 index = *it;
+        if (self->edges.data[index].source == from) {
             array_replace_by_last(arr, it_index);
-            return *it;
+            /* Must be a variables, because arrray_replace_by_last
+             * here will change the contents of *it */
+            return index;
         }
     }
     return -1;
