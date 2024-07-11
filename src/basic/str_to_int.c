@@ -4,7 +4,7 @@
 #include "checked_arithmetic.h"
 
 #define MAKE_S2U(SIZE, MAX_DIGITS, MSD_MAX_VALUE) \
-S2I_Result str_to_u##SIZE(const str *string, u##SIZE *value) { \
+S2I_Result str_to_u##SIZE(str *string, u##SIZE *value) { \
     if (string->length == 0) return S2I_NOT_FOUND; \
     char c = string->data[0]; \
 \
@@ -30,6 +30,8 @@ S2I_Result str_to_u##SIZE(const str *string, u##SIZE *value) { \
 \
     if (count != MAX_DIGITS) { \
         *value = msd * msd_multiplier + rest; \
+        string->data += count; \
+        string->length -= count; \
         return S2I_OK; \
     } \
 \
@@ -50,11 +52,13 @@ S2I_Result str_to_u##SIZE(const str *string, u##SIZE *value) { \
     if (cheked_u_add(U##SIZE, value, msd_multiplier, rest)) { \
         return S2I_OUT_OF_RANGE; \
     } \
+    string->data += count; \
+    string->length -= count; \
     return S2I_OK; \
 }
 
 #define MAKE_S2S(SIZE, MAX_DIGITS, MSD_MAX_VALUE) \
-S2I_Result str_to_s##SIZE(const str *string, s##SIZE *value) { \
+S2I_Result str_to_s##SIZE(str *string, s##SIZE *value) { \
     (void)string; \
     (void)value; \
     return S2I_NOT_FOUND; \
