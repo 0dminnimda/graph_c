@@ -1,6 +1,6 @@
 CC = "$(shell (which clang 2>/dev/null || which gcc 2>/dev/null) | head -1)"
 PYTHON = "$(shell (which python3 2>/dev/null || which python 2>/dev/null) | head -1)"
-O = 3
+O = 1
 
 FLAGS := -pedantic -Wall -Wextra -Werror
 FLAGS := $(FLAGS) -std=c11
