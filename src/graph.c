@@ -1,6 +1,9 @@
 #include "graph.h"
-#include "basic/array.h"
+
 #include <assert.h>
+
+#include "basic/array.h"
+#include "basic/type_operations.h"
 
 void graph_init(Graph *self) {
     array_init(&self->edges);
@@ -82,10 +85,77 @@ u32 graph_remove_edge_from(Graph *self, u32 node, u32 from) {
     return -1;
 }
 
-bool graph_replace_node_by_last(Graph *self, u32 id) {
-    (void)self;
-    (void)id;
-    return true;
+void graph_replace_edge_by_last(Graph *self, u32 index) {
+    u32 old_index = self->edges.length - 1;
+    array_replace_by_last(&self->edges, index);
+    GraphEdge *edge = &self->edges.data[index];
+
+    u32 *it;
+    array_for(&self->nodes.data[edge->source].out, it) {
+        if (*it == old_index) {
+            *it = index;
+            break;
+        }
+    }
+    array_for(&self->nodes.data[edge->target].in, it) {
+        if (*it == old_index) {
+            *it = index;
+            break;
+        }
+    }
+}
+
+void graph_replace_node_by_last(Graph *self, u32 index) {
+    array_replace_by_last(&self->nodes, index);
+    GraphNode *node = &self->nodes.data[index];
+
+    u32 *it;
+    array_for(&node->out, it) {
+        self->edges.data[*it].source = index;
+    }
+    array_for(&node->in, it) {
+        self->edges.data[*it].target = index;
+    }
+}
+
+void graph_del_node_and_replace_by_last(Graph *self, u32 id) {
+    /* Same reasoning as in graph_add_edge */
+    assert(id < self->nodes.length && "invalid source");
+
+    /* Delete all indices to the edges in the corrected nodes. */
+    u32 *it;
+    array_u32 *arr;
+
+    arr = &self->nodes.data[id].out;
+    array_for(arr, it) {
+        graph_remove_edge_from(self, self->edges.data[*it].target, id);
+    }
+
+    arr = &self->nodes.data[id].in;
+    array_for(arr, it) {
+        graph_remove_edge_to(self, self->edges.data[*it].source, id);
+    }
+
+    /* To remove the edges from the edge array,
+     * the edges that will take place of the old ones must have
+     * their indices in the nodes be renamed. */
+
+    array_extend_from(arr, &self->nodes.data[id].out);
+    /* The latest indices must be removed first
+     * not to cause issues for the later removals. */
+    array_sort(arr, u32_compare_reversed);
+
+    /* This may do extra renames which could have been avoided,
+     * but for now it'll do and everything else I come up with
+     * just seems more compilated. */
+    array_for(arr, it) {
+        graph_replace_edge_by_last(self, *it);
+    }
+
+    array_deinit(&self->nodes.data[id].out);
+    array_deinit(&self->nodes.data[id].in);
+
+    graph_replace_node_by_last(self, id);
 }
 
 bool graph_del_edge(Graph *self, u32 source, u32 target) {
@@ -95,7 +165,7 @@ bool graph_del_edge(Graph *self, u32 source, u32 target) {
 
     if (index == (u32)-1) return false;
 
-    array_replace_by_last(&self->edges, index);
+    graph_replace_edge_by_last(self, index);
     return true;
 }
 
