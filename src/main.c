@@ -16,14 +16,17 @@
 #define YELLOW "\033[33m"
 #define CLEAR "\033[0m"
 
-#define ERROR(msg) RED "ERROR: " msg CLEAR
-#define WARNING(msg) YELLOW "WARNING: " msg CLEAR
-#define DEBUG(msg) GREEN "DEBUG: " msg CLEAR
+#define PAINT(color, msg) (ctx->glow? color msg CLEAR : msg)
+
+#define ERROR(msg) PAINT(RED, "ERROR: " msg)
+#define WARNING(msg) PAINT(YELLOW, "WARNING: " msg)
+#define DEBUG(msg) PAINT(GREEN, "DEBUG: " msg)
 
 typedef struct {
     Graph graph;
     Names names;
     bool in_debug;
+    bool glow;
     u32 root_node;
 } Context;
 
@@ -109,7 +112,7 @@ Result handle_command(Context *ctx, Command cmd, str args) {
         return NICE_STOP;
     } else if (cmd == DEBUG) {
         ctx->in_debug = !ctx->in_debug;
-        printf("Debug mode: turned %s\n" CLEAR, ctx->in_debug? GREEN "on" : RED "off");
+        printf("Debug mode: turned %s\n", ctx->in_debug? PAINT(GREEN, "on") : PAINT(RED, "off"));
         return OK;
     } else if (cmd == ADD_NODE) {
         /* ADD_NODE <name> */
@@ -208,7 +211,16 @@ int Main(Clargs *clargs) {
 
     Context ctx;
     ctx.in_debug = false;
+    ctx.glow = true;
     ctx.root_node = -1;
+
+    str *clarg;
+    array_for(clargs, clarg) {
+        if (str_compare(clarg, &str_lit("--no-glow")) == 0) {
+            ctx.glow = false;
+            break;
+        }
+    }
 
     array_init(&ctx.names);
     graph_init(&ctx.graph);
