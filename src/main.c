@@ -22,6 +22,7 @@ typedef struct {
     Graph graph;
     Names names;
     bool in_debug;
+    u32 root_node;
 } Context;
 
 typedef enum {
@@ -152,6 +153,32 @@ Result handle_command(Context *ctx, Command cmd, str args) {
             printf(DEBUG("Index1: %zu, Index2: %zu, Weight: " PRI_u16 "\n"),
                    index1, index2, weight);
         }
+    } else if (cmd == ROOT) {
+        /* ROOT <name> */
+
+        str name;
+        str_partition_whitespace(&args, &name, &args);
+
+        if (name.length == 0) {
+            printf(ERROR("You must provide a name of the node\n"));
+            return OK;
+        }
+
+        if (args.length != 0) {
+            printf(WARNING("Junk in the back is ignored ('" PRI_str "')\n"), FMT_str(&args));
+        }
+
+        size_t index;
+        if (!names_find(&ctx->names, &name, &index)) {
+            printf(ERROR("Node '" PRI_str "' does not exist\n"), FMT_str(&name));
+            return OK;
+        }
+
+        ctx->root_node = (u32)index;
+
+        if (ctx->in_debug) {
+            printf(DEBUG("Index: %zu\n"), index);
+        }
     }
 
     return OK;
@@ -182,6 +209,7 @@ int main(void) {
 
     Context ctx;
     ctx.in_debug = false;
+    ctx.root_node = -1;
 
     array_init(&ctx.names);
     graph_init(&ctx.graph);
