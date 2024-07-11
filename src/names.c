@@ -1,21 +1,23 @@
 #include "names.h"
 
-str *names_find(const Names *self, const str *string) {
+bool names_find(const Names *self, const str *string, size_t *index) {
     str *result;
     array_find(self, str, string, ==, result);
-    return result;
+    if (result == NULL) {
+        return false;
+    }
+    *index = result - self->data;
+    return true;
 }
 
-bool names_insert(Names *self, const str *string, size_t *result) {
-    str *item = names_find(self, string);
-    if (item != NULL) {
-        *result = item - self->data;
+bool names_insert(Names *self, const str *string, size_t *index) {
+    if (names_find(self, string, index)) {
         return true;
     }
 
     str *next = array_add(self);
     *next = str_copy_and_return(string);
-    *result = next - self->data;
+    *index = next - self->data;
     return false;
 }
 
