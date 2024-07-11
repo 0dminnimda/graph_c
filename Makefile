@@ -18,7 +18,7 @@ else ifeq ($(SAN),1)
 	FLAGS := $(FLAGS) -fsanitize=address
 endif
 
-BASIC = src/basic/str.c src/basic/read_line.c # src/basic/str_to_int.c
+BASIC = src/basic/str.c src/basic/read_line.c src/basic/str_to_int.c
 SRC = src/main.c src/graph.c src/names.c
 
 .PHONY: build

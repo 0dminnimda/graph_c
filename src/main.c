@@ -2,6 +2,7 @@
 
 #include "basic/read_line.h"
 #include "basic/str.h"
+#include "basic/str_to_int.h"
 #include "graph.h"
 #include "names.h"
 
@@ -62,6 +63,51 @@ bool handle_operation(Context *ctx, str *line) {
 
         if (ctx->in_debug) {
             printf(DEBUG("Name: '" PRI_str "', Index: %zu\n"), FMT_str(&name), index);
+        }
+    } else if (str_compare(&command, &str_lit("ADD_EDGE")) == 0) {
+        /* ADD_EDGE <name1> <name2> [<weight>] */
+
+        str name1, name2, weight_s;
+        /* We don't want to have spaces in names. */
+        str_partition_whitespace(&args, &name1, &args);
+        str_partition_whitespace(&args, &name2, &weight_s);
+
+        if (name1.length == 0 || name2.length == 0) {
+            printf(ERROR("You must provide two node names, got %d\n"),
+                   (name1.length? 1:0) + (name2.length? 1:0));
+            return false;
+        }
+
+        size_t index1, index2;
+        if (!names_find(&ctx->names, &name1, &index1)) {
+            printf(ERROR("First name '" PRI_str "' does not exist\n"), FMT_str(&name1));
+            return false;
+        }
+        if (!names_find(&ctx->names, &name2, &index2)) {
+            printf(ERROR("Second name '" PRI_str "' does not exist\n"), FMT_str(&name2));
+            return false;
+        }
+
+        u16 weight = 1;
+        if (weight_s.length != 0) {
+            if (str_to_u16(&weight_s, &weight) != S2I_OK) {
+                printf(WARNING("failed to parse weight '" PRI_str "', "
+                               "continuing with default '1'\n"), FMT_str(&weight_s));
+            }
+        }
+
+        if (weight_s.length != 0) {
+            printf(WARNING("Junk in the back is ignored ('" PRI_str "')\n"), FMT_str(&weight_s));
+        }
+
+        if (graph_add_edge(&ctx->graph, (u32)index1, (u32)index2, weight)) {
+            printf(WARNING("edge between nodes '" PRI_str "' and '" PRI_str "' already exists\n"),
+                       FMT_str(&name1), FMT_str(&name2));
+        }
+
+        if (ctx->in_debug) {
+            printf(DEBUG("Index1: %zu, Index2: %zu, Weight: " PRI_u16 "\n"),
+                   index1, index2, weight);
         }
     } else {
         printf(ERROR("Unknown command '" PRI_str "'\n"), FMT_str(&command));
