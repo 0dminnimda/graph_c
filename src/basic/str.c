@@ -36,25 +36,24 @@ char *string_duplicate_known_length(const char *source, size_t length) {
 
 #define min(a, b) ((a) < (b) ? (a) : (b))
 
-void str_init(str *self, const char *data) {
-    self->length = strlen(data);
-    self->data = string_duplicate_known_length(data, self->length);
-}
-
-void str_init_known_length(str *self, const char *data, size_t length) {
-    self->length = length;
-    self->data = string_duplicate_known_length(data, self->length);
-}
-
-void str_init_slice(str *self, char *data, size_t length) {
+void str_init(str *self, char *data, size_t length) {
     self->length = length;
     self->data = data;
 }
 
 void str_deinit(str *self) { free(self->data); }
 
+void str_copy_known_length(str *self, const char *data, size_t length) {
+    self->length = length;
+    self->data = string_duplicate_known_length(data, self->length);
+}
+
+void str_copy_cstr(str *self, const char *data) {
+    str_copy_known_length(self, data, strlen(data));
+}
+
 void str_copy(const str *self, str *copy) {
-    str_init_known_length(copy, self->data, self->length);
+    str_copy_known_length(copy, self->data, self->length);
 }
 
 str str_copy_and_return(const str *self) {

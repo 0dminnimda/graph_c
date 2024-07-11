@@ -31,12 +31,12 @@ str fread_line(FILE *stream) {
 
 finish:
     buf[len] = '\0';
-    str_init_slice(&result, buf, len);
+    str_init(&result, buf, len);
     return result;
 
 empty:
     free(buf);
-    str_init_slice(&result, NULL, 0);
+    str_init(&result, NULL, 0);
     return result;
 }
 
