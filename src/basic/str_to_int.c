@@ -12,7 +12,13 @@
  * (no spaces between them and number allowed).
 
  * Allow single underscores in the number
- * (except the first and last characteres) */
+ * (except the first and last characteres)
+ */
+
+/* SEE:
+ * https://github.com/lattera/glibc/blob/895ef79e04a953cac1493863bcae29ad85657ee1/stdlib/strtol_l.c
+ * https://github.com/python/cpython/blob/6557af669899f18f8d123f8e1b6c3380d502c519/Objects/longobject.c#L2518
+ */
 
 #define MAKE_S2U(SIZE, MAX_DIGITS, MSD_MAX_VALUE) \
 S2I_Result str_to_u##SIZE(str *string, u##SIZE *value) { \
