@@ -87,10 +87,10 @@ bool graph_del_edge(Graph *self, u32 source, u32 target) {
     u32 index2 = graph_remove_edge_from(self, target, source);
     assert(index == index2);
 
-    if (index == (u32)-1) return true;
+    if (index == (u32)-1) return false;
 
     array_replace_by_last(&self->edges, index);
-    return false;
+    return true;
 }
 
 void graph_reverse_post_order(const Graph *self, u32 root, array_u32 *ordering, array_u32 *back_edges) {
