@@ -115,19 +115,28 @@ bool longest_path_in_acyclic_graph(const Graph *self, array_u32 *path) {
 void graph_fprint_debug(const Graph *self, FILE *stream) {
     fprintf(stream, "Graph(%zu nodes, %zu edges):\n",
             self->nodes.length, self->edges.length);
+
+    fprintf(stream, "edges:\n");
+    GraphEdge *edge;
+    array_for(&self->edges, edge) {
+        fprintf(stream, "[%zu] = " PRI_u32 " -> " PRI_u32 " (" PRI_u16 ")\n",
+                edge_index, edge->source, edge->target, edge->weight);
+    }
+
+    fprintf(stream, "nodes:\n");
     GraphNode *node;
     array_for(&self->nodes, node) {
         u32 *it;
         fprintf(stream, "%zu  in:", node_index);
         array_for(&node->in, it) {
             GraphEdge *edge = &self->edges.data[*it];
-            fprintf(stream, " %u (%d),", edge->source, edge->weight);
+            fprintf(stream, " [" PRI_u32 "] " PRI_u32 " (" PRI_u16 "),", *it, edge->source, edge->weight);
         }
         fprintf(stream, "\n");
         fprintf(stream, "%zu out:", node_index);
         array_for(&node->out, it) {
             GraphEdge *edge = &self->edges.data[*it];
-            fprintf(stream, " %u (%d),", edge->target, edge->weight);
+            fprintf(stream, " [" PRI_u32 "] " PRI_u32 " (" PRI_u16 "),", *it, edge->target, edge->weight);
         }
         fprintf(stream, "\n");
     }
