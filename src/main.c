@@ -1,5 +1,6 @@
 #include <stdio.h>
 
+#include "basic/array.h"
 #include "basic/read_line.h"
 #include "basic/str.h"
 #include "basic/str_builder.h"
