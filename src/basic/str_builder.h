@@ -10,6 +10,6 @@ typedef array(char) StrBuilder;
 
 /* For init and deinit use array.h */
 void str_builder_add(StrBuilder *sb, const str *string);
-str str_builder_finish(StrBuilder *sb);
+str str_builder_get(StrBuilder *sb);
 
 #endif // STR_BUILDER_H
