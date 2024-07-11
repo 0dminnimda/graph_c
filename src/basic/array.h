@@ -33,6 +33,12 @@
     (self)->capacity = (cap) \
 )
 
+#define array_init_with_capacity_and_length(self, cap, len) ( \
+    (self)->data = malloc((cap) * array_item_size((self))), \
+    (self)->length = (len), \
+    (self)->capacity = (cap) \
+)
+
 #define array_deinit(self) free((self)->data)
 
 #define array_deinit_with_item(self, T) do { \
