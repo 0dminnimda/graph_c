@@ -114,6 +114,9 @@
     } \
 } while(0)
 
+#define array_sort(self, cmp) \
+    qsort((self)->data, (self)->length, array_item_size((self)), (int (*)(const void*, const void*))cmp)
+
 #define array_for(self, name) \
     if ((name = (self)->data), 1) \
         for (size_t CONCAT(name, _index) = 0; \
