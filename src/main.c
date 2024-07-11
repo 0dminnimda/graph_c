@@ -241,30 +241,6 @@ int Main(Clargs *clargs) {
     array_init(&ctx.names);
     graph_init(&ctx.graph);
 
-/*
-    graph_fprint_debug(&ctx.graph, stdout);
-
-    u32 n1 = graph_add_node(&ctx.graph);
-
-    graph_fprint_debug(&ctx.graph, stdout);
-
-    u32 n2 = graph_add_node(&ctx.graph);
-
-    graph_fprint_debug(&ctx.graph, stdout);
-
-    graph_add_edge(&ctx.graph, n1, n2, 20);
-
-    graph_fprint_debug(&ctx.graph, stdout);
-
-    graph_add_edge(&ctx.graph, n2, n1, 30);
-
-    graph_fprint_debug(&ctx.graph, stdout);
-
-    printf("deleted: %s\n", graph_del_edge(&ctx.graph, n1, n2)? "failure": "success");
-
-    graph_fprint_debug(&ctx.graph, stdout);
-*/
-
     StrBuilder sb;
     array_init(&sb);
 
