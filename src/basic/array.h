@@ -84,6 +84,11 @@
     &(self)->data[(self)->length++] \
 )
 
+#define array_extend_from(self, other) ( \
+    array_resize((self)->length + (other)->length), \
+    memcpy((self)->data + (self)->length, (other)->data, (other)->length) \
+)
+
 #define array_remove_unordered(self, index) array_replace_by_last(self, index)
 #define array_replace_by_last(self, index) ( \
     (self)->length--, \
