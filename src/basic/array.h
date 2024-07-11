@@ -117,8 +117,11 @@
     } \
 } while(0)
 
-#define array_sort(self, cmp) \
-    qsort((self)->data, (self)->length, array_item_size((self)), (int (*)(const void*, const void*))cmp)
+#define array_sort(self, cmp) ( \
+    ((self)->length > 1)? \
+        (qsort((self)->data, (self)->length, array_item_size((self)), (int (*)(const void*, const void*))cmp), 0) \
+        : 0 \
+)
 
 #define array_for(self, name) \
     if ((name = (self)->data), 1) \

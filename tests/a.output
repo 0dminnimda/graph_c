@@ -89,10 +89,7 @@ Welcome to example graph program!
 > 
 > 
 > 
-> src/graph.c:146:5: runtime error: null pointer passed as argument 1, which is declared to never be null
-/usr/include/stdlib.h:839:30: note: nonnull attribute specified here
-SUMMARY: UndefinedBehaviorSanitizer: undefined-behavior src/graph.c:146:5 in 
-
+> 
 > 
 > ERROR: Node #1 'd' does not exist
 
