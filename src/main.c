@@ -165,7 +165,23 @@ Result handle_command(Context *ctx, Command cmd, str args) {
     } else if (cmd == REMOVE_EDGE) {
         /* REMOVE_EDGE <name1> <name2> */
 
-        // printf("deleted: %s\n", graph_del_edge(&ctx.graph, n1, n2)? "failure": "success");
+        u32 id1, id2;
+        str name1, name2;
+        if (str_to_node(ctx, &args, &name1, 1, false, &id1, &result)) {
+            return result;
+        }
+        if (str_to_node(ctx, &args, &name2, 2, false, &id2, &result)) {
+            return result;
+        }
+
+        if (!graph_del_edge(&ctx->graph, id1, id2)) {
+            printf(WARNING("edge between nodes '" PRI_str "' and '" PRI_str "' does not exist\n"),
+                   FMT_str(&name1), FMT_str(&name2));
+        }
+
+        if (ctx->in_debug) {
+            printf(DEBUG("Index1: " PRI_u32 ", Index2: " PRI_u32 "\n"), id1, id2);
+        }
     } else if (cmd == ROOT) {
         /* ROOT <name> */
 
