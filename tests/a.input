@@ -37,4 +37,54 @@ ADD_EDGE a b 855
 
 REMOVE_EDGE a b
 
+REMOVE_EDGE a b
+
+REMOVE_EDGE a a
+
+ADD_EDGE b b
+
+REMOVE_EDGE b a
+
+ADD_EDGE a a
+
+ADD_EDGE a b
+
+ADD_EDGE b a
+
+REMOVE_NODE a
+
+ADD_EDGE a b
+
+ADD_NODE a
+
+ADD_NODE c
+
+ADD_EDGE a b
+
+ADD_EDGE b c
+
+ADD_EDGE c a
+
+REMOVE_NODE b
+
+ADD_EDGE c b 23
+
+ADD_EDGE c c 4
+
+ADD_EDGE b b 8
+
+ADD_NODE d
+
+REMOVE_NODE d
+
+REMOVE_NODE d
+
+ADD_NODE d
+
+ADD_EDGE d d 67
+
+ADD_EDGE d c 87
+
+ADD_EDGE d b 23
+
 END

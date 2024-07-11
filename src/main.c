@@ -162,6 +162,26 @@ Result handle_command(Context *ctx, Command cmd, str args) {
         }
     } else if (cmd == REMOVE_NODE) {
         /* REMOVE_NODE <name> */
+
+        u32 id;
+        str name;
+        if (str_to_node(ctx, &args, &name, 1, false, &id, &result)) {
+            return result;
+        }
+
+        array_replace_by_last(&ctx->names, id);
+        graph_del_node_and_replace_by_last(&ctx->graph, id);
+
+        if (ctx->names.length != ctx->graph.nodes.length) {
+            printf(ERROR("Count of names (%zu) does not match count of nodes (%zu)\n"
+                         "This is a bug in the program, report it.\n"),
+                   ctx->names.length, ctx->graph.nodes.length);
+            return FATAL_ERROR;
+        }
+
+        if (ctx->in_debug) {
+            printf(DEBUG("Index: " PRI_u32 "\n"), id);
+        }
     } else if (cmd == REMOVE_EDGE) {
         /* REMOVE_EDGE <name1> <name2> */
 
