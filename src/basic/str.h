@@ -42,9 +42,10 @@ str str_strip_whitespaces(str *self);
 void str_partition_whitespace(str *self, str *pre, str *post);
 
 #define str_for(self, name) \
-    for (size_t name##_index = 0; \
-        name##_index < (self)->length; \
-        ++name##_index, name = (self)->data[name##_index])
+    if ((name = (self)->data[0], 1)) \
+        for (size_t name##_index = 0; \
+            name##_index < (self)->length; \
+            ++name##_index, name = (self)->data[name##_index])
 
 void str_debug_fprint(const str *self, FILE *stream);
 
