@@ -39,13 +39,19 @@ bool handle_operation(Context *ctx, str *line) {
         /* We don't want to have spaces in names. */
         str_partition_whitespace(&args, &name, &args);
 
+        if (name.length == 0) {
+            printf(ERROR("You must provide a name of the node\n"));
+            return false;
+        }
+
         size_t index;
         if (names_insert(&ctx->names, &name, &index)) {
             printf(WARNING("node '" PRI_str "' already exists\n"), FMT_str(&name));
         } else {
             u32 id = graph_add_node(&ctx->graph);
             if (index != id) {
-                printf(ERROR("name index (%zu) does not match graph id (" PRI_u32 ")\n"), index, id);
+                printf(ERROR("name index (%zu) does not match graph id (" PRI_u32 ")\n"
+                            "This is a bug in the program\n"), index, id);
                 return true;
             }
         }
@@ -59,7 +65,7 @@ bool handle_operation(Context *ctx, str *line) {
     }
 
     if (ctx->in_debug) {
-        printf(DEBUG("current graph state:\n"));
+        printf(DEBUG("Current graph state:\n"));
         graph_fprint_debug(&ctx->graph, stdout);
     }
 
