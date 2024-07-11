@@ -16,8 +16,8 @@
 
 #define ARRAY_APPEND_INIT_CAP 128
 
-#define array_it_ TOKENPASTE(it__, __LINE__)
-#define array_ind_ TOKENPASTE(TOKENPASTE(it__, __LINE__), _index)
+#define array_it_ CONCAT(it__, __LINE__)
+#define array_ind_ CONCAT(CONCAT(it__, __LINE__), _index)
 
 #define array_item_size(self) sizeof(*(self)->data)
 
@@ -110,14 +110,14 @@
 
 #define array_for(self, name) \
     if ((name = (self)->data), 1) \
-        for (size_t TOKENPASTE(name, _index) = 0; \
-            TOKENPASTE(name, _index) < (self)->length; \
-            ++TOKENPASTE(name, _index), ++name)
+        for (size_t CONCAT(name, _index) = 0; \
+            CONCAT(name, _index) < (self)->length; \
+            ++CONCAT(name, _index), ++name)
 
 #define array_for__remove(self, name) \
-    array_replace_by_last((self), TOKENPASTE(name, _index)); \
+    array_replace_by_last((self), CONCAT(name, _index)); \
     --name; \
-    --TOKENPASTE(name, _index); \
+    --CONCAT(name, _index); \
     continue;
 
 #endif // ARRAY_H
