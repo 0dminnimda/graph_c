@@ -6,11 +6,7 @@
 #include <stddef.h>
 #include <stdlib.h>
 #include <string.h>
-
-#if !defined(TOKENPASTE_) && !defined(TOKENPASTE)
-#define TOKENPASTE_(x, y) x ## y
-#define TOKENPASTE(x, y) TOKENPASTE_(x, y)
-#endif
+#include "macros.h"
 
 #define array(T) struct { \
     T *data; \
