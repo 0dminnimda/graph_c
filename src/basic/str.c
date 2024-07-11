@@ -68,6 +68,8 @@ int str_compare(const str *self, const str *other) {
         return -1;
     } else if (self->length > other->length) {
         return 1;
+    } else if (self->length == 0) {
+        return 0;
     } else {
         return memcmp(self->data, other->data, self->length);
     }
