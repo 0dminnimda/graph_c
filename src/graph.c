@@ -28,15 +28,15 @@ u32 graph_add_node(Graph *self) {
 }
 
 bool graph_add_edge(Graph *self, u32 source, u32 target, u16 weight) {
-    // That's how we can be fast.
-    // Nice to catch errors, but not required.
-    // User should never provide the incorrect index.
+    /* That's how we can be fast.
+     * Nice to catch errors, but not required.
+     * User should never provide the incorrect index. */
     assert(source < self->nodes.length && "invalid source");
     assert(target < self->nodes.length && "invalid target");
 
-    // nodes[target].in should be in sync
-    // if it's not then it's users fault,
-    // don't mess with internal structure.
+    /* nodes[target].in should be in sync
+     * if it's not then it's users fault,
+     * don't mess with internal structure. */
     u32 *it;
     array_for(&self->nodes.data[source].out, it) {
         if (self->edges.data[*it].target == target)

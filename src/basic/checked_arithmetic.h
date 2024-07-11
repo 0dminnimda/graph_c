@@ -17,7 +17,9 @@
 #  define cheked_u_sub(T, R, A, B) __builtin_sub_overflow ((A), (B), (R))
 #  define cheked_u_mul(T, R, A, B) __builtin_mul_overflow ((A), (B), (R))
 #else
-// For mcvs/intel: https://stackoverflow.com/questions/69565333/are-there-overflow-check-math-functions-for-msvc
+/* For mcvs/intel:
+ * https://stackoverflow.com/questions/69565333/are-there-overflow-check-math-functions-for-msvc
+ */
 
 #  define cheked_s_add(T, R, A, B) ( \
     (((B) > 0 && (A) > T##_MAX - (B)) || ((B) < 0 && (A) < T##_MIN - (B))) ? \
