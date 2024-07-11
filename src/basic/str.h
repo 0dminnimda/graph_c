@@ -43,7 +43,7 @@ str str_strip_whitespaces(str *self);
 void str_partition_whitespace(str *self, str *pre, str *post);
 
 #define str_for(self, name) \
-    if ((name = (self)->data[0], 1)) \
+    if ((self)->length && (name = (self)->data[0], 1)) \
         for (size_t CONCAT(name, _index) = 0; \
             CONCAT(name, _index) < (self)->length; \
             ++CONCAT(name, _index), name = (self)->data[CONCAT(name, _index)])
