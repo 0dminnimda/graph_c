@@ -485,15 +485,7 @@ nodes:
 2  in:
 2 out:
 
-> src/graph.c:143:5: runtime error: applying zero offset to null pointer
-SUMMARY: UndefinedBehaviorSanitizer: undefined-behavior src/graph.c:143:5 in 
-src/graph.c:143:5: runtime error: null pointer passed as argument 1, which is declared to never be null
-/usr/include/string.h:44:28: note: nonnull attribute specified here
-SUMMARY: UndefinedBehaviorSanitizer: undefined-behavior src/graph.c:143:5 in 
-src/graph.c:143:5: runtime error: null pointer passed as argument 2, which is declared to never be null
-/usr/include/string.h:44:28: note: nonnull attribute specified here
-SUMMARY: UndefinedBehaviorSanitizer: undefined-behavior src/graph.c:143:5 in 
-src/graph.c:146:5: runtime error: null pointer passed as argument 1, which is declared to never be null
+> src/graph.c:146:5: runtime error: null pointer passed as argument 1, which is declared to never be null
 /usr/include/stdlib.h:839:30: note: nonnull attribute specified here
 SUMMARY: UndefinedBehaviorSanitizer: undefined-behavior src/graph.c:146:5 in 
 DEBUG: Index: 2

@@ -91,8 +91,11 @@
 )
 
 #define array_extend_from(self, other) ( \
-    array_resize((self), (self)->length + (other)->length), \
-    memcpy((self)->data + (self)->length, (other)->data, (other)->length) \
+    (other)->length? ( \
+        array_resize((self), (self)->length + (other)->length), \
+        memcpy((self)->data + (self)->length, (other)->data, (other)->length), \
+        0 \
+    ) : 0 \
 )
 
 #define array_remove_unordered(self, index) array_replace_by_last(self, index)
