@@ -9,9 +9,6 @@
 /* Command line arguments */
 typedef array(str) Clargs;
 
-#define MAIN_CORE_CODE \
-    int result = Main();
-
 #define MAIN_CLARGS_WRAPPER(inner) \
     Clargs clargs; \
     array_init_with_capacity_and_length(&clargs, argc, argc); \
@@ -28,10 +25,13 @@ typedef array(str) Clargs;
     return result; \
 }
 
-#define DEFINE_MAIN int main(void) MAIN_BODY_WRAPPER( \
+#define DEFINE_MAIN int main(void) \
+MAIN_BODY_WRAPPER( \
     result = Main(); \
 )
-#define DEFINE_MAIN_CLARGS int main(int argc, char *argv[]) MAIN_BODY_WRAPPER(MAIN_CLARGS_WRAPPER( \
+
+#define DEFINE_MAIN_CLARGS int main(int argc, char *argv[]) \
+MAIN_BODY_WRAPPER(MAIN_CLARGS_WRAPPER( \
     result = Main(&clargs); \
 ))
 
