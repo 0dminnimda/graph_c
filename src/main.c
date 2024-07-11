@@ -23,23 +23,29 @@ typedef struct {
     bool in_debug;
 } Context;
 
-bool handle_operation(Context *ctx, str *line) {
-    if (str_compare(line, &str_lit("DEBUG")) == 0) {
-        ctx->in_debug = !ctx->in_debug;
-        printf("Debug mode: turned %s\n" CLEAR, ctx->in_debug? GREEN "on" : RED "off");
-        return false;
-    }
+typedef enum {
+    OK,
+    FATAL_ERROR,
+    NICE_STOP
+} Result;
 
+Result handle_operation(Context *ctx, str *line) {
     str stripped = str_strip_whitespaces(line);
     if (stripped.length == 0) {
         /* Just skip an empty line */
-        return false;
+        return OK;
     }
 
     str command, args;
     str_partition_whitespace(&stripped, &command, &args);
 
-    if (str_compare(&command, &str_lit("ADD_NODE")) == 0) {
+    if (str_compare(&command, &str_lit("END")) == 0) {
+        return NICE_STOP;
+    } else if (str_compare(&command, &str_lit("DEBUG")) == 0) {
+        ctx->in_debug = !ctx->in_debug;
+        printf("Debug mode: turned %s\n" CLEAR, ctx->in_debug? GREEN "on" : RED "off");
+        return OK;
+    } else if (str_compare(&command, &str_lit("ADD_NODE")) == 0) {
         /* ADD_NODE <name> */
 
         str name;
@@ -48,7 +54,7 @@ bool handle_operation(Context *ctx, str *line) {
 
         if (name.length == 0) {
             printf(ERROR("You must provide a name of the node\n"));
-            return false;
+            return OK;
         }
 
         if (args.length != 0) {
@@ -63,7 +69,7 @@ bool handle_operation(Context *ctx, str *line) {
             if (index != id) {
                 printf(ERROR("name index (%zu) does not match graph id (" PRI_u32 ")\n"
                             "This is a bug in the program\n"), index, id);
-                return true;
+                return FATAL_ERROR;
             }
         }
 
@@ -81,17 +87,17 @@ bool handle_operation(Context *ctx, str *line) {
         if (name1.length == 0 || name2.length == 0) {
             printf(ERROR("You must provide two node names, got %d\n"),
                    (name1.length? 1:0) + (name2.length? 1:0));
-            return false;
+            return OK;
         }
 
         size_t index1, index2;
         if (!names_find(&ctx->names, &name1, &index1)) {
             printf(ERROR("First name '" PRI_str "' does not exist\n"), FMT_str(&name1));
-            return false;
+            return OK;
         }
         if (!names_find(&ctx->names, &name2, &index2)) {
             printf(ERROR("Second name '" PRI_str "' does not exist\n"), FMT_str(&name2));
-            return false;
+            return OK;
         }
 
         u16 weight = 1;
@@ -103,7 +109,7 @@ bool handle_operation(Context *ctx, str *line) {
                 } else {
                     printf(ERROR("failed to parse weight '" PRI_str "' as a number\n"), FMT_str(&weight_s));
                 }
-                return false;
+                return OK;
             }
         }
 
@@ -122,7 +128,7 @@ bool handle_operation(Context *ctx, str *line) {
         }
     } else {
         printf(ERROR("Unknown command '" PRI_str "'\n"), FMT_str(&command));
-        return false;
+        return OK;
     }
 
     if (ctx->in_debug) {
@@ -130,7 +136,7 @@ bool handle_operation(Context *ctx, str *line) {
         graph_fprint_debug(&ctx->graph, stdout);
     }
 
-    return false;
+    return OK;
 }
 
 int main(void) {
@@ -174,20 +180,17 @@ int main(void) {
         if (line.data == NULL) {
             fprintf(stderr, "Error while reading the line\n");
             str_deinit(&line);
-            return 1;
-        }
-
-        if (str_compare(&line, &str_lit("END")) == 0) {
-            str_deinit(&line);
             break;
         }
 
-        bool got_error = handle_operation(&ctx, &line);
+        Result res = handle_operation(&ctx, &line);
 
         str_deinit(&line);
 
-        if (got_error) {
+        if (res == FATAL_ERROR) {
             fprintf(stderr, "Fatal error occured, stopping.\n");
+            break;
+        } else if (res == NICE_STOP) {
             break;
         }
     }
