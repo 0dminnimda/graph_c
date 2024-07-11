@@ -79,7 +79,7 @@ bool str_to_node(Context *ctx, str *string, str *name, u8 arg_no, bool can_creat
             u32 id = graph_add_node(&ctx->graph);
             if (index != id) {
                 printf(ERROR("Name index (%zu) does not match graph id (" PRI_u32 ")\n"
-                             "This is a bug in the program\n"), index, id);
+                             "This is a bug in the program, report it.\n"), index, id);
                 *result = FATAL_ERROR;
                 return true;
             }
