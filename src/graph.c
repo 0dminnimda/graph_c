@@ -93,7 +93,7 @@ bool graph_del_edge(Graph *self, u32 source, u32 target) {
     return false;
 }
 
-void graph_topsort(const Graph *self, u32 root, array_u32 *ordering, array_u32 *back_edges) {
+void graph_reverse_post_order(const Graph *self, u32 root, array_u32 *ordering, array_u32 *back_edges) {
     (void)self;
     (void)root;
     (void)ordering;
