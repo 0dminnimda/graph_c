@@ -98,8 +98,8 @@
 #define array_remove_unordered(self, index) array_replace_by_last(self, index)
 #define array_replace_by_last(self, index) ( \
     (self)->length--, \
-    (index != (self)->length)? \
-        ((self)->data[index] = (self)->data[(self)->length], 0): 0 \
+    ((index) != (self)->length)? \
+        ((self)->data[(index)] = (self)->data[(self)->length], 0): 0 \
 )
 
 /* result is a pointer to the item in the array */
