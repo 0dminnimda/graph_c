@@ -30,23 +30,48 @@ typedef enum {
     NICE_STOP
 } Result;
 
-Result handle_operation(Context *ctx, str *line) {
-    str stripped = str_strip_whitespaces(line);
-    if (stripped.length == 0) {
+typedef enum {
+    INVALID,
+    EMPTY,
+    END,
+    DEBUG,
+    ADD_NODE,
+    ADD_EDGE,
+    REMOVE_NODE,
+    REMOVE_EDGE,
+    ROOT,
+} Command;
+
+#define CMD_CASE(n) if (str_compare(string, &str_lit(STR(n))) == 0) return n
+Command str_to_command(const str *string) {
+    CMD_CASE(END);
+    CMD_CASE(DEBUG);
+    CMD_CASE(ADD_NODE);
+    CMD_CASE(ADD_EDGE);
+    CMD_CASE(REMOVE_NODE);
+    CMD_CASE(REMOVE_EDGE);
+    CMD_CASE(ROOT);
+    return INVALID;
+}
+#undef CMD_CASE
+
+Result handle_command(Context *ctx, Command cmd, str args) {
+    if (cmd == EMPTY) {
+        /* If in debug mode let's print current state. */
+        if (ctx->in_debug) {
+            printf(DEBUG("Current graph state:\n"));
+            graph_fprint_debug(&ctx->graph, stdout);
+        }
+
         /* Just skip an empty line */
         return OK;
-    }
-
-    str command, args;
-    str_partition_whitespace(&stripped, &command, &args);
-
-    if (str_compare(&command, &str_lit("END")) == 0) {
+    } else if (cmd == END) {
         return NICE_STOP;
-    } else if (str_compare(&command, &str_lit("DEBUG")) == 0) {
+    } else if (cmd == DEBUG) {
         ctx->in_debug = !ctx->in_debug;
         printf("Debug mode: turned %s\n" CLEAR, ctx->in_debug? GREEN "on" : RED "off");
         return OK;
-    } else if (str_compare(&command, &str_lit("ADD_NODE")) == 0) {
+    } else if (cmd == ADD_NODE) {
         /* ADD_NODE <name> */
 
         str name;
@@ -77,7 +102,7 @@ Result handle_operation(Context *ctx, str *line) {
         if (ctx->in_debug) {
             printf(DEBUG("Name: '" PRI_str "', Index: %zu\n"), FMT_str(&name), index);
         }
-    } else if (str_compare(&command, &str_lit("ADD_EDGE")) == 0) {
+    } else if (cmd == ADD_EDGE) {
         /* ADD_EDGE <name1> <name2> [<weight>] */
 
         str name1, name2, weight_s;
@@ -127,17 +152,29 @@ Result handle_operation(Context *ctx, str *line) {
             printf(DEBUG("Index1: %zu, Index2: %zu, Weight: " PRI_u16 "\n"),
                    index1, index2, weight);
         }
-    } else {
+    }
+
+    return OK;
+}
+
+Result handle_line(Context *ctx, str line) {
+    Command cmd;
+
+    str stripped = str_strip_whitespaces(&line);
+    if (stripped.length == 0) {
+        return handle_command(ctx, EMPTY, stripped);
+    }
+
+    str command, args;
+    str_partition_whitespace(&stripped, &command, &args);
+
+    cmd = str_to_command(&command);
+    if (cmd == INVALID) {
         printf(ERROR("Unknown command '" PRI_str "'\n"), FMT_str(&command));
         return OK;
     }
 
-    if (ctx->in_debug) {
-        printf(DEBUG("Current graph state:\n"));
-        graph_fprint_debug(&ctx->graph, stdout);
-    }
-
-    return OK;
+    return handle_command(ctx, cmd, args);
 }
 
 int main(void) {
@@ -189,7 +226,7 @@ int main(void) {
             break;
         }
 
-        Result res = handle_operation(&ctx, &line);
+        Result res = handle_line(&ctx, line);
 
         if (res == FATAL_ERROR) {
             fprintf(stderr, "Fatal error occured, stopping.\n");
