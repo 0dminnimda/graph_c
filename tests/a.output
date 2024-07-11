@@ -29,4 +29,17 @@ Welcome to example graph program!
 > 
 > 
 > 
+> WARNING: edge between nodes 'a' and 'b' does not exist
+
 > 
+> WARNING: edge between nodes 'b' and 'b' does not exist
+
+> 
+> 
+> 
+> 
+> 
+> WARNING: edge between nodes 'a' and 'b' already exists
+
+> 
+> main.out: src/graph.c:117: _Bool graph_del_edge(Graph *, u32, u32): Assertion `index == index2' failed.
