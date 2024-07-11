@@ -24,6 +24,16 @@
  * https://github.com/python/cpython/blob/6557af669899f18f8d123f8e1b6c3380d502c519/Objects/longobject.c#L2518
  */
 
+/* The basic idea is that given a spefic type, you know it's maximum/minimum.
+ * If you leave out the most significant digit (MSD) (make number out of one less digits then maximum)
+ * then you can guarantee, there were no overflows while you are constructing it.
+ * The only possible overflow is when you add MSD to the rest.
+
+ * For example, for u8 all numbers from 0 to 99 are guranteed to fit,
+ * but if you start parting 299, thus adding 200 and 99,
+ * then you will need to check for overflow,
+ * which ofter should be a single instruction and a jump.
+ */
 
 S2I_Result str_to_u8(str *string, u8 *value) {
     if (string->length == 0) return S2I_NOT_FOUND;
