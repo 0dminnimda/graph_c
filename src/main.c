@@ -74,7 +74,7 @@ bool str_to_node(Context *ctx, str *string, str *name, u8 arg_no, bool can_creat
             u32 id = graph_add_node(&ctx->graph);
             if (index != id) {
                 printf(ERROR("Name index (%zu) does not match graph id (" PRI_u32 ")\n"
-                            "This is a bug in the program\n"), index, id);
+                             "This is a bug in the program\n"), index, id);
                 *result = FATAL_ERROR;
                 return true;
             }
@@ -148,7 +148,7 @@ Result handle_command(Context *ctx, Command cmd, str args) {
 
         if (graph_add_edge(&ctx->graph, id1, id2, weight)) {
             printf(WARNING("edge between nodes '" PRI_str "' and '" PRI_str "' already exists\n"),
-                       FMT_str(&name1), FMT_str(&name2));
+                   FMT_str(&name1), FMT_str(&name2));
         }
 
         if (ctx->in_debug) {
