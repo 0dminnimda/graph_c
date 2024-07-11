@@ -119,11 +119,11 @@ Result handle_command(Context *ctx, Command cmd, str args) {
 
         size_t index1, index2;
         if (!names_find(&ctx->names, &name1, &index1)) {
-            printf(ERROR("First name '" PRI_str "' does not exist\n"), FMT_str(&name1));
+            printf(ERROR("First node '" PRI_str "' does not exist\n"), FMT_str(&name1));
             return OK;
         }
         if (!names_find(&ctx->names, &name2, &index2)) {
-            printf(ERROR("Second name '" PRI_str "' does not exist\n"), FMT_str(&name2));
+            printf(ERROR("Second node '" PRI_str "' does not exist\n"), FMT_str(&name2));
             return OK;
         }
 
