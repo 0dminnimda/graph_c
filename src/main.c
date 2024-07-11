@@ -31,6 +31,10 @@ bool handle_operation(Context *ctx, str *line) {
     }
 
     str stripped = str_strip_whitespaces(line);
+    if (stripped.length == 0) {
+        /* Just skip an empty line */
+        return false;
+    }
 
     str command, args;
     str_partition_whitespace(&stripped, &command, &args);
@@ -167,7 +171,7 @@ int main(void) {
         fflush(stdout);
 
         str line = read_line();
-        if (line.data == NULL || line.length == 0) {
+        if (line.data == NULL) {
             fprintf(stderr, "Error while reading the line\n");
             str_deinit(&line);
             return 1;
