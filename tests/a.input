@@ -22,3 +22,4 @@ REMOVE_EDGE a b
 
 REMOVE_EDGE b b
 
+END

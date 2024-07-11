@@ -4,6 +4,8 @@ Welcome to example graph program!
 
 > DEBUG: Current graph state:
 Graph(0 nodes, 0 edges):
+edges:
+nodes:
 
 > DEBUG: Name: 'a', Index: 0
 
@@ -15,6 +17,8 @@ DEBUG: Name: 'a', Index: 0
 
 > DEBUG: Current graph state:
 Graph(1 nodes, 0 edges):
+edges:
+nodes:
 0  in:
 0 out:
 
@@ -28,6 +32,8 @@ DEBUG: Name: 'b', Index: 1
 
 > DEBUG: Current graph state:
 Graph(2 nodes, 0 edges):
+edges:
+nodes:
 0  in:
 0 out:
 1  in:
@@ -41,36 +47,81 @@ Graph(2 nodes, 0 edges):
 
 > DEBUG: Current graph state:
 Graph(2 nodes, 1 edges):
+edges:
+[0] = 0 -> 1 (65535)
+nodes:
 0  in:
-0 out: 1 (65535),
-1  in: 0 (65535),
+0 out: [0] 1 (65535),
+1  in: [0] 0 (65535),
 1 out:
 
 > DEBUG: Index1: 1, Index2: 0, Weight: 4
 
 > DEBUG: Current graph state:
 Graph(2 nodes, 2 edges):
-0  in: 1 (4),
-0 out: 1 (65535),
-1  in: 0 (65535),
-1 out: 0 (4),
+edges:
+[0] = 0 -> 1 (65535)
+[1] = 1 -> 0 (4)
+nodes:
+0  in: [1] 1 (4),
+0 out: [0] 1 (65535),
+1  in: [0] 0 (65535),
+1 out: [1] 0 (4),
 
 > DEBUG: Index1: 0, Index2: 0, Weight: 9
 
 > DEBUG: Current graph state:
 Graph(2 nodes, 3 edges):
-0  in: 1 (4), 0 (9),
-0 out: 1 (65535), 0 (9),
-1  in: 0 (65535),
-1 out: 0 (4),
+edges:
+[0] = 0 -> 1 (65535)
+[1] = 1 -> 0 (4)
+[2] = 0 -> 0 (9)
+nodes:
+0  in: [1] 1 (4), [2] 0 (9),
+0 out: [0] 1 (65535), [2] 0 (9),
+1  in: [0] 0 (65535),
+1 out: [1] 0 (4),
 
 > DEBUG: Index1: 1, Index2: 1, Weight: 6
 
 > DEBUG: Current graph state:
 Graph(2 nodes, 4 edges):
-0  in: 1 (4), 0 (9),
-0 out: 1 (65535), 0 (9),
-1  in: 0 (65535), 1 (6),
-1 out: 0 (4), 1 (6),
+edges:
+[0] = 0 -> 1 (65535)
+[1] = 1 -> 0 (4)
+[2] = 0 -> 0 (9)
+[3] = 1 -> 1 (6)
+nodes:
+0  in: [1] 1 (4), [2] 0 (9),
+0 out: [0] 1 (65535), [2] 0 (9),
+1  in: [0] 0 (65535), [3] 1 (6),
+1 out: [1] 0 (4), [3] 1 (6),
 
-> main.out: src/graph.c:88: _Bool graph_del_edge(Graph *, u32, u32): Assertion `index == index2' failed.
+> DEBUG: Index1: 0, Index2: 1
+
+> DEBUG: Current graph state:
+Graph(2 nodes, 3 edges):
+edges:
+[0] = 1 -> 1 (6)
+[1] = 1 -> 0 (4)
+[2] = 0 -> 0 (9)
+nodes:
+0  in: [1] 1 (4), [2] 0 (9),
+0 out: [2] 0 (9),
+1  in: [3] 1 (6),
+1 out: [1] 0 (4), [3] 1 (6),
+
+> DEBUG: Index1: 1, Index2: 1
+
+> DEBUG: Current graph state:
+Graph(2 nodes, 2 edges):
+edges:
+[0] = 1 -> 1 (6)
+[1] = 1 -> 0 (4)
+nodes:
+0  in: [1] 1 (4), [2] 0 (9),
+0 out: [2] 0 (9),
+1  in:
+1 out: [1] 0 (4),
+
+> 
