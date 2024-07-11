@@ -85,6 +85,22 @@ ADD_EDGE d d 67
 
 ADD_EDGE d c 87
 
-ADD_EDGE d b 23
+ADD_EDGE d a 23
+
+ADD_EDGE a a 76
+
+ADD_EDGE a d 654
+
+ADD_EDGE a c 234
+
+ADD_EDGE c a 75
+
+REMOVE_NODE c
+
+ADD_NODE j
+
+ADD_EDGE j a
+
+REMOVE_NODE a
 
 END

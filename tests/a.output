@@ -111,7 +111,39 @@ SUMMARY: UndefinedBehaviorSanitizer: undefined-behavior src/graph.c:146:5 in
 > 
 > 
 > 
-> ERROR: Node #2 'b' does not exist
+> 
+> 
+> 
+> 
+> 
+> 
+> 
+> 
+> 
+> 
+> 
+> 
+> 
+> 
+> 
+> 
+> src/graph.c:90:5: runtime error: addition of unsigned offset to 0x71a000000000 overflowed to 0x719ffffffff4
+SUMMARY: UndefinedBehaviorSanitizer: undefined-behavior src/graph.c:90:5 in 
+MemorySanitizer:DEADLYSIGNAL
+==203009==ERROR: MemorySanitizer: SEGV on unknown address 0x719ffffffff8 (pc 0x7f8501dd19e0 bp 0x7fff98933880 sp 0x7fff98933038 T203009)
+==203009==The signal is caused by a READ memory access.
+    #0 0x7f8501dd19e0  string/../sysdeps/x86_64/multiarch/memmove-vec-unaligned-erms.S:416
+    #1 0x55f37972c342 in __msan_memcpy (/mnt/c/python/projects/graph_c/main.out+0x5a342) (BuildId: 1e0d329adfe41a0d2688d8ebbf3e1920553aa0f2)
+    #2 0x55f37978fc6e in graph_replace_edge_by_last /mnt/c/python/projects/graph_c/src/graph.c:90:5
+    #3 0x55f379792b72 in graph_del_node_and_replace_by_last /mnt/c/python/projects/graph_c/src/graph.c:152:9
+    #4 0x55f379785bc9 in handle_command /mnt/c/python/projects/graph_c/src/main.c:173:9
+    #5 0x55f3797877d8 in handle_line /mnt/c/python/projects/graph_c/src/main.c
+    #6 0x55f379787cdf in Main /mnt/c/python/projects/graph_c/src/main.c:280:22
+    #7 0x55f379788162 in main /mnt/c/python/projects/graph_c/src/main.c:298:1
+    #8 0x7f8501d36d8f in __libc_start_call_main csu/../sysdeps/nptl/libc_start_call_main.h:58:16
+    #9 0x7f8501d36e3f in __libc_start_main csu/../csu/libc-start.c:392:3
+    #10 0x55f3796fe2e4 in _start (/mnt/c/python/projects/graph_c/main.out+0x2c2e4) (BuildId: 1e0d329adfe41a0d2688d8ebbf3e1920553aa0f2)
 
-> 
-> 
+MemorySanitizer can not provide additional info.
+SUMMARY: MemorySanitizer: SEGV string/../sysdeps/x86_64/multiarch/memmove-vec-unaligned-erms.S:416 
+==203009==ABORTING
