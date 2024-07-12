@@ -425,11 +425,11 @@ nodes:
 > DEBUG: Current graph state:
 Graph(2 nodes, 1 edges):
 edges:
-[0] = 0 -> 2 (1)
+[0] = 0 -> 1 (1)
 nodes:
 0  in:
-0 out: [1] 2 (1),
-1  in: [1] 0 (1),
+0 out: [0] 1 (1),
+1  in: [0] 0 (1),
 1 out:
 
 > ERROR: Node #2 'b' does not exist
@@ -437,11 +437,11 @@ nodes:
 > DEBUG: Current graph state:
 Graph(2 nodes, 1 edges):
 edges:
-[0] = 0 -> 2 (1)
+[0] = 0 -> 1 (1)
 nodes:
 0  in:
-0 out: [1] 2 (1),
-1  in: [1] 0 (1),
+0 out: [0] 1 (1),
+1  in: [0] 0 (1),
 1 out:
 
 > DEBUG: Index1: 0, Index2: 0, Weight: 4
@@ -449,12 +449,12 @@ nodes:
 > DEBUG: Current graph state:
 Graph(2 nodes, 2 edges):
 edges:
-[0] = 0 -> 2 (1)
+[0] = 0 -> 1 (1)
 [1] = 0 -> 0 (4)
 nodes:
 0  in: [1] 0 (4),
-0 out: [1] 0 (4), [1] 0 (4),
-1  in: [1] 0 (4),
+0 out: [0] 1 (1), [1] 0 (4),
+1  in: [0] 0 (1),
 1 out:
 
 > ERROR: Node #1 'b' does not exist
@@ -462,12 +462,12 @@ nodes:
 > DEBUG: Current graph state:
 Graph(2 nodes, 2 edges):
 edges:
-[0] = 0 -> 2 (1)
+[0] = 0 -> 1 (1)
 [1] = 0 -> 0 (4)
 nodes:
 0  in: [1] 0 (4),
-0 out: [1] 0 (4), [1] 0 (4),
-1  in: [1] 0 (4),
+0 out: [0] 1 (1), [1] 0 (4),
+1  in: [0] 0 (1),
 1 out:
 
 > DEBUG: Name: 'd', Index: 2
@@ -475,12 +475,12 @@ nodes:
 > DEBUG: Current graph state:
 Graph(3 nodes, 2 edges):
 edges:
-[0] = 0 -> 2 (1)
+[0] = 0 -> 1 (1)
 [1] = 0 -> 0 (4)
 nodes:
 0  in: [1] 0 (4),
-0 out: [1] 0 (4), [1] 0 (4),
-1  in: [1] 0 (4),
+0 out: [0] 1 (1), [1] 0 (4),
+1  in: [0] 0 (1),
 1 out:
 2  in:
 2 out:
@@ -490,12 +490,12 @@ nodes:
 > DEBUG: Current graph state:
 Graph(2 nodes, 2 edges):
 edges:
-[0] = 0 -> 2 (1)
+[0] = 0 -> 1 (1)
 [1] = 0 -> 0 (4)
 nodes:
 0  in: [1] 0 (4),
-0 out: [1] 0 (4), [1] 0 (4),
-1  in: [1] 0 (4),
+0 out: [0] 1 (1), [1] 0 (4),
+1  in: [0] 0 (1),
 1 out:
 
 > ERROR: Node #1 'd' does not exist
@@ -503,12 +503,12 @@ nodes:
 > DEBUG: Current graph state:
 Graph(2 nodes, 2 edges):
 edges:
-[0] = 0 -> 2 (1)
+[0] = 0 -> 1 (1)
 [1] = 0 -> 0 (4)
 nodes:
 0  in: [1] 0 (4),
-0 out: [1] 0 (4), [1] 0 (4),
-1  in: [1] 0 (4),
+0 out: [0] 1 (1), [1] 0 (4),
+1  in: [0] 0 (1),
 1 out:
 
 > DEBUG: Name: 'd', Index: 2
@@ -516,12 +516,12 @@ nodes:
 > DEBUG: Current graph state:
 Graph(3 nodes, 2 edges):
 edges:
-[0] = 0 -> 2 (1)
+[0] = 0 -> 1 (1)
 [1] = 0 -> 0 (4)
 nodes:
 0  in: [1] 0 (4),
-0 out: [1] 0 (4), [1] 0 (4),
-1  in: [1] 0 (4),
+0 out: [0] 1 (1), [1] 0 (4),
+1  in: [0] 0 (1),
 1 out:
 2  in:
 2 out:
@@ -531,13 +531,13 @@ nodes:
 > DEBUG: Current graph state:
 Graph(3 nodes, 3 edges):
 edges:
-[0] = 0 -> 2 (1)
+[0] = 0 -> 1 (1)
 [1] = 0 -> 0 (4)
 [2] = 2 -> 2 (67)
 nodes:
 0  in: [1] 0 (4),
-0 out: [1] 0 (4), [1] 0 (4),
-1  in: [1] 0 (4),
+0 out: [0] 1 (1), [1] 0 (4),
+1  in: [0] 0 (1),
 1 out:
 2  in: [2] 2 (67),
 2 out: [2] 2 (67),
@@ -547,14 +547,14 @@ nodes:
 > DEBUG: Current graph state:
 Graph(3 nodes, 4 edges):
 edges:
-[0] = 0 -> 2 (1)
+[0] = 0 -> 1 (1)
 [1] = 0 -> 0 (4)
 [2] = 2 -> 2 (67)
 [3] = 2 -> 0 (87)
 nodes:
 0  in: [1] 0 (4), [3] 2 (87),
-0 out: [1] 0 (4), [1] 0 (4),
-1  in: [1] 0 (4),
+0 out: [0] 1 (1), [1] 0 (4),
+1  in: [0] 0 (1),
 1 out:
 2  in: [2] 2 (67),
 2 out: [2] 2 (67), [3] 0 (87),
@@ -564,15 +564,15 @@ nodes:
 > DEBUG: Current graph state:
 Graph(3 nodes, 5 edges):
 edges:
-[0] = 0 -> 2 (1)
+[0] = 0 -> 1 (1)
 [1] = 0 -> 0 (4)
 [2] = 2 -> 2 (67)
 [3] = 2 -> 0 (87)
 [4] = 2 -> 1 (23)
 nodes:
 0  in: [1] 0 (4), [3] 2 (87),
-0 out: [1] 0 (4), [1] 0 (4),
-1  in: [1] 0 (4), [4] 2 (23),
+0 out: [0] 1 (1), [1] 0 (4),
+1  in: [0] 0 (1), [4] 2 (23),
 1 out:
 2  in: [2] 2 (67),
 2 out: [2] 2 (67), [3] 0 (87), [4] 1 (23),
@@ -582,7 +582,7 @@ nodes:
 > DEBUG: Current graph state:
 Graph(3 nodes, 6 edges):
 edges:
-[0] = 0 -> 2 (1)
+[0] = 0 -> 1 (1)
 [1] = 0 -> 0 (4)
 [2] = 2 -> 2 (67)
 [3] = 2 -> 0 (87)
@@ -590,8 +590,8 @@ edges:
 [5] = 1 -> 1 (76)
 nodes:
 0  in: [1] 0 (4), [3] 2 (87),
-0 out: [1] 0 (4), [1] 0 (4),
-1  in: [1] 0 (4), [4] 2 (23), [5] 1 (76),
+0 out: [0] 1 (1), [1] 0 (4),
+1  in: [0] 0 (1), [4] 2 (23), [5] 1 (76),
 1 out: [5] 1 (76),
 2  in: [2] 2 (67),
 2 out: [2] 2 (67), [3] 0 (87), [4] 1 (23),
@@ -601,7 +601,7 @@ nodes:
 > DEBUG: Current graph state:
 Graph(3 nodes, 7 edges):
 edges:
-[0] = 0 -> 2 (1)
+[0] = 0 -> 1 (1)
 [1] = 0 -> 0 (4)
 [2] = 2 -> 2 (67)
 [3] = 2 -> 0 (87)
@@ -610,8 +610,8 @@ edges:
 [6] = 1 -> 2 (654)
 nodes:
 0  in: [1] 0 (4), [3] 2 (87),
-0 out: [1] 0 (4), [1] 0 (4),
-1  in: [1] 0 (4), [4] 2 (23), [5] 1 (76),
+0 out: [0] 1 (1), [1] 0 (4),
+1  in: [0] 0 (1), [4] 2 (23), [5] 1 (76),
 1 out: [5] 1 (76), [6] 2 (654),
 2  in: [2] 2 (67), [6] 1 (654),
 2 out: [2] 2 (67), [3] 0 (87), [4] 1 (23),
@@ -621,7 +621,7 @@ nodes:
 > DEBUG: Current graph state:
 Graph(3 nodes, 8 edges):
 edges:
-[0] = 0 -> 2 (1)
+[0] = 0 -> 1 (1)
 [1] = 0 -> 0 (4)
 [2] = 2 -> 2 (67)
 [3] = 2 -> 0 (87)
@@ -631,18 +631,19 @@ edges:
 [7] = 1 -> 0 (234)
 nodes:
 0  in: [1] 0 (4), [3] 2 (87), [7] 1 (234),
-0 out: [1] 0 (4), [1] 0 (4),
-1  in: [1] 0 (4), [4] 2 (23), [5] 1 (76),
+0 out: [0] 1 (1), [1] 0 (4),
+1  in: [0] 0 (1), [4] 2 (23), [5] 1 (76),
 1 out: [5] 1 (76), [6] 2 (654), [7] 0 (234),
 2  in: [2] 2 (67), [6] 1 (654),
 2 out: [2] 2 (67), [3] 0 (87), [4] 1 (23),
 
-> DEBUG: Index1: 0, Index2: 1, Weight: 75
+> WARNING: edge between nodes 'c' and 'a' already exists
+DEBUG: Index1: 0, Index2: 1, Weight: 75
 
 > DEBUG: Current graph state:
-Graph(3 nodes, 9 edges):
+Graph(3 nodes, 8 edges):
 edges:
-[0] = 0 -> 2 (1)
+[0] = 0 -> 1 (1)
 [1] = 0 -> 0 (4)
 [2] = 2 -> 2 (67)
 [3] = 2 -> 0 (87)
@@ -650,11 +651,10 @@ edges:
 [5] = 1 -> 1 (76)
 [6] = 1 -> 2 (654)
 [7] = 1 -> 0 (234)
-[8] = 0 -> 1 (75)
 nodes:
 0  in: [1] 0 (4), [3] 2 (87), [7] 1 (234),
-0 out: [1] 0 (4), [1] 0 (4), [8] 1 (75),
-1  in: [1] 0 (4), [4] 2 (23), [5] 1 (76), [8] 0 (75),
+0 out: [0] 1 (1), [1] 0 (4),
+1  in: [0] 0 (1), [4] 2 (23), [5] 1 (76),
 1 out: [5] 1 (76), [6] 2 (654), [7] 0 (234),
 2  in: [2] 2 (67), [6] 1 (654),
 2 out: [2] 2 (67), [3] 0 (87), [4] 1 (23),
@@ -665,14 +665,14 @@ nodes:
 Graph(2 nodes, 4 edges):
 edges:
 [0] = 0 -> 1 (23)
-[1] = 0 -> 0 (4)
+[1] = 1 -> 1 (76)
 [2] = 0 -> 0 (67)
 [3] = 1 -> 0 (654)
 nodes:
 0  in: [2] 0 (67), [3] 1 (654),
 0 out: [2] 0 (67), [0] 1 (23),
-1  in: [7] 0 (75), [0] 0 (23), [0] 0 (23),
-1 out: [0] 1 (23), [3] 0 (654),
+1  in: [1] 1 (76), [0] 0 (23),
+1 out: [1] 1 (76), [3] 0 (654),
 
 > DEBUG: Name: 'j', Index: 2
 
@@ -680,14 +680,14 @@ nodes:
 Graph(3 nodes, 4 edges):
 edges:
 [0] = 0 -> 1 (23)
-[1] = 0 -> 0 (4)
+[1] = 1 -> 1 (76)
 [2] = 0 -> 0 (67)
 [3] = 1 -> 0 (654)
 nodes:
 0  in: [2] 0 (67), [3] 1 (654),
 0 out: [2] 0 (67), [0] 1 (23),
-1  in: [7] 0 (75), [0] 0 (23), [0] 0 (23),
-1 out: [0] 1 (23), [3] 0 (654),
+1  in: [1] 1 (76), [0] 0 (23),
+1 out: [1] 1 (76), [3] 0 (654),
 2  in:
 2 out:
 
@@ -697,35 +697,54 @@ nodes:
 Graph(3 nodes, 5 edges):
 edges:
 [0] = 0 -> 1 (23)
-[1] = 0 -> 0 (4)
+[1] = 1 -> 1 (76)
 [2] = 0 -> 0 (67)
 [3] = 1 -> 0 (654)
 [4] = 2 -> 1 (1)
 nodes:
 0  in: [2] 0 (67), [3] 1 (654),
 0 out: [2] 0 (67), [0] 1 (23),
-1  in: [7] 0 (75), [0] 0 (23), [0] 0 (23), [4] 2 (1),
-1 out: [0] 1 (23), [3] 0 (654),
+1  in: [1] 1 (76), [0] 0 (23), [4] 2 (1),
+1 out: [1] 1 (76), [3] 0 (654),
 2  in:
 2 out: [4] 1 (1),
 
-> src/graph.c:90:5: runtime error: addition of unsigned offset to 0x71a000000000 overflowed to 0x719ffffffff4
-SUMMARY: UndefinedBehaviorSanitizer: undefined-behavior src/graph.c:90:5 in 
-MemorySanitizer:DEADLYSIGNAL
-==203011==ERROR: MemorySanitizer: SEGV on unknown address 0x719ffffffff8 (pc 0x7f0d818a09e0 bp 0x7fff02bfc620 sp 0x7fff02bfbdd8 T203011)
-==203011==The signal is caused by a READ memory access.
-    #0 0x7f0d818a09e0  string/../sysdeps/x86_64/multiarch/memmove-vec-unaligned-erms.S:416
-    #1 0x563aed0f8342 in __msan_memcpy (/mnt/c/python/projects/graph_c/main.out+0x5a342) (BuildId: 1e0d329adfe41a0d2688d8ebbf3e1920553aa0f2)
-    #2 0x563aed15bc6e in graph_replace_edge_by_last /mnt/c/python/projects/graph_c/src/graph.c:90:5
-    #3 0x563aed15eb72 in graph_del_node_and_replace_by_last /mnt/c/python/projects/graph_c/src/graph.c:152:9
-    #4 0x563aed151bc9 in handle_command /mnt/c/python/projects/graph_c/src/main.c:173:9
-    #5 0x563aed1537d8 in handle_line /mnt/c/python/projects/graph_c/src/main.c
-    #6 0x563aed153cdf in Main /mnt/c/python/projects/graph_c/src/main.c:280:22
-    #7 0x563aed154162 in main /mnt/c/python/projects/graph_c/src/main.c:298:1
-    #8 0x7f0d81805d8f in __libc_start_call_main csu/../sysdeps/nptl/libc_start_call_main.h:58:16
-    #9 0x7f0d81805e3f in __libc_start_main csu/../csu/libc-start.c:392:3
-    #10 0x563aed0ca2e4 in _start (/mnt/c/python/projects/graph_c/main.out+0x2c2e4) (BuildId: 1e0d329adfe41a0d2688d8ebbf3e1920553aa0f2)
+> DEBUG: Index: 1
 
-MemorySanitizer can not provide additional info.
-SUMMARY: MemorySanitizer: SEGV string/../sysdeps/x86_64/multiarch/memmove-vec-unaligned-erms.S:416 
-==203011==ABORTING
+> DEBUG: Current graph state:
+Graph(2 nodes, 1 edges):
+edges:
+[0] = 0 -> 0 (67)
+nodes:
+0  in: [0] 0 (67),
+0 out: [0] 0 (67),
+1  in:
+1 out:
+
+> DEBUG: Name: 'l', Index: 2
+
+> DEBUG: Current graph state:
+Graph(3 nodes, 1 edges):
+edges:
+[0] = 0 -> 0 (67)
+nodes:
+0  in: [0] 0 (67),
+0 out: [0] 0 (67),
+1  in:
+1 out:
+2  in:
+2 out:
+
+> DEBUG: Index: 2
+
+> DEBUG: Current graph state:
+Graph(2 nodes, 1 edges):
+edges:
+[0] = 0 -> 0 (67)
+nodes:
+0  in: [0] 0 (67),
+0 out: [0] 0 (67),
+1  in:
+1 out:
+
+> 

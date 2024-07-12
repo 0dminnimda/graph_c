@@ -1,0 +1,13 @@
+ADD_NODE b
+
+ADD_NODE a
+
+ADD_EDGE b b
+
+ADD_EDGE a b
+
+ADD_EDGE a a
+
+REMOVE_NODE b
+
+END
