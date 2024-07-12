@@ -46,6 +46,7 @@ typedef enum {
     REMOVE_NODE,
     REMOVE_EDGE,
     ROOT,
+    PRINT_RPO,
 } Command;
 
 #define CMD_CASE(n) if (str_compare(string, &str_lit(STR(n))) == 0) return n
@@ -57,6 +58,7 @@ Command str_to_command(const str *string) {
     CMD_CASE(REMOVE_NODE);
     CMD_CASE(REMOVE_EDGE);
     CMD_CASE(ROOT);
+    CMD_CASE(PRINT_RPO);
     return INVALID;
 }
 #undef CMD_CASE
@@ -213,6 +215,35 @@ Result handle_command(Context *ctx, Command cmd, str args) {
 
         if (ctx->in_debug) {
             printf(DEBUG("Index: " PRI_u32 "\n"), ctx->root_node);
+        }
+    } else if (cmd == PRINT_RPO) {
+        /* PRINT_RPO */
+
+
+        if (ctx->root_node == (u32)-1) {
+            printf(ERROR("root node needs to be set\n"));
+            return OK;
+        }
+        if (ctx->root_node >= ctx->names.length) {
+            printf(ERROR("root node is outdated and needs to be reset\n"));
+            return OK;
+        }
+
+        array_u32 ordering, back_edges;
+        graph_reverse_post_order(&ctx->graph, ctx->root_node, &ordering, &back_edges);
+
+        u32 *it;
+        array_for(&ordering, it) {
+            if (it_index) printf(" ");
+            printf(PRI_str, FMT_str(&ctx->names.data[*it]));
+        }
+        printf("\n");
+
+        array_for(&back_edges, it) {
+            GraphEdge *edge = &ctx->graph.edges.data[*it];
+            printf("Found back edge: " PRI_str " -> " PRI_str "\n",
+                   FMT_str(&ctx->names.data[edge->source]),
+                   FMT_str(&ctx->names.data[edge->target]));
         }
     }
 

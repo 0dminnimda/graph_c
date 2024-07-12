@@ -177,11 +177,62 @@ bool graph_del_edge(Graph *self, u32 source, u32 target) {
     return true;
 }
 
+typedef enum {
+    RPO_NEW,
+    RPO_SEEN,
+    RPO_DONE,
+} RPO_State;
+
 void graph_reverse_post_order(const Graph *self, u32 root, array_u32 *ordering, array_u32 *back_edges) {
-    (void)self;
-    (void)root;
-    (void)ordering;
-    (void)back_edges;
+    /* Same reasoning as in graph_add_edge */
+    assert(root < self->nodes.length && "invalid root");
+
+    s64 length = self->nodes.length;
+
+    array(RPO_State) states;
+    array_init_with_capacity_and_length(&states, length, length);
+    array_init_with_capacity_and_length(ordering, length, length);
+    array_init(back_edges);
+
+    array(s64) stack;
+    /* Large upper bound. Once for all of the nodes,
+     * second time for all the post order nodes,
+     * and third for possible repeating nodes from loops. */
+    array_init_with_capacity(&stack, length * 3);
+
+    RPO_State *state;
+    array_for(&states, state) {
+        *state = RPO_NEW;
+    }
+
+    *array_add(&stack) = (s64)root;
+
+    while (stack.length) {
+        s64 id = array_pop(&stack);
+
+        if (id < 0) {
+            /* Post order visit. */
+            u32 actual = (u32)(id + length);
+            *array_add(ordering) = actual;
+            states.data[actual] = RPO_DONE;
+            continue;
+        }
+
+        /* Will be popped after all children are visited
+         * thus post order. */
+        *array_add(&stack) = id - length;
+        states.data[id] = RPO_SEEN;
+
+        u32 *edge;
+        array_for(&self->nodes.data[id].out, edge) {
+            u32 child = self->edges.data[*edge].target;
+            if (states.data[child] == RPO_SEEN) {
+                *array_add(back_edges) = *edge;
+            } else if (states.data[child] == RPO_NEW) {
+                *array_add(&stack) = (s64)child;
+            }
+        }
+    }
 }
 
 bool longest_path_in_acyclic_graph(const Graph *self, array_u32 *path) {

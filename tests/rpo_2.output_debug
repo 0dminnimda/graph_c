@@ -1,0 +1,50 @@
+Welcome to example graph program!
+
+> Debug mode: turned on
+
+> DEBUG: Name: 'X', Index: 0
+
+> DEBUG: Name: 'T', Index: 1
+
+> DEBUG: Name: 'B', Index: 2
+
+> DEBUG: Name: 'C', Index: 3
+
+> DEBUG: Name: 'D', Index: 4
+
+> DEBUG: Name: 'E', Index: 5
+
+> DEBUG: Name: 'M', Index: 6
+
+> DEBUG: Name: 'G', Index: 7
+
+> DEBUG: Index1: 0, Index2: 1, Weight: 1
+
+> DEBUG: Index1: 5, Index2: 6, Weight: 1
+
+> DEBUG: Index1: 1, Index2: 2, Weight: 1
+
+> DEBUG: Index1: 3, Index2: 5, Weight: 1
+
+> DEBUG: Index1: 6, Index2: 3, Weight: 1
+
+> DEBUG: Index1: 7, Index2: 4, Weight: 1
+
+> DEBUG: Index1: 5, Index2: 4, Weight: 1
+
+> DEBUG: Index1: 0, Index2: 3, Weight: 1
+
+> DEBUG: Index1: 2, Index2: 4, Weight: 1
+
+> DEBUG: Index1: 0, Index2: 2, Weight: 1
+
+> DEBUG: Index1: 4, Index2: 7, Weight: 1
+
+> DEBUG: Index: 0
+
+> huh
+X T C E M B D G
+Found back edge: G -> D
+Found back edge: M -> C
+
+> 
