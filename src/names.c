@@ -24,3 +24,12 @@ bool names_insert(Names *self, const str *string, size_t *index) {
 void names_copy(const Names *self, Names *copy) {
     array_copy_with_item(self, str, copy);
 }
+
+void names_fprint_debug(const Names *self, FILE *stream) {
+    fprintf(stream, "Names(%zu):\n", self->length);
+
+    str *it;
+    array_for(self, it) {
+        fprintf(stream, "[%zu]" PRI_str "\n", it_index, FMT_str(it));
+    }
+}
