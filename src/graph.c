@@ -86,8 +86,8 @@ u32 graph_remove_edge_from(Graph *self, u32 node, u32 from) {
 }
 
 void graph_replace_edge_by_last(Graph *self, u32 index) {
-    u32 old_index = self->edges.length - 1;
     array_replace_by_last(&self->edges, index);
+    u32 old_index = self->edges.length;
     GraphEdge *edge = &self->edges.data[index];
 
     u32 *it;
