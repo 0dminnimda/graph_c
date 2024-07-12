@@ -95,7 +95,7 @@
 #define array_extend_from(self, other) ( \
     (other)->length? ( \
         array_resize((self), (self)->length + (other)->length), \
-        memcpy((self)->data + (self)->length, (other)->data, (other)->length), \
+        memcpy((self)->data + (self)->length, (other)->data, (other)->length * array_item_size((self))), \
         0 \
     ) : 0 \
 )
