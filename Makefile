@@ -30,3 +30,11 @@ build:
 record:
 	./record_tests.sh ./main.out --no-glow
 
+.PHONY: tests
+tests:
+	./check_tests.sh ./main.out --no-glow
+
+.PHONY: clean
+clean:
+	rm ./main.out
+
