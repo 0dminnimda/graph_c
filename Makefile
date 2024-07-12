@@ -12,7 +12,7 @@ else ifeq ($(DEBUG),1)
 endif
 
 ifeq ($(SAN),2)
-	# address is implied by memory
+	# address is incompatable with memory
 	FLAGS := $(FLAGS) -fsanitize=memory,undefined
 else ifeq ($(SAN),1)
 	FLAGS := $(FLAGS) -fsanitize=address
