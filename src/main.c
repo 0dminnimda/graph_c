@@ -78,7 +78,9 @@ Command str_to_command(const str *string) {
     "Edge between nodes " PRI_str " and " PRI_str " is already exist": \
     WARNING("edge between nodes '" PRI_str "' and '" PRI_str "' already exists\n"))
 
-bool str_to_node(Context *ctx, str *string, str *name, u8 arg_no, bool can_create, u32 *id, Result *result) {
+#define BAD_REMOVE "Node with num 1 is not exist"
+
+bool str_to_node(Context *ctx, str *string, str *name, u8 arg_no, bool can_create, bool remove, u32 *id, Result *result) {
     /* We don't want to have spaces in names. */
     str_partition_whitespace(string, name, string);
 
@@ -103,7 +105,11 @@ bool str_to_node(Context *ctx, str *string, str *name, u8 arg_no, bool can_creat
         }
     } else {
         if (!names_find(&ctx->names, name, &index)) {
-            printf(MISSING_NODE, arg_no, FMT_str(name));
+            if (remove) {
+                printf(BAD_REMOVE);
+            } else {
+                printf(MISSING_NODE, arg_no, FMT_str(name));
+            }
             *result = OK;
             return true;
         }
@@ -137,7 +143,7 @@ Result handle_command(Context *ctx, Command cmd, str args) {
 
         u32 id;
         str name;
-        if (str_to_node(ctx, &args, &name, 1, true, &id, &result)) {
+        if (str_to_node(ctx, &args, &name, 1, true, false, &id, &result)) {
             return result;
         }
 
@@ -149,10 +155,10 @@ Result handle_command(Context *ctx, Command cmd, str args) {
 
         u32 id1, id2;
         str name1, name2;
-        if (str_to_node(ctx, &args, &name1, 1, false, &id1, &result)) {
+        if (str_to_node(ctx, &args, &name1, 1, false, false, &id1, &result)) {
             return result;
         }
-        if (str_to_node(ctx, &args, &name2, 2, false, &id2, &result)) {
+        if (str_to_node(ctx, &args, &name2, 2, false, false, &id2, &result)) {
             return result;
         }
 
@@ -182,7 +188,7 @@ Result handle_command(Context *ctx, Command cmd, str args) {
 
         u32 id;
         str name;
-        if (str_to_node(ctx, &args, &name, 1, false, &id, &result)) {
+        if (str_to_node(ctx, &args, &name, 1, false, true, &id, &result)) {
             return result;
         }
 
@@ -204,10 +210,10 @@ Result handle_command(Context *ctx, Command cmd, str args) {
 
         u32 id1, id2;
         str name1, name2;
-        if (str_to_node(ctx, &args, &name1, 1, false, &id1, &result)) {
+        if (str_to_node(ctx, &args, &name1, 1, false, false, &id1, &result)) {
             return result;
         }
-        if (str_to_node(ctx, &args, &name2, 2, false, &id2, &result)) {
+        if (str_to_node(ctx, &args, &name2, 2, false, false, &id2, &result)) {
             return result;
         }
 
@@ -222,7 +228,7 @@ Result handle_command(Context *ctx, Command cmd, str args) {
         /* ROOT <name> */
 
         str name;
-        if (str_to_node(ctx, &args, &name, 1, false, &ctx->root_node, &result)) {
+        if (str_to_node(ctx, &args, &name, 1, false, false, &ctx->root_node, &result)) {
             return result;
         }
 
