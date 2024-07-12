@@ -18,15 +18,16 @@
 
 #define PAINT(color, msg) (ctx->glow? color msg CLEAR : msg)
 
-#define ERROR(msg) PAINT(RED, "ERROR: " msg)
-#define WARNING(msg) PAINT(YELLOW, "WARNING: " msg)
-#define DEBUG(msg) PAINT(GREEN, "DEBUG: " msg)
+#define ERROR(msg) (ctx->ugly_ui? msg : PAINT(RED, "ERROR: " msg))
+#define WARNING(msg) (ctx->ugly_ui? msg : PAINT(YELLOW, "WARNING: " msg))
+#define DEBUG(msg) (ctx->ugly_ui? msg : PAINT(GREEN, "DEBUG: " msg))
 
 typedef struct {
     Graph graph;
     Names names;
     bool in_debug;
     bool glow;
+    bool ugly_ui;
     u32 root_node;
 } Context;
 
@@ -63,6 +64,18 @@ Command str_to_command(const str *string) {
 }
 #undef CMD_CASE
 
+#define NODE_EXISTS (ctx->ugly_ui? \
+    "Node \"" PRI_str "\" is already exist\n": \
+    WARNING("Node '" PRI_str "' already exists\n"))
+
+#define MISSING_NODE (ctx->ugly_ui? \
+    PRI_u8 "\rNode \"" PRI_str "\" is not exist\n": \
+    ERROR("Node #" PRI_u8 " '" PRI_str "' does not exist\n"))
+
+#define EDGE_EXISTS (ctx->ugly_ui? \
+    "Edge between nodes " PRI_str " and " PRI_str " is already exist": \
+    WARNING("edge between nodes '" PRI_str "' and '" PRI_str "' already exists\n"))
+
 bool str_to_node(Context *ctx, str *string, str *name, u8 arg_no, bool can_create, u32 *id, Result *result) {
     /* We don't want to have spaces in names. */
     str_partition_whitespace(string, name, string);
@@ -76,7 +89,7 @@ bool str_to_node(Context *ctx, str *string, str *name, u8 arg_no, bool can_creat
     size_t index;
     if (can_create) {
         if (names_insert(&ctx->names, name, &index)) {
-            printf(WARNING("Node '" PRI_str "' already exists\n"), FMT_str(name));
+            printf(NODE_EXISTS, FMT_str(name));
         } else {
             u32 id = graph_add_node(&ctx->graph);
             if (index != id) {
@@ -88,7 +101,7 @@ bool str_to_node(Context *ctx, str *string, str *name, u8 arg_no, bool can_creat
         }
     } else {
         if (!names_find(&ctx->names, name, &index)) {
-            printf(ERROR("Node #" PRI_u8 " '" PRI_str "' does not exist\n"), arg_no, FMT_str(name));
+            printf(MISSING_NODE, arg_no, FMT_str(name));
             *result = OK;
             return true;
         }
@@ -155,8 +168,7 @@ Result handle_command(Context *ctx, Command cmd, str args) {
         }
 
         if (graph_add_edge(&ctx->graph, id1, id2, weight)) {
-            printf(WARNING("edge between nodes '" PRI_str "' and '" PRI_str "' already exists\n"),
-                   FMT_str(&name1), FMT_str(&name2));
+            printf(EDGE_EXISTS, FMT_str(&name1), FMT_str(&name2));
         }
 
         if (ctx->in_debug) {
@@ -198,8 +210,7 @@ Result handle_command(Context *ctx, Command cmd, str args) {
         }
 
         if (!graph_del_edge(&ctx->graph, id1, id2)) {
-            printf(WARNING("edge between nodes '" PRI_str "' and '" PRI_str "' does not exist\n"),
-                   FMT_str(&name1), FMT_str(&name2));
+            printf(EDGE_EXISTS, FMT_str(&name1), FMT_str(&name2));
         }
 
         if (ctx->in_debug) {
@@ -275,18 +286,19 @@ Result handle_line(Context *ctx, str line) {
 }
 
 int Main(Clargs *clargs) {
-    printf("Welcome to example graph program!\n");
-
     Context ctx;
     ctx.in_debug = false;
     ctx.glow = true;
+    ctx.ugly_ui = false;
     ctx.root_node = -1;
 
     str *clarg;
     array_for(clargs, clarg) {
         if (str_compare(clarg, &str_lit("--no-glow")) == 0) {
             ctx.glow = false;
-            break;
+        } else if (str_compare(clarg, &str_lit("--ugly-ui")) == 0) {
+            ctx.ugly_ui = true;
+            ctx.glow = false;
         }
     }
 
@@ -296,9 +308,15 @@ int Main(Clargs *clargs) {
     StrBuilder sb;
     array_init(&sb);
 
+    if (!ctx.ugly_ui) {
+        printf("Welcome to example graph program!\n");
+    }
+
     while (1) {
-        printf("\n> ");
-        fflush(stdout);
+        if (!ctx.ugly_ui) {
+            printf("\n> ");
+            fflush(stdout);
+        }
 
         sb.length = 0;  /* No need to collect all inputs, only this one. */
         read_line_use_buffer(&sb);
