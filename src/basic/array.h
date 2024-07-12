@@ -90,6 +90,8 @@
     &(self)->data[(self)->length++] \
 )
 
+#define array_pop(self) (self)->data[--(self)->length]
+
 #define array_extend_from(self, other) ( \
     (other)->length? ( \
         array_resize((self), (self)->length + (other)->length), \
