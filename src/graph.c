@@ -120,7 +120,7 @@ void graph_replace_node_by_last(Graph *self, u32 index) {
 
 void graph_del_node_and_replace_by_last(Graph *self, u32 id) {
     /* Same reasoning as in graph_add_edge */
-    assert(id < self->nodes.length && "invalid source");
+    assert(id < self->nodes.length && "invalid id");
 
     /* Delete all indices to the edges in the corrected nodes.
      * But leave (one) self to self node, so it would be renamed,
