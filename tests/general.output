@@ -29,10 +29,10 @@ Welcome to example graph program!
 > 
 > 
 > 
-> WARNING: edge between nodes 'a' and 'b' does not exist
+> WARNING: edge between nodes 'a' and 'b' already exists
 
 > 
-> WARNING: edge between nodes 'b' and 'b' does not exist
+> WARNING: edge between nodes 'b' and 'b' already exists
 
 > 
 > 
@@ -47,7 +47,7 @@ Welcome to example graph program!
 > 
 > 
 > 
-> WARNING: edge between nodes 'a' and 'b' does not exist
+> WARNING: edge between nodes 'a' and 'b' already exists
 
 > 
 > 
@@ -91,8 +91,7 @@ Welcome to example graph program!
 > 
 > 
 > 
-> ERROR: Node #1 'd' does not exist
-
+> Node with num 1 is not exist
 > 
 > 
 > 

@@ -148,7 +148,7 @@ nodes:
 1  in:
 1 out: [1] 0 (4),
 
-> WARNING: edge between nodes 'a' and 'b' does not exist
+> WARNING: edge between nodes 'a' and 'b' already exists
 DEBUG: Index1: 0, Index2: 1
 
 > DEBUG: Current graph state:
@@ -165,7 +165,7 @@ nodes:
 1  in:
 1 out: [1] 0 (4),
 
-> WARNING: edge between nodes 'b' and 'b' does not exist
+> WARNING: edge between nodes 'b' and 'b' already exists
 DEBUG: Index1: 1, Index2: 1
 
 > DEBUG: Current graph state:
@@ -281,7 +281,7 @@ nodes:
 1  in:
 1 out: [1] 0 (4),
 
-> WARNING: edge between nodes 'a' and 'b' does not exist
+> WARNING: edge between nodes 'a' and 'b' already exists
 DEBUG: Index1: 0, Index2: 1
 
 > DEBUG: Current graph state:
@@ -609,8 +609,7 @@ nodes:
 1  in: [0] 0 (1),
 1 out:
 
-> ERROR: Node #1 'd' does not exist
-
+> Node with num 1 is not exist
 > DEBUG: Current graph state:
 Names(2):
 [0] = c
