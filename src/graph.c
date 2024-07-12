@@ -191,7 +191,7 @@ void graph_reverse_post_order(const Graph *self, u32 root, array_u32 *ordering, 
 
     array(RPO_State) states;
     array_init_with_capacity_and_length(&states, length, length);
-    array_init_with_capacity_and_length(ordering, length, length);
+    array_init_with_capacity(ordering, length);
     array_init(back_edges);
 
     array(s64) stack;
@@ -233,6 +233,8 @@ void graph_reverse_post_order(const Graph *self, u32 root, array_u32 *ordering, 
             }
         }
     }
+
+    array_reverse(ordering, u32);
 }
 
 bool longest_path_in_acyclic_graph(const Graph *self, array_u32 *path) {

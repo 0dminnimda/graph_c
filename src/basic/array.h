@@ -18,6 +18,8 @@
 
 #define array_it_ CONCAT(it__, __LINE__)
 #define array_ind_ CONCAT(CONCAT(it__, __LINE__), _index)
+#define array_i_ CONCAT(arr_i__, __LINE__)
+#define array_tmp_ CONCAT(tmp__, __LINE__)
 
 #define array_item_size(self) sizeof(*(self)->data)
 
@@ -124,6 +126,14 @@
         (qsort((self)->data, (self)->length, array_item_size((self)), (int (*)(const void*, const void*))cmp), 0) \
         : 0 \
 )
+
+#define array_reverse(self, T) do { \
+    for (size_t array_i_ = 0; array_i_ < (self)->length / 2; ++array_i_) { \
+        T array_tmp_ = (self)->data[array_i_]; \
+        (self)->data[array_i_] = (self)->data[(self)->length - 1 - array_i_]; \
+        (self)->data[(self)->length - 1 - array_i_] = array_tmp_; \
+    } \
+} while(0)
 
 #define array_for(self, name) \
     if ((name = (self)->data), 1) \
