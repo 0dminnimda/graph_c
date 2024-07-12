@@ -235,6 +235,8 @@ void graph_reverse_post_order(const Graph *self, u32 root, array_u32 *ordering, 
     }
 
     array_reverse(ordering, u32);
+    array_deinit(&stack);
+    array_deinit(&states);
 }
 
 bool longest_path_in_acyclic_graph(const Graph *self, array_u32 *path) {

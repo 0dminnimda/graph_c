@@ -258,6 +258,9 @@ Result handle_command(Context *ctx, Command cmd, str args) {
                    FMT_str(&ctx->names.data[edge->source]),
                    FMT_str(&ctx->names.data[edge->target]));
         }
+
+        array_deinit(&ordering);
+        array_deinit(&back_edges);
     } else if (cmd == FIND_CRITICAL_PATH) {
 
     }
