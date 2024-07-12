@@ -48,6 +48,7 @@ typedef enum {
     REMOVE_EDGE,
     ROOT,
     PRINT_RPO,
+    FIND_CRITICAL_PATH,
 } Command;
 
 #define CMD_CASE(n) if (str_compare(string, &str_lit(STR(n))) == 0) return n
@@ -60,6 +61,7 @@ Command str_to_command(const str *string) {
     CMD_CASE(REMOVE_EDGE);
     CMD_CASE(ROOT);
     CMD_CASE(PRINT_RPO);
+    CMD_CASE(FIND_CRITICAL_PATH);
     return INVALID;
 }
 #undef CMD_CASE
@@ -256,6 +258,8 @@ Result handle_command(Context *ctx, Command cmd, str args) {
                    FMT_str(&ctx->names.data[edge->source]),
                    FMT_str(&ctx->names.data[edge->target]));
         }
+    } else if (cmd == FIND_CRITICAL_PATH) {
+
     }
 
     if (args.length != 0) {
