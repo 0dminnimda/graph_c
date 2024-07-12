@@ -5,6 +5,8 @@ Welcome to example graph program!
 > DEBUG: Name: 'b', Index: 0
 
 > DEBUG: Current graph state:
+Names(1):
+[0] = b
 Graph(1 nodes, 0 edges):
 edges:
 nodes:
@@ -14,6 +16,9 @@ nodes:
 > DEBUG: Name: 'a', Index: 1
 
 > DEBUG: Current graph state:
+Names(2):
+[0] = b
+[1] = a
 Graph(2 nodes, 0 edges):
 edges:
 nodes:
@@ -25,6 +30,10 @@ nodes:
 > DEBUG: Name: 'c', Index: 2
 
 > DEBUG: Current graph state:
+Names(3):
+[0] = b
+[1] = a
+[2] = c
 Graph(3 nodes, 0 edges):
 edges:
 nodes:
@@ -38,6 +47,10 @@ nodes:
 > DEBUG: Index1: 0, Index2: 0, Weight: 1
 
 > DEBUG: Current graph state:
+Names(3):
+[0] = b
+[1] = a
+[2] = c
 Graph(3 nodes, 1 edges):
 edges:
 [0] = 0 -> 0 (1)
@@ -52,6 +65,10 @@ nodes:
 > DEBUG: Index1: 1, Index2: 0, Weight: 1
 
 > DEBUG: Current graph state:
+Names(3):
+[0] = b
+[1] = a
+[2] = c
 Graph(3 nodes, 2 edges):
 edges:
 [0] = 0 -> 0 (1)
@@ -67,6 +84,10 @@ nodes:
 > DEBUG: Index1: 2, Index2: 1, Weight: 1
 
 > DEBUG: Current graph state:
+Names(3):
+[0] = b
+[1] = a
+[2] = c
 Graph(3 nodes, 3 edges):
 edges:
 [0] = 0 -> 0 (1)
@@ -83,6 +104,9 @@ nodes:
 > DEBUG: Index: 0
 
 > DEBUG: Current graph state:
+Names(2):
+[0] = c
+[1] = a
 Graph(2 nodes, 1 edges):
 edges:
 [0] = 0 -> 1 (1)

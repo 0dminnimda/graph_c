@@ -103,6 +103,7 @@ Result handle_command(Context *ctx, Command cmd, str args) {
         /* If in debug mode let's print current state. */
         if (ctx->in_debug) {
             printf(DEBUG("Current graph state:\n"));
+            names_fprint_debug(&ctx->names, stdout);
             graph_fprint_debug(&ctx->graph, stdout);
         }
 
