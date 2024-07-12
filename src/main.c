@@ -75,10 +75,10 @@ Command str_to_command(const str *string) {
     ERROR("Node #" PRI_u8 " '" PRI_str "' does not exist\n"))
 
 #define EDGE_EXISTS (ctx->ugly_ui? \
-    "Edge between nodes " PRI_str " and " PRI_str " is already exist": \
+    "Edge between nodes " PRI_str " and " PRI_str " is already exist\n": \
     WARNING("edge between nodes '" PRI_str "' and '" PRI_str "' already exists\n"))
 
-#define BAD_REMOVE "Node with num 1 is not exist"
+#define BAD_REMOVE "Node with num 1 is not exist\n"
 
 bool str_to_node(Context *ctx, str *string, str *name, u8 arg_no, bool can_create, bool remove, u32 *id, Result *result) {
     /* We don't want to have spaces in names. */
