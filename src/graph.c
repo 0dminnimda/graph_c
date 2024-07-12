@@ -122,7 +122,10 @@ void graph_del_node_and_replace_by_last(Graph *self, u32 id) {
     /* Same reasoning as in graph_add_edge */
     assert(id < self->nodes.length && "invalid source");
 
-    /* Delete all indices to the edges in the corrected nodes. */
+    /* Delete all indices to the edges in the corrected nodes.
+     * But leave (one) self to self node, so it would be renamed,
+     * and there's no point to remove it from 'other' node,
+     * since there's no 'other'. */
     u32 *it;
     array_u32 *arr;
 
@@ -140,7 +143,12 @@ void graph_del_node_and_replace_by_last(Graph *self, u32 id) {
      * the edges that will take place of the old ones must have
      * their indices in the nodes be renamed. */
 
-    array_extend_from(arr, &self->nodes.data[id].out);
+    /* XXX: why does this not work?
+     * array_extend_from(arr, &self->nodes.data[id].out); */
+    array_for(&self->nodes.data[id].out, it) {
+        *array_add(arr) = *it;
+    }
+
     /* The latest indices must be removed first
      * not to cause issues for the later removals. */
     array_sort(arr, u32_compare_reversed);
