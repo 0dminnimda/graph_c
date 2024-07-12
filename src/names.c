@@ -30,6 +30,6 @@ void names_fprint_debug(const Names *self, FILE *stream) {
 
     str *it;
     array_for(self, it) {
-        fprintf(stream, "[%zu]" PRI_str "\n", it_index, FMT_str(it));
+        fprintf(stream, "[%zu] = " PRI_str "\n", it_index, FMT_str(it));
     }
 }
