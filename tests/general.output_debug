@@ -914,4 +914,85 @@ nodes:
 1  in:
 1 out:
 
+> ERROR: root node needs to be set
+
+> DEBUG: Current graph state:
+Names(2):
+[0] = d
+[1] = j
+Graph(2 nodes, 1 edges):
+edges:
+[0] = 0 -> 0 (67)
+nodes:
+0  in: [0] 0 (67),
+0 out: [0] 0 (67),
+1  in:
+1 out:
+
+> DEBUG: Name: 'l', Index: 2
+
+> DEBUG: Current graph state:
+Names(3):
+[0] = d
+[1] = j
+[2] = l
+Graph(3 nodes, 1 edges):
+edges:
+[0] = 0 -> 0 (67)
+nodes:
+0  in: [0] 0 (67),
+0 out: [0] 0 (67),
+1  in:
+1 out:
+2  in:
+2 out:
+
+> DEBUG: Index: 2
+
+> DEBUG: Current graph state:
+Names(3):
+[0] = d
+[1] = j
+[2] = l
+Graph(3 nodes, 1 edges):
+edges:
+[0] = 0 -> 0 (67)
+nodes:
+0  in: [0] 0 (67),
+0 out: [0] 0 (67),
+1  in:
+1 out:
+2  in:
+2 out:
+
+> DEBUG: Index: 2
+
+> DEBUG: Current graph state:
+Names(2):
+[0] = d
+[1] = j
+Graph(2 nodes, 1 edges):
+edges:
+[0] = 0 -> 0 (67)
+nodes:
+0  in: [0] 0 (67),
+0 out: [0] 0 (67),
+1  in:
+1 out:
+
+> ERROR: root node is outdated and needs to be reset
+
+> DEBUG: Current graph state:
+Names(2):
+[0] = d
+[1] = j
+Graph(2 nodes, 1 edges):
+edges:
+[0] = 0 -> 0 (67)
+nodes:
+0  in: [0] 0 (67),
+0 out: [0] 0 (67),
+1  in:
+1 out:
+
 > 

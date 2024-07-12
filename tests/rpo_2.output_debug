@@ -42,8 +42,7 @@ Welcome to example graph program!
 
 > DEBUG: Index: 0
 
-> huh
-X T C E M B D G
+> X T C E M B D G
 Found back edge: G -> D
 Found back edge: M -> C
 
