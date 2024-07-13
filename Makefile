@@ -33,7 +33,7 @@ record:
 .PHONY: tests
 tests:
 	./check_tests.sh ./main.out --no-glow
-	# ./check_tests.sh valgrind --leak-check=full ./main.out --no-glow
+	# ./check_tests.sh valgrind --leak-check=full --show-leak-kinds=all ./main.out --no-glow
 
 .PHONY: clean
 clean:
