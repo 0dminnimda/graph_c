@@ -25,6 +25,7 @@
 typedef struct {
     Graph graph;
     Names names;
+    u8 verbosity;
     bool in_debug;
     bool glow;
     bool ugly_ui;
@@ -300,6 +301,7 @@ Result handle_line(Context *ctx, str line) {
 
 int Main(Clargs *clargs) {
     Context ctx;
+    ctx.verbosity = 1;
     ctx.in_debug = false;
     ctx.glow = true;
     ctx.ugly_ui = false;
@@ -312,6 +314,11 @@ int Main(Clargs *clargs) {
         } else if (str_compare(clarg, &str_lit("--ugly-ui")) == 0) {
             ctx.ugly_ui = true;
             ctx.glow = false;
+            ctx.verbosity = 0;
+        } else if (str_compare(clarg, &str_lit("--verbose")) == 0) {
+            if (ctx.verbosity != U8_MAX) ctx.verbosity++;
+        } else if (str_compare(clarg, &str_lit("--quiet")) == 0) {
+            if (ctx.verbosity != 0) ctx.verbosity--;
         }
     }
 
@@ -326,7 +333,7 @@ int Main(Clargs *clargs) {
     }
 
     while (1) {
-        if (!ctx.ugly_ui) {
+        if (ctx.verbosity >= 1) {
             printf("\n> ");
             fflush(stdout);
         }
