@@ -177,8 +177,13 @@ bool graph_del_edge(Graph *self, u32 source, u32 target) {
     return true;
 }
 
+/* Here the fourth color was added (compared to the recursive implementation),
+ * because we must know what was already added on stack and waits to be processed, to avoid duplication.
+ * Recursive approach does not need it because it can wait to execute the walk, since it stores information in the stack frames formed by function calls.
+ */
 typedef enum {
     RPO_NEW,
+    RPO_WAIT,
     RPO_SEEN,
     RPO_DONE,
 } RPO_State;
@@ -204,9 +209,20 @@ void graph_reverse_post_order(const Graph *self, u32 root, array_u32 *ordering, 
     array_for(&states, state) {
         *state = RPO_NEW;
     }
+    states.data[root] = RPO_WAIT;
 
     *array_add(&stack) = (s64)root;
 
+    /* The meat of the iterative reverse post order is
+     * to use stack for two kinds of values:
+     * - regular visit
+     * - post order visit
+     * regular visits are what is usually seen in the recutsive approaches.
+     * They go through all the successors and visit them.
+     * Now the new post order visit is represented as a negative index (actual index - length).
+     * It is pushed first thing in the regual visit, and it's purpose
+     * is to be visited after it's successors finished the process,
+     * after it's guranteed all the nodes that may have come before it were visited. */
     while (stack.length) {
         s64 id = array_pop(&stack);
 
@@ -226,9 +242,11 @@ void graph_reverse_post_order(const Graph *self, u32 root, array_u32 *ordering, 
         u32 *edge;
         array_for(&self->nodes.data[id].out, edge) {
             u32 child = self->edges.data[*edge].target;
-            if (states.data[child] == RPO_SEEN) {
+            RPO_State s = states.data[child];
+            if (s == RPO_WAIT || s == RPO_SEEN) {
                 *array_add(back_edges) = *edge;
-            } else if (states.data[child] == RPO_NEW) {
+            } else if (s == RPO_NEW) {
+                states.data[child] = RPO_WAIT;
                 *array_add(&stack) = (s64)child;
             }
         }
