@@ -1,32 +1,5 @@
 Welcome to example graph program!
-
-> 
-> 
-> 
-> 
-> 
-> 
-> 
-> 
-> 
-> 
-> 
-> 
-> 
-> 
-> 
-> 
-> 
-> 
-> 
-> 
-> 
-> 
-> 
-> 
-> 
-> 
-> n0 n1 n2 n3 n4
+n0 n1 n2 n3 n4
 Found back edge: n4 -> n0
 Found back edge: n4 -> n1
 Found back edge: n4 -> n2
@@ -37,5 +10,3 @@ Found back edge: n3 -> n2
 Found back edge: n2 -> n0
 Found back edge: n2 -> n1
 Found back edge: n1 -> n0
-
-> 

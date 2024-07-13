@@ -1,22 +1,4 @@
 Welcome to example graph program!
-
-> 
-> 
-> 
-> 
-> 
-> 
-> WARNING: Node 'A' already exists
-
-> 
-> 
-> 
-> 
-> 
-> 
-> 
-> 
-> Start A B D C Stop
+WARNING: Node 'A' already exists
+Start A B D C Stop
 Found back edge: D -> B
-
-> 

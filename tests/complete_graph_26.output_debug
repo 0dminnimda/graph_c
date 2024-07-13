@@ -1,1362 +1,683 @@
 Welcome to example graph program!
-
-> Debug mode: turned on
-
-> DEBUG: Name: 'a', Index: 0
-
-> DEBUG: Name: 'b', Index: 1
-
-> DEBUG: Name: 'c', Index: 2
-
-> DEBUG: Name: 'd', Index: 3
-
-> DEBUG: Name: 'e', Index: 4
-
-> DEBUG: Name: 'f', Index: 5
-
-> DEBUG: Name: 'g', Index: 6
-
-> DEBUG: Name: 'h', Index: 7
-
-> DEBUG: Name: 'i', Index: 8
-
-> DEBUG: Name: 'j', Index: 9
-
-> DEBUG: Name: 'k', Index: 10
-
-> DEBUG: Name: 'l', Index: 11
-
-> DEBUG: Name: 'm', Index: 12
-
-> DEBUG: Name: 'n', Index: 13
-
-> DEBUG: Name: 'o', Index: 14
-
-> DEBUG: Name: 'p', Index: 15
-
-> DEBUG: Name: 'q', Index: 16
-
-> DEBUG: Name: 'r', Index: 17
-
-> DEBUG: Name: 's', Index: 18
-
-> DEBUG: Name: 't', Index: 19
-
-> DEBUG: Name: 'u', Index: 20
-
-> DEBUG: Name: 'v', Index: 21
-
-> DEBUG: Name: 'w', Index: 22
-
-> DEBUG: Name: 'x', Index: 23
-
-> DEBUG: Name: 'y', Index: 24
-
-> DEBUG: Name: 'z', Index: 25
-
-> DEBUG: Index1: 0, Index2: 1, Weight: 1
-
-> DEBUG: Index1: 0, Index2: 2, Weight: 1
-
-> DEBUG: Index1: 0, Index2: 3, Weight: 1
-
-> DEBUG: Index1: 0, Index2: 4, Weight: 1
-
-> DEBUG: Index1: 0, Index2: 5, Weight: 1
-
-> DEBUG: Index1: 0, Index2: 6, Weight: 1
-
-> DEBUG: Index1: 0, Index2: 7, Weight: 1
-
-> DEBUG: Index1: 0, Index2: 8, Weight: 1
-
-> DEBUG: Index1: 0, Index2: 9, Weight: 1
-
-> DEBUG: Index1: 0, Index2: 10, Weight: 1
-
-> DEBUG: Index1: 0, Index2: 11, Weight: 1
-
-> DEBUG: Index1: 0, Index2: 12, Weight: 1
-
-> DEBUG: Index1: 0, Index2: 13, Weight: 1
-
-> DEBUG: Index1: 0, Index2: 14, Weight: 1
-
-> DEBUG: Index1: 0, Index2: 15, Weight: 1
-
-> DEBUG: Index1: 0, Index2: 16, Weight: 1
-
-> DEBUG: Index1: 0, Index2: 17, Weight: 1
-
-> DEBUG: Index1: 0, Index2: 18, Weight: 1
-
-> DEBUG: Index1: 0, Index2: 19, Weight: 1
-
-> DEBUG: Index1: 0, Index2: 20, Weight: 1
-
-> DEBUG: Index1: 0, Index2: 21, Weight: 1
-
-> DEBUG: Index1: 0, Index2: 22, Weight: 1
-
-> DEBUG: Index1: 0, Index2: 23, Weight: 1
-
-> DEBUG: Index1: 0, Index2: 24, Weight: 1
-
-> DEBUG: Index1: 0, Index2: 25, Weight: 1
-
-> DEBUG: Index1: 1, Index2: 0, Weight: 1
-
-> DEBUG: Index1: 1, Index2: 2, Weight: 1
-
-> DEBUG: Index1: 1, Index2: 3, Weight: 1
-
-> DEBUG: Index1: 1, Index2: 4, Weight: 1
-
-> DEBUG: Index1: 1, Index2: 5, Weight: 1
-
-> DEBUG: Index1: 1, Index2: 6, Weight: 1
-
-> DEBUG: Index1: 1, Index2: 7, Weight: 1
-
-> DEBUG: Index1: 1, Index2: 8, Weight: 1
-
-> DEBUG: Index1: 1, Index2: 9, Weight: 1
-
-> DEBUG: Index1: 1, Index2: 10, Weight: 1
-
-> DEBUG: Index1: 1, Index2: 11, Weight: 1
-
-> DEBUG: Index1: 1, Index2: 12, Weight: 1
-
-> DEBUG: Index1: 1, Index2: 13, Weight: 1
-
-> DEBUG: Index1: 1, Index2: 14, Weight: 1
-
-> DEBUG: Index1: 1, Index2: 15, Weight: 1
-
-> DEBUG: Index1: 1, Index2: 16, Weight: 1
-
-> DEBUG: Index1: 1, Index2: 17, Weight: 1
-
-> DEBUG: Index1: 1, Index2: 18, Weight: 1
-
-> DEBUG: Index1: 1, Index2: 19, Weight: 1
-
-> DEBUG: Index1: 1, Index2: 20, Weight: 1
-
-> DEBUG: Index1: 1, Index2: 21, Weight: 1
-
-> DEBUG: Index1: 1, Index2: 22, Weight: 1
-
-> DEBUG: Index1: 1, Index2: 23, Weight: 1
-
-> DEBUG: Index1: 1, Index2: 24, Weight: 1
-
-> DEBUG: Index1: 1, Index2: 25, Weight: 1
-
-> DEBUG: Index1: 2, Index2: 0, Weight: 1
-
-> DEBUG: Index1: 2, Index2: 1, Weight: 1
-
-> DEBUG: Index1: 2, Index2: 3, Weight: 1
-
-> DEBUG: Index1: 2, Index2: 4, Weight: 1
-
-> DEBUG: Index1: 2, Index2: 5, Weight: 1
-
-> DEBUG: Index1: 2, Index2: 6, Weight: 1
-
-> DEBUG: Index1: 2, Index2: 7, Weight: 1
-
-> DEBUG: Index1: 2, Index2: 8, Weight: 1
-
-> DEBUG: Index1: 2, Index2: 9, Weight: 1
-
-> DEBUG: Index1: 2, Index2: 10, Weight: 1
-
-> DEBUG: Index1: 2, Index2: 11, Weight: 1
-
-> DEBUG: Index1: 2, Index2: 12, Weight: 1
-
-> DEBUG: Index1: 2, Index2: 13, Weight: 1
-
-> DEBUG: Index1: 2, Index2: 14, Weight: 1
-
-> DEBUG: Index1: 2, Index2: 15, Weight: 1
-
-> DEBUG: Index1: 2, Index2: 16, Weight: 1
-
-> DEBUG: Index1: 2, Index2: 17, Weight: 1
-
-> DEBUG: Index1: 2, Index2: 18, Weight: 1
-
-> DEBUG: Index1: 2, Index2: 19, Weight: 1
-
-> DEBUG: Index1: 2, Index2: 20, Weight: 1
-
-> DEBUG: Index1: 2, Index2: 21, Weight: 1
-
-> DEBUG: Index1: 2, Index2: 22, Weight: 1
-
-> DEBUG: Index1: 2, Index2: 23, Weight: 1
-
-> DEBUG: Index1: 2, Index2: 24, Weight: 1
-
-> DEBUG: Index1: 2, Index2: 25, Weight: 1
-
-> DEBUG: Index1: 3, Index2: 0, Weight: 1
-
-> DEBUG: Index1: 3, Index2: 1, Weight: 1
-
-> DEBUG: Index1: 3, Index2: 2, Weight: 1
-
-> DEBUG: Index1: 3, Index2: 4, Weight: 1
-
-> DEBUG: Index1: 3, Index2: 5, Weight: 1
-
-> DEBUG: Index1: 3, Index2: 6, Weight: 1
-
-> DEBUG: Index1: 3, Index2: 7, Weight: 1
-
-> DEBUG: Index1: 3, Index2: 8, Weight: 1
-
-> DEBUG: Index1: 3, Index2: 9, Weight: 1
-
-> DEBUG: Index1: 3, Index2: 10, Weight: 1
-
-> DEBUG: Index1: 3, Index2: 11, Weight: 1
-
-> DEBUG: Index1: 3, Index2: 12, Weight: 1
-
-> DEBUG: Index1: 3, Index2: 13, Weight: 1
-
-> DEBUG: Index1: 3, Index2: 14, Weight: 1
-
-> DEBUG: Index1: 3, Index2: 15, Weight: 1
-
-> DEBUG: Index1: 3, Index2: 16, Weight: 1
-
-> DEBUG: Index1: 3, Index2: 17, Weight: 1
-
-> DEBUG: Index1: 3, Index2: 18, Weight: 1
-
-> DEBUG: Index1: 3, Index2: 19, Weight: 1
-
-> DEBUG: Index1: 3, Index2: 20, Weight: 1
-
-> DEBUG: Index1: 3, Index2: 21, Weight: 1
-
-> DEBUG: Index1: 3, Index2: 22, Weight: 1
-
-> DEBUG: Index1: 3, Index2: 23, Weight: 1
-
-> DEBUG: Index1: 3, Index2: 24, Weight: 1
-
-> DEBUG: Index1: 3, Index2: 25, Weight: 1
-
-> DEBUG: Index1: 4, Index2: 0, Weight: 1
-
-> DEBUG: Index1: 4, Index2: 1, Weight: 1
-
-> DEBUG: Index1: 4, Index2: 2, Weight: 1
-
-> DEBUG: Index1: 4, Index2: 3, Weight: 1
-
-> DEBUG: Index1: 4, Index2: 5, Weight: 1
-
-> DEBUG: Index1: 4, Index2: 6, Weight: 1
-
-> DEBUG: Index1: 4, Index2: 7, Weight: 1
-
-> DEBUG: Index1: 4, Index2: 8, Weight: 1
-
-> DEBUG: Index1: 4, Index2: 9, Weight: 1
-
-> DEBUG: Index1: 4, Index2: 10, Weight: 1
-
-> DEBUG: Index1: 4, Index2: 11, Weight: 1
-
-> DEBUG: Index1: 4, Index2: 12, Weight: 1
-
-> DEBUG: Index1: 4, Index2: 13, Weight: 1
-
-> DEBUG: Index1: 4, Index2: 14, Weight: 1
-
-> DEBUG: Index1: 4, Index2: 15, Weight: 1
-
-> DEBUG: Index1: 4, Index2: 16, Weight: 1
-
-> DEBUG: Index1: 4, Index2: 17, Weight: 1
-
-> DEBUG: Index1: 4, Index2: 18, Weight: 1
-
-> DEBUG: Index1: 4, Index2: 19, Weight: 1
-
-> DEBUG: Index1: 4, Index2: 20, Weight: 1
-
-> DEBUG: Index1: 4, Index2: 21, Weight: 1
-
-> DEBUG: Index1: 4, Index2: 22, Weight: 1
-
-> DEBUG: Index1: 4, Index2: 23, Weight: 1
-
-> DEBUG: Index1: 4, Index2: 24, Weight: 1
-
-> DEBUG: Index1: 4, Index2: 25, Weight: 1
-
-> DEBUG: Index1: 5, Index2: 0, Weight: 1
-
-> DEBUG: Index1: 5, Index2: 1, Weight: 1
-
-> DEBUG: Index1: 5, Index2: 2, Weight: 1
-
-> DEBUG: Index1: 5, Index2: 3, Weight: 1
-
-> DEBUG: Index1: 5, Index2: 4, Weight: 1
-
-> DEBUG: Index1: 5, Index2: 6, Weight: 1
-
-> DEBUG: Index1: 5, Index2: 7, Weight: 1
-
-> DEBUG: Index1: 5, Index2: 8, Weight: 1
-
-> DEBUG: Index1: 5, Index2: 9, Weight: 1
-
-> DEBUG: Index1: 5, Index2: 10, Weight: 1
-
-> DEBUG: Index1: 5, Index2: 11, Weight: 1
-
-> DEBUG: Index1: 5, Index2: 12, Weight: 1
-
-> DEBUG: Index1: 5, Index2: 13, Weight: 1
-
-> DEBUG: Index1: 5, Index2: 14, Weight: 1
-
-> DEBUG: Index1: 5, Index2: 15, Weight: 1
-
-> DEBUG: Index1: 5, Index2: 16, Weight: 1
-
-> DEBUG: Index1: 5, Index2: 17, Weight: 1
-
-> DEBUG: Index1: 5, Index2: 18, Weight: 1
-
-> DEBUG: Index1: 5, Index2: 19, Weight: 1
-
-> DEBUG: Index1: 5, Index2: 20, Weight: 1
-
-> DEBUG: Index1: 5, Index2: 21, Weight: 1
-
-> DEBUG: Index1: 5, Index2: 22, Weight: 1
-
-> DEBUG: Index1: 5, Index2: 23, Weight: 1
-
-> DEBUG: Index1: 5, Index2: 24, Weight: 1
-
-> DEBUG: Index1: 5, Index2: 25, Weight: 1
-
-> DEBUG: Index1: 6, Index2: 0, Weight: 1
-
-> DEBUG: Index1: 6, Index2: 1, Weight: 1
-
-> DEBUG: Index1: 6, Index2: 2, Weight: 1
-
-> DEBUG: Index1: 6, Index2: 3, Weight: 1
-
-> DEBUG: Index1: 6, Index2: 4, Weight: 1
-
-> DEBUG: Index1: 6, Index2: 5, Weight: 1
-
-> DEBUG: Index1: 6, Index2: 7, Weight: 1
-
-> DEBUG: Index1: 6, Index2: 8, Weight: 1
-
-> DEBUG: Index1: 6, Index2: 9, Weight: 1
-
-> DEBUG: Index1: 6, Index2: 10, Weight: 1
-
-> DEBUG: Index1: 6, Index2: 11, Weight: 1
-
-> DEBUG: Index1: 6, Index2: 12, Weight: 1
-
-> DEBUG: Index1: 6, Index2: 13, Weight: 1
-
-> DEBUG: Index1: 6, Index2: 14, Weight: 1
-
-> DEBUG: Index1: 6, Index2: 15, Weight: 1
-
-> DEBUG: Index1: 6, Index2: 16, Weight: 1
-
-> DEBUG: Index1: 6, Index2: 17, Weight: 1
-
-> DEBUG: Index1: 6, Index2: 18, Weight: 1
-
-> DEBUG: Index1: 6, Index2: 19, Weight: 1
-
-> DEBUG: Index1: 6, Index2: 20, Weight: 1
-
-> DEBUG: Index1: 6, Index2: 21, Weight: 1
-
-> DEBUG: Index1: 6, Index2: 22, Weight: 1
-
-> DEBUG: Index1: 6, Index2: 23, Weight: 1
-
-> DEBUG: Index1: 6, Index2: 24, Weight: 1
-
-> DEBUG: Index1: 6, Index2: 25, Weight: 1
-
-> DEBUG: Index1: 7, Index2: 0, Weight: 1
-
-> DEBUG: Index1: 7, Index2: 1, Weight: 1
-
-> DEBUG: Index1: 7, Index2: 2, Weight: 1
-
-> DEBUG: Index1: 7, Index2: 3, Weight: 1
-
-> DEBUG: Index1: 7, Index2: 4, Weight: 1
-
-> DEBUG: Index1: 7, Index2: 5, Weight: 1
-
-> DEBUG: Index1: 7, Index2: 6, Weight: 1
-
-> DEBUG: Index1: 7, Index2: 8, Weight: 1
-
-> DEBUG: Index1: 7, Index2: 9, Weight: 1
-
-> DEBUG: Index1: 7, Index2: 10, Weight: 1
-
-> DEBUG: Index1: 7, Index2: 11, Weight: 1
-
-> DEBUG: Index1: 7, Index2: 12, Weight: 1
-
-> DEBUG: Index1: 7, Index2: 13, Weight: 1
-
-> DEBUG: Index1: 7, Index2: 14, Weight: 1
-
-> DEBUG: Index1: 7, Index2: 15, Weight: 1
-
-> DEBUG: Index1: 7, Index2: 16, Weight: 1
-
-> DEBUG: Index1: 7, Index2: 17, Weight: 1
-
-> DEBUG: Index1: 7, Index2: 18, Weight: 1
-
-> DEBUG: Index1: 7, Index2: 19, Weight: 1
-
-> DEBUG: Index1: 7, Index2: 20, Weight: 1
-
-> DEBUG: Index1: 7, Index2: 21, Weight: 1
-
-> DEBUG: Index1: 7, Index2: 22, Weight: 1
-
-> DEBUG: Index1: 7, Index2: 23, Weight: 1
-
-> DEBUG: Index1: 7, Index2: 24, Weight: 1
-
-> DEBUG: Index1: 7, Index2: 25, Weight: 1
-
-> DEBUG: Index1: 8, Index2: 0, Weight: 1
-
-> DEBUG: Index1: 8, Index2: 1, Weight: 1
-
-> DEBUG: Index1: 8, Index2: 2, Weight: 1
-
-> DEBUG: Index1: 8, Index2: 3, Weight: 1
-
-> DEBUG: Index1: 8, Index2: 4, Weight: 1
-
-> DEBUG: Index1: 8, Index2: 5, Weight: 1
-
-> DEBUG: Index1: 8, Index2: 6, Weight: 1
-
-> DEBUG: Index1: 8, Index2: 7, Weight: 1
-
-> DEBUG: Index1: 8, Index2: 9, Weight: 1
-
-> DEBUG: Index1: 8, Index2: 10, Weight: 1
-
-> DEBUG: Index1: 8, Index2: 11, Weight: 1
-
-> DEBUG: Index1: 8, Index2: 12, Weight: 1
-
-> DEBUG: Index1: 8, Index2: 13, Weight: 1
-
-> DEBUG: Index1: 8, Index2: 14, Weight: 1
-
-> DEBUG: Index1: 8, Index2: 15, Weight: 1
-
-> DEBUG: Index1: 8, Index2: 16, Weight: 1
-
-> DEBUG: Index1: 8, Index2: 17, Weight: 1
-
-> DEBUG: Index1: 8, Index2: 18, Weight: 1
-
-> DEBUG: Index1: 8, Index2: 19, Weight: 1
-
-> DEBUG: Index1: 8, Index2: 20, Weight: 1
-
-> DEBUG: Index1: 8, Index2: 21, Weight: 1
-
-> DEBUG: Index1: 8, Index2: 22, Weight: 1
-
-> DEBUG: Index1: 8, Index2: 23, Weight: 1
-
-> DEBUG: Index1: 8, Index2: 24, Weight: 1
-
-> DEBUG: Index1: 8, Index2: 25, Weight: 1
-
-> DEBUG: Index1: 9, Index2: 0, Weight: 1
-
-> DEBUG: Index1: 9, Index2: 1, Weight: 1
-
-> DEBUG: Index1: 9, Index2: 2, Weight: 1
-
-> DEBUG: Index1: 9, Index2: 3, Weight: 1
-
-> DEBUG: Index1: 9, Index2: 4, Weight: 1
-
-> DEBUG: Index1: 9, Index2: 5, Weight: 1
-
-> DEBUG: Index1: 9, Index2: 6, Weight: 1
-
-> DEBUG: Index1: 9, Index2: 7, Weight: 1
-
-> DEBUG: Index1: 9, Index2: 8, Weight: 1
-
-> DEBUG: Index1: 9, Index2: 10, Weight: 1
-
-> DEBUG: Index1: 9, Index2: 11, Weight: 1
-
-> DEBUG: Index1: 9, Index2: 12, Weight: 1
-
-> DEBUG: Index1: 9, Index2: 13, Weight: 1
-
-> DEBUG: Index1: 9, Index2: 14, Weight: 1
-
-> DEBUG: Index1: 9, Index2: 15, Weight: 1
-
-> DEBUG: Index1: 9, Index2: 16, Weight: 1
-
-> DEBUG: Index1: 9, Index2: 17, Weight: 1
-
-> DEBUG: Index1: 9, Index2: 18, Weight: 1
-
-> DEBUG: Index1: 9, Index2: 19, Weight: 1
-
-> DEBUG: Index1: 9, Index2: 20, Weight: 1
-
-> DEBUG: Index1: 9, Index2: 21, Weight: 1
-
-> DEBUG: Index1: 9, Index2: 22, Weight: 1
-
-> DEBUG: Index1: 9, Index2: 23, Weight: 1
-
-> DEBUG: Index1: 9, Index2: 24, Weight: 1
-
-> DEBUG: Index1: 9, Index2: 25, Weight: 1
-
-> DEBUG: Index1: 10, Index2: 0, Weight: 1
-
-> DEBUG: Index1: 10, Index2: 1, Weight: 1
-
-> DEBUG: Index1: 10, Index2: 2, Weight: 1
-
-> DEBUG: Index1: 10, Index2: 3, Weight: 1
-
-> DEBUG: Index1: 10, Index2: 4, Weight: 1
-
-> DEBUG: Index1: 10, Index2: 5, Weight: 1
-
-> DEBUG: Index1: 10, Index2: 6, Weight: 1
-
-> DEBUG: Index1: 10, Index2: 7, Weight: 1
-
-> DEBUG: Index1: 10, Index2: 8, Weight: 1
-
-> DEBUG: Index1: 10, Index2: 9, Weight: 1
-
-> DEBUG: Index1: 10, Index2: 11, Weight: 1
-
-> DEBUG: Index1: 10, Index2: 12, Weight: 1
-
-> DEBUG: Index1: 10, Index2: 13, Weight: 1
-
-> DEBUG: Index1: 10, Index2: 14, Weight: 1
-
-> DEBUG: Index1: 10, Index2: 15, Weight: 1
-
-> DEBUG: Index1: 10, Index2: 16, Weight: 1
-
-> DEBUG: Index1: 10, Index2: 17, Weight: 1
-
-> DEBUG: Index1: 10, Index2: 18, Weight: 1
-
-> DEBUG: Index1: 10, Index2: 19, Weight: 1
-
-> DEBUG: Index1: 10, Index2: 20, Weight: 1
-
-> DEBUG: Index1: 10, Index2: 21, Weight: 1
-
-> DEBUG: Index1: 10, Index2: 22, Weight: 1
-
-> DEBUG: Index1: 10, Index2: 23, Weight: 1
-
-> DEBUG: Index1: 10, Index2: 24, Weight: 1
-
-> DEBUG: Index1: 10, Index2: 25, Weight: 1
-
-> DEBUG: Index1: 11, Index2: 0, Weight: 1
-
-> DEBUG: Index1: 11, Index2: 1, Weight: 1
-
-> DEBUG: Index1: 11, Index2: 2, Weight: 1
-
-> DEBUG: Index1: 11, Index2: 3, Weight: 1
-
-> DEBUG: Index1: 11, Index2: 4, Weight: 1
-
-> DEBUG: Index1: 11, Index2: 5, Weight: 1
-
-> DEBUG: Index1: 11, Index2: 6, Weight: 1
-
-> DEBUG: Index1: 11, Index2: 7, Weight: 1
-
-> DEBUG: Index1: 11, Index2: 8, Weight: 1
-
-> DEBUG: Index1: 11, Index2: 9, Weight: 1
-
-> DEBUG: Index1: 11, Index2: 10, Weight: 1
-
-> DEBUG: Index1: 11, Index2: 12, Weight: 1
-
-> DEBUG: Index1: 11, Index2: 13, Weight: 1
-
-> DEBUG: Index1: 11, Index2: 14, Weight: 1
-
-> DEBUG: Index1: 11, Index2: 15, Weight: 1
-
-> DEBUG: Index1: 11, Index2: 16, Weight: 1
-
-> DEBUG: Index1: 11, Index2: 17, Weight: 1
-
-> DEBUG: Index1: 11, Index2: 18, Weight: 1
-
-> DEBUG: Index1: 11, Index2: 19, Weight: 1
-
-> DEBUG: Index1: 11, Index2: 20, Weight: 1
-
-> DEBUG: Index1: 11, Index2: 21, Weight: 1
-
-> DEBUG: Index1: 11, Index2: 22, Weight: 1
-
-> DEBUG: Index1: 11, Index2: 23, Weight: 1
-
-> DEBUG: Index1: 11, Index2: 24, Weight: 1
-
-> DEBUG: Index1: 11, Index2: 25, Weight: 1
-
-> DEBUG: Index1: 12, Index2: 0, Weight: 1
-
-> DEBUG: Index1: 12, Index2: 1, Weight: 1
-
-> DEBUG: Index1: 12, Index2: 2, Weight: 1
-
-> DEBUG: Index1: 12, Index2: 3, Weight: 1
-
-> DEBUG: Index1: 12, Index2: 4, Weight: 1
-
-> DEBUG: Index1: 12, Index2: 5, Weight: 1
-
-> DEBUG: Index1: 12, Index2: 6, Weight: 1
-
-> DEBUG: Index1: 12, Index2: 7, Weight: 1
-
-> DEBUG: Index1: 12, Index2: 8, Weight: 1
-
-> DEBUG: Index1: 12, Index2: 9, Weight: 1
-
-> DEBUG: Index1: 12, Index2: 10, Weight: 1
-
-> DEBUG: Index1: 12, Index2: 11, Weight: 1
-
-> DEBUG: Index1: 12, Index2: 13, Weight: 1
-
-> DEBUG: Index1: 12, Index2: 14, Weight: 1
-
-> DEBUG: Index1: 12, Index2: 15, Weight: 1
-
-> DEBUG: Index1: 12, Index2: 16, Weight: 1
-
-> DEBUG: Index1: 12, Index2: 17, Weight: 1
-
-> DEBUG: Index1: 12, Index2: 18, Weight: 1
-
-> DEBUG: Index1: 12, Index2: 19, Weight: 1
-
-> DEBUG: Index1: 12, Index2: 20, Weight: 1
-
-> DEBUG: Index1: 12, Index2: 21, Weight: 1
-
-> DEBUG: Index1: 12, Index2: 22, Weight: 1
-
-> DEBUG: Index1: 12, Index2: 23, Weight: 1
-
-> DEBUG: Index1: 12, Index2: 24, Weight: 1
-
-> DEBUG: Index1: 12, Index2: 25, Weight: 1
-
-> DEBUG: Index1: 13, Index2: 0, Weight: 1
-
-> DEBUG: Index1: 13, Index2: 1, Weight: 1
-
-> DEBUG: Index1: 13, Index2: 2, Weight: 1
-
-> DEBUG: Index1: 13, Index2: 3, Weight: 1
-
-> DEBUG: Index1: 13, Index2: 4, Weight: 1
-
-> DEBUG: Index1: 13, Index2: 5, Weight: 1
-
-> DEBUG: Index1: 13, Index2: 6, Weight: 1
-
-> DEBUG: Index1: 13, Index2: 7, Weight: 1
-
-> DEBUG: Index1: 13, Index2: 8, Weight: 1
-
-> DEBUG: Index1: 13, Index2: 9, Weight: 1
-
-> DEBUG: Index1: 13, Index2: 10, Weight: 1
-
-> DEBUG: Index1: 13, Index2: 11, Weight: 1
-
-> DEBUG: Index1: 13, Index2: 12, Weight: 1
-
-> DEBUG: Index1: 13, Index2: 14, Weight: 1
-
-> DEBUG: Index1: 13, Index2: 15, Weight: 1
-
-> DEBUG: Index1: 13, Index2: 16, Weight: 1
-
-> DEBUG: Index1: 13, Index2: 17, Weight: 1
-
-> DEBUG: Index1: 13, Index2: 18, Weight: 1
-
-> DEBUG: Index1: 13, Index2: 19, Weight: 1
-
-> DEBUG: Index1: 13, Index2: 20, Weight: 1
-
-> DEBUG: Index1: 13, Index2: 21, Weight: 1
-
-> DEBUG: Index1: 13, Index2: 22, Weight: 1
-
-> DEBUG: Index1: 13, Index2: 23, Weight: 1
-
-> DEBUG: Index1: 13, Index2: 24, Weight: 1
-
-> DEBUG: Index1: 13, Index2: 25, Weight: 1
-
-> DEBUG: Index1: 14, Index2: 0, Weight: 1
-
-> DEBUG: Index1: 14, Index2: 1, Weight: 1
-
-> DEBUG: Index1: 14, Index2: 2, Weight: 1
-
-> DEBUG: Index1: 14, Index2: 3, Weight: 1
-
-> DEBUG: Index1: 14, Index2: 4, Weight: 1
-
-> DEBUG: Index1: 14, Index2: 5, Weight: 1
-
-> DEBUG: Index1: 14, Index2: 6, Weight: 1
-
-> DEBUG: Index1: 14, Index2: 7, Weight: 1
-
-> DEBUG: Index1: 14, Index2: 8, Weight: 1
-
-> DEBUG: Index1: 14, Index2: 9, Weight: 1
-
-> DEBUG: Index1: 14, Index2: 10, Weight: 1
-
-> DEBUG: Index1: 14, Index2: 11, Weight: 1
-
-> DEBUG: Index1: 14, Index2: 12, Weight: 1
-
-> DEBUG: Index1: 14, Index2: 13, Weight: 1
-
-> DEBUG: Index1: 14, Index2: 15, Weight: 1
-
-> DEBUG: Index1: 14, Index2: 16, Weight: 1
-
-> DEBUG: Index1: 14, Index2: 17, Weight: 1
-
-> DEBUG: Index1: 14, Index2: 18, Weight: 1
-
-> DEBUG: Index1: 14, Index2: 19, Weight: 1
-
-> DEBUG: Index1: 14, Index2: 20, Weight: 1
-
-> DEBUG: Index1: 14, Index2: 21, Weight: 1
-
-> DEBUG: Index1: 14, Index2: 22, Weight: 1
-
-> DEBUG: Index1: 14, Index2: 23, Weight: 1
-
-> DEBUG: Index1: 14, Index2: 24, Weight: 1
-
-> DEBUG: Index1: 14, Index2: 25, Weight: 1
-
-> DEBUG: Index1: 15, Index2: 0, Weight: 1
-
-> DEBUG: Index1: 15, Index2: 1, Weight: 1
-
-> DEBUG: Index1: 15, Index2: 2, Weight: 1
-
-> DEBUG: Index1: 15, Index2: 3, Weight: 1
-
-> DEBUG: Index1: 15, Index2: 4, Weight: 1
-
-> DEBUG: Index1: 15, Index2: 5, Weight: 1
-
-> DEBUG: Index1: 15, Index2: 6, Weight: 1
-
-> DEBUG: Index1: 15, Index2: 7, Weight: 1
-
-> DEBUG: Index1: 15, Index2: 8, Weight: 1
-
-> DEBUG: Index1: 15, Index2: 9, Weight: 1
-
-> DEBUG: Index1: 15, Index2: 10, Weight: 1
-
-> DEBUG: Index1: 15, Index2: 11, Weight: 1
-
-> DEBUG: Index1: 15, Index2: 12, Weight: 1
-
-> DEBUG: Index1: 15, Index2: 13, Weight: 1
-
-> DEBUG: Index1: 15, Index2: 14, Weight: 1
-
-> DEBUG: Index1: 15, Index2: 16, Weight: 1
-
-> DEBUG: Index1: 15, Index2: 17, Weight: 1
-
-> DEBUG: Index1: 15, Index2: 18, Weight: 1
-
-> DEBUG: Index1: 15, Index2: 19, Weight: 1
-
-> DEBUG: Index1: 15, Index2: 20, Weight: 1
-
-> DEBUG: Index1: 15, Index2: 21, Weight: 1
-
-> DEBUG: Index1: 15, Index2: 22, Weight: 1
-
-> DEBUG: Index1: 15, Index2: 23, Weight: 1
-
-> DEBUG: Index1: 15, Index2: 24, Weight: 1
-
-> DEBUG: Index1: 15, Index2: 25, Weight: 1
-
-> DEBUG: Index1: 16, Index2: 0, Weight: 1
-
-> DEBUG: Index1: 16, Index2: 1, Weight: 1
-
-> DEBUG: Index1: 16, Index2: 2, Weight: 1
-
-> DEBUG: Index1: 16, Index2: 3, Weight: 1
-
-> DEBUG: Index1: 16, Index2: 4, Weight: 1
-
-> DEBUG: Index1: 16, Index2: 5, Weight: 1
-
-> DEBUG: Index1: 16, Index2: 6, Weight: 1
-
-> DEBUG: Index1: 16, Index2: 7, Weight: 1
-
-> DEBUG: Index1: 16, Index2: 8, Weight: 1
-
-> DEBUG: Index1: 16, Index2: 9, Weight: 1
-
-> DEBUG: Index1: 16, Index2: 10, Weight: 1
-
-> DEBUG: Index1: 16, Index2: 11, Weight: 1
-
-> DEBUG: Index1: 16, Index2: 12, Weight: 1
-
-> DEBUG: Index1: 16, Index2: 13, Weight: 1
-
-> DEBUG: Index1: 16, Index2: 14, Weight: 1
-
-> DEBUG: Index1: 16, Index2: 15, Weight: 1
-
-> DEBUG: Index1: 16, Index2: 17, Weight: 1
-
-> DEBUG: Index1: 16, Index2: 18, Weight: 1
-
-> DEBUG: Index1: 16, Index2: 19, Weight: 1
-
-> DEBUG: Index1: 16, Index2: 20, Weight: 1
-
-> DEBUG: Index1: 16, Index2: 21, Weight: 1
-
-> DEBUG: Index1: 16, Index2: 22, Weight: 1
-
-> DEBUG: Index1: 16, Index2: 23, Weight: 1
-
-> DEBUG: Index1: 16, Index2: 24, Weight: 1
-
-> DEBUG: Index1: 16, Index2: 25, Weight: 1
-
-> DEBUG: Index1: 17, Index2: 0, Weight: 1
-
-> DEBUG: Index1: 17, Index2: 1, Weight: 1
-
-> DEBUG: Index1: 17, Index2: 2, Weight: 1
-
-> DEBUG: Index1: 17, Index2: 3, Weight: 1
-
-> DEBUG: Index1: 17, Index2: 4, Weight: 1
-
-> DEBUG: Index1: 17, Index2: 5, Weight: 1
-
-> DEBUG: Index1: 17, Index2: 6, Weight: 1
-
-> DEBUG: Index1: 17, Index2: 7, Weight: 1
-
-> DEBUG: Index1: 17, Index2: 8, Weight: 1
-
-> DEBUG: Index1: 17, Index2: 9, Weight: 1
-
-> DEBUG: Index1: 17, Index2: 10, Weight: 1
-
-> DEBUG: Index1: 17, Index2: 11, Weight: 1
-
-> DEBUG: Index1: 17, Index2: 12, Weight: 1
-
-> DEBUG: Index1: 17, Index2: 13, Weight: 1
-
-> DEBUG: Index1: 17, Index2: 14, Weight: 1
-
-> DEBUG: Index1: 17, Index2: 15, Weight: 1
-
-> DEBUG: Index1: 17, Index2: 16, Weight: 1
-
-> DEBUG: Index1: 17, Index2: 18, Weight: 1
-
-> DEBUG: Index1: 17, Index2: 19, Weight: 1
-
-> DEBUG: Index1: 17, Index2: 20, Weight: 1
-
-> DEBUG: Index1: 17, Index2: 21, Weight: 1
-
-> DEBUG: Index1: 17, Index2: 22, Weight: 1
-
-> DEBUG: Index1: 17, Index2: 23, Weight: 1
-
-> DEBUG: Index1: 17, Index2: 24, Weight: 1
-
-> DEBUG: Index1: 17, Index2: 25, Weight: 1
-
-> DEBUG: Index1: 18, Index2: 0, Weight: 1
-
-> DEBUG: Index1: 18, Index2: 1, Weight: 1
-
-> DEBUG: Index1: 18, Index2: 2, Weight: 1
-
-> DEBUG: Index1: 18, Index2: 3, Weight: 1
-
-> DEBUG: Index1: 18, Index2: 4, Weight: 1
-
-> DEBUG: Index1: 18, Index2: 5, Weight: 1
-
-> DEBUG: Index1: 18, Index2: 6, Weight: 1
-
-> DEBUG: Index1: 18, Index2: 7, Weight: 1
-
-> DEBUG: Index1: 18, Index2: 8, Weight: 1
-
-> DEBUG: Index1: 18, Index2: 9, Weight: 1
-
-> DEBUG: Index1: 18, Index2: 10, Weight: 1
-
-> DEBUG: Index1: 18, Index2: 11, Weight: 1
-
-> DEBUG: Index1: 18, Index2: 12, Weight: 1
-
-> DEBUG: Index1: 18, Index2: 13, Weight: 1
-
-> DEBUG: Index1: 18, Index2: 14, Weight: 1
-
-> DEBUG: Index1: 18, Index2: 15, Weight: 1
-
-> DEBUG: Index1: 18, Index2: 16, Weight: 1
-
-> DEBUG: Index1: 18, Index2: 17, Weight: 1
-
-> DEBUG: Index1: 18, Index2: 19, Weight: 1
-
-> DEBUG: Index1: 18, Index2: 20, Weight: 1
-
-> DEBUG: Index1: 18, Index2: 21, Weight: 1
-
-> DEBUG: Index1: 18, Index2: 22, Weight: 1
-
-> DEBUG: Index1: 18, Index2: 23, Weight: 1
-
-> DEBUG: Index1: 18, Index2: 24, Weight: 1
-
-> DEBUG: Index1: 18, Index2: 25, Weight: 1
-
-> DEBUG: Index1: 19, Index2: 0, Weight: 1
-
-> DEBUG: Index1: 19, Index2: 1, Weight: 1
-
-> DEBUG: Index1: 19, Index2: 2, Weight: 1
-
-> DEBUG: Index1: 19, Index2: 3, Weight: 1
-
-> DEBUG: Index1: 19, Index2: 4, Weight: 1
-
-> DEBUG: Index1: 19, Index2: 5, Weight: 1
-
-> DEBUG: Index1: 19, Index2: 6, Weight: 1
-
-> DEBUG: Index1: 19, Index2: 7, Weight: 1
-
-> DEBUG: Index1: 19, Index2: 8, Weight: 1
-
-> DEBUG: Index1: 19, Index2: 9, Weight: 1
-
-> DEBUG: Index1: 19, Index2: 10, Weight: 1
-
-> DEBUG: Index1: 19, Index2: 11, Weight: 1
-
-> DEBUG: Index1: 19, Index2: 12, Weight: 1
-
-> DEBUG: Index1: 19, Index2: 13, Weight: 1
-
-> DEBUG: Index1: 19, Index2: 14, Weight: 1
-
-> DEBUG: Index1: 19, Index2: 15, Weight: 1
-
-> DEBUG: Index1: 19, Index2: 16, Weight: 1
-
-> DEBUG: Index1: 19, Index2: 17, Weight: 1
-
-> DEBUG: Index1: 19, Index2: 18, Weight: 1
-
-> DEBUG: Index1: 19, Index2: 20, Weight: 1
-
-> DEBUG: Index1: 19, Index2: 21, Weight: 1
-
-> DEBUG: Index1: 19, Index2: 22, Weight: 1
-
-> DEBUG: Index1: 19, Index2: 23, Weight: 1
-
-> DEBUG: Index1: 19, Index2: 24, Weight: 1
-
-> DEBUG: Index1: 19, Index2: 25, Weight: 1
-
-> DEBUG: Index1: 20, Index2: 0, Weight: 1
-
-> DEBUG: Index1: 20, Index2: 1, Weight: 1
-
-> DEBUG: Index1: 20, Index2: 2, Weight: 1
-
-> DEBUG: Index1: 20, Index2: 3, Weight: 1
-
-> DEBUG: Index1: 20, Index2: 4, Weight: 1
-
-> DEBUG: Index1: 20, Index2: 5, Weight: 1
-
-> DEBUG: Index1: 20, Index2: 6, Weight: 1
-
-> DEBUG: Index1: 20, Index2: 7, Weight: 1
-
-> DEBUG: Index1: 20, Index2: 8, Weight: 1
-
-> DEBUG: Index1: 20, Index2: 9, Weight: 1
-
-> DEBUG: Index1: 20, Index2: 10, Weight: 1
-
-> DEBUG: Index1: 20, Index2: 11, Weight: 1
-
-> DEBUG: Index1: 20, Index2: 12, Weight: 1
-
-> DEBUG: Index1: 20, Index2: 13, Weight: 1
-
-> DEBUG: Index1: 20, Index2: 14, Weight: 1
-
-> DEBUG: Index1: 20, Index2: 15, Weight: 1
-
-> DEBUG: Index1: 20, Index2: 16, Weight: 1
-
-> DEBUG: Index1: 20, Index2: 17, Weight: 1
-
-> DEBUG: Index1: 20, Index2: 18, Weight: 1
-
-> DEBUG: Index1: 20, Index2: 19, Weight: 1
-
-> DEBUG: Index1: 20, Index2: 21, Weight: 1
-
-> DEBUG: Index1: 20, Index2: 22, Weight: 1
-
-> DEBUG: Index1: 20, Index2: 23, Weight: 1
-
-> DEBUG: Index1: 20, Index2: 24, Weight: 1
-
-> DEBUG: Index1: 20, Index2: 25, Weight: 1
-
-> DEBUG: Index1: 21, Index2: 0, Weight: 1
-
-> DEBUG: Index1: 21, Index2: 1, Weight: 1
-
-> DEBUG: Index1: 21, Index2: 2, Weight: 1
-
-> DEBUG: Index1: 21, Index2: 3, Weight: 1
-
-> DEBUG: Index1: 21, Index2: 4, Weight: 1
-
-> DEBUG: Index1: 21, Index2: 5, Weight: 1
-
-> DEBUG: Index1: 21, Index2: 6, Weight: 1
-
-> DEBUG: Index1: 21, Index2: 7, Weight: 1
-
-> DEBUG: Index1: 21, Index2: 8, Weight: 1
-
-> DEBUG: Index1: 21, Index2: 9, Weight: 1
-
-> DEBUG: Index1: 21, Index2: 10, Weight: 1
-
-> DEBUG: Index1: 21, Index2: 11, Weight: 1
-
-> DEBUG: Index1: 21, Index2: 12, Weight: 1
-
-> DEBUG: Index1: 21, Index2: 13, Weight: 1
-
-> DEBUG: Index1: 21, Index2: 14, Weight: 1
-
-> DEBUG: Index1: 21, Index2: 15, Weight: 1
-
-> DEBUG: Index1: 21, Index2: 16, Weight: 1
-
-> DEBUG: Index1: 21, Index2: 17, Weight: 1
-
-> DEBUG: Index1: 21, Index2: 18, Weight: 1
-
-> DEBUG: Index1: 21, Index2: 19, Weight: 1
-
-> DEBUG: Index1: 21, Index2: 20, Weight: 1
-
-> DEBUG: Index1: 21, Index2: 22, Weight: 1
-
-> DEBUG: Index1: 21, Index2: 23, Weight: 1
-
-> DEBUG: Index1: 21, Index2: 24, Weight: 1
-
-> DEBUG: Index1: 21, Index2: 25, Weight: 1
-
-> DEBUG: Index1: 22, Index2: 0, Weight: 1
-
-> DEBUG: Index1: 22, Index2: 1, Weight: 1
-
-> DEBUG: Index1: 22, Index2: 2, Weight: 1
-
-> DEBUG: Index1: 22, Index2: 3, Weight: 1
-
-> DEBUG: Index1: 22, Index2: 4, Weight: 1
-
-> DEBUG: Index1: 22, Index2: 5, Weight: 1
-
-> DEBUG: Index1: 22, Index2: 6, Weight: 1
-
-> DEBUG: Index1: 22, Index2: 7, Weight: 1
-
-> DEBUG: Index1: 22, Index2: 8, Weight: 1
-
-> DEBUG: Index1: 22, Index2: 9, Weight: 1
-
-> DEBUG: Index1: 22, Index2: 10, Weight: 1
-
-> DEBUG: Index1: 22, Index2: 11, Weight: 1
-
-> DEBUG: Index1: 22, Index2: 12, Weight: 1
-
-> DEBUG: Index1: 22, Index2: 13, Weight: 1
-
-> DEBUG: Index1: 22, Index2: 14, Weight: 1
-
-> DEBUG: Index1: 22, Index2: 15, Weight: 1
-
-> DEBUG: Index1: 22, Index2: 16, Weight: 1
-
-> DEBUG: Index1: 22, Index2: 17, Weight: 1
-
-> DEBUG: Index1: 22, Index2: 18, Weight: 1
-
-> DEBUG: Index1: 22, Index2: 19, Weight: 1
-
-> DEBUG: Index1: 22, Index2: 20, Weight: 1
-
-> DEBUG: Index1: 22, Index2: 21, Weight: 1
-
-> DEBUG: Index1: 22, Index2: 23, Weight: 1
-
-> DEBUG: Index1: 22, Index2: 24, Weight: 1
-
-> DEBUG: Index1: 22, Index2: 25, Weight: 1
-
-> DEBUG: Index1: 23, Index2: 0, Weight: 1
-
-> DEBUG: Index1: 23, Index2: 1, Weight: 1
-
-> DEBUG: Index1: 23, Index2: 2, Weight: 1
-
-> DEBUG: Index1: 23, Index2: 3, Weight: 1
-
-> DEBUG: Index1: 23, Index2: 4, Weight: 1
-
-> DEBUG: Index1: 23, Index2: 5, Weight: 1
-
-> DEBUG: Index1: 23, Index2: 6, Weight: 1
-
-> DEBUG: Index1: 23, Index2: 7, Weight: 1
-
-> DEBUG: Index1: 23, Index2: 8, Weight: 1
-
-> DEBUG: Index1: 23, Index2: 9, Weight: 1
-
-> DEBUG: Index1: 23, Index2: 10, Weight: 1
-
-> DEBUG: Index1: 23, Index2: 11, Weight: 1
-
-> DEBUG: Index1: 23, Index2: 12, Weight: 1
-
-> DEBUG: Index1: 23, Index2: 13, Weight: 1
-
-> DEBUG: Index1: 23, Index2: 14, Weight: 1
-
-> DEBUG: Index1: 23, Index2: 15, Weight: 1
-
-> DEBUG: Index1: 23, Index2: 16, Weight: 1
-
-> DEBUG: Index1: 23, Index2: 17, Weight: 1
-
-> DEBUG: Index1: 23, Index2: 18, Weight: 1
-
-> DEBUG: Index1: 23, Index2: 19, Weight: 1
-
-> DEBUG: Index1: 23, Index2: 20, Weight: 1
-
-> DEBUG: Index1: 23, Index2: 21, Weight: 1
-
-> DEBUG: Index1: 23, Index2: 22, Weight: 1
-
-> DEBUG: Index1: 23, Index2: 24, Weight: 1
-
-> DEBUG: Index1: 23, Index2: 25, Weight: 1
-
-> DEBUG: Index1: 24, Index2: 0, Weight: 1
-
-> DEBUG: Index1: 24, Index2: 1, Weight: 1
-
-> DEBUG: Index1: 24, Index2: 2, Weight: 1
-
-> DEBUG: Index1: 24, Index2: 3, Weight: 1
-
-> DEBUG: Index1: 24, Index2: 4, Weight: 1
-
-> DEBUG: Index1: 24, Index2: 5, Weight: 1
-
-> DEBUG: Index1: 24, Index2: 6, Weight: 1
-
-> DEBUG: Index1: 24, Index2: 7, Weight: 1
-
-> DEBUG: Index1: 24, Index2: 8, Weight: 1
-
-> DEBUG: Index1: 24, Index2: 9, Weight: 1
-
-> DEBUG: Index1: 24, Index2: 10, Weight: 1
-
-> DEBUG: Index1: 24, Index2: 11, Weight: 1
-
-> DEBUG: Index1: 24, Index2: 12, Weight: 1
-
-> DEBUG: Index1: 24, Index2: 13, Weight: 1
-
-> DEBUG: Index1: 24, Index2: 14, Weight: 1
-
-> DEBUG: Index1: 24, Index2: 15, Weight: 1
-
-> DEBUG: Index1: 24, Index2: 16, Weight: 1
-
-> DEBUG: Index1: 24, Index2: 17, Weight: 1
-
-> DEBUG: Index1: 24, Index2: 18, Weight: 1
-
-> DEBUG: Index1: 24, Index2: 19, Weight: 1
-
-> DEBUG: Index1: 24, Index2: 20, Weight: 1
-
-> DEBUG: Index1: 24, Index2: 21, Weight: 1
-
-> DEBUG: Index1: 24, Index2: 22, Weight: 1
-
-> DEBUG: Index1: 24, Index2: 23, Weight: 1
-
-> DEBUG: Index1: 24, Index2: 25, Weight: 1
-
-> DEBUG: Index1: 25, Index2: 0, Weight: 1
-
-> DEBUG: Index1: 25, Index2: 1, Weight: 1
-
-> DEBUG: Index1: 25, Index2: 2, Weight: 1
-
-> DEBUG: Index1: 25, Index2: 3, Weight: 1
-
-> DEBUG: Index1: 25, Index2: 4, Weight: 1
-
-> DEBUG: Index1: 25, Index2: 5, Weight: 1
-
-> DEBUG: Index1: 25, Index2: 6, Weight: 1
-
-> DEBUG: Index1: 25, Index2: 7, Weight: 1
-
-> DEBUG: Index1: 25, Index2: 8, Weight: 1
-
-> DEBUG: Index1: 25, Index2: 9, Weight: 1
-
-> DEBUG: Index1: 25, Index2: 10, Weight: 1
-
-> DEBUG: Index1: 25, Index2: 11, Weight: 1
-
-> DEBUG: Index1: 25, Index2: 12, Weight: 1
-
-> DEBUG: Index1: 25, Index2: 13, Weight: 1
-
-> DEBUG: Index1: 25, Index2: 14, Weight: 1
-
-> DEBUG: Index1: 25, Index2: 15, Weight: 1
-
-> DEBUG: Index1: 25, Index2: 16, Weight: 1
-
-> DEBUG: Index1: 25, Index2: 17, Weight: 1
-
-> DEBUG: Index1: 25, Index2: 18, Weight: 1
-
-> DEBUG: Index1: 25, Index2: 19, Weight: 1
-
-> DEBUG: Index1: 25, Index2: 20, Weight: 1
-
-> DEBUG: Index1: 25, Index2: 21, Weight: 1
-
-> DEBUG: Index1: 25, Index2: 22, Weight: 1
-
-> DEBUG: Index1: 25, Index2: 23, Weight: 1
-
-> DEBUG: Index1: 25, Index2: 24, Weight: 1
-
-> DEBUG: Index: 0
-
-> a b c d e f g h i j k l m n o p q r s t u v w x y z
+Debug mode: turned on
+DEBUG: Name: 'a', Index: 0
+DEBUG: Name: 'b', Index: 1
+DEBUG: Name: 'c', Index: 2
+DEBUG: Name: 'd', Index: 3
+DEBUG: Name: 'e', Index: 4
+DEBUG: Name: 'f', Index: 5
+DEBUG: Name: 'g', Index: 6
+DEBUG: Name: 'h', Index: 7
+DEBUG: Name: 'i', Index: 8
+DEBUG: Name: 'j', Index: 9
+DEBUG: Name: 'k', Index: 10
+DEBUG: Name: 'l', Index: 11
+DEBUG: Name: 'm', Index: 12
+DEBUG: Name: 'n', Index: 13
+DEBUG: Name: 'o', Index: 14
+DEBUG: Name: 'p', Index: 15
+DEBUG: Name: 'q', Index: 16
+DEBUG: Name: 'r', Index: 17
+DEBUG: Name: 's', Index: 18
+DEBUG: Name: 't', Index: 19
+DEBUG: Name: 'u', Index: 20
+DEBUG: Name: 'v', Index: 21
+DEBUG: Name: 'w', Index: 22
+DEBUG: Name: 'x', Index: 23
+DEBUG: Name: 'y', Index: 24
+DEBUG: Name: 'z', Index: 25
+DEBUG: Index1: 0, Index2: 1, Weight: 1
+DEBUG: Index1: 0, Index2: 2, Weight: 1
+DEBUG: Index1: 0, Index2: 3, Weight: 1
+DEBUG: Index1: 0, Index2: 4, Weight: 1
+DEBUG: Index1: 0, Index2: 5, Weight: 1
+DEBUG: Index1: 0, Index2: 6, Weight: 1
+DEBUG: Index1: 0, Index2: 7, Weight: 1
+DEBUG: Index1: 0, Index2: 8, Weight: 1
+DEBUG: Index1: 0, Index2: 9, Weight: 1
+DEBUG: Index1: 0, Index2: 10, Weight: 1
+DEBUG: Index1: 0, Index2: 11, Weight: 1
+DEBUG: Index1: 0, Index2: 12, Weight: 1
+DEBUG: Index1: 0, Index2: 13, Weight: 1
+DEBUG: Index1: 0, Index2: 14, Weight: 1
+DEBUG: Index1: 0, Index2: 15, Weight: 1
+DEBUG: Index1: 0, Index2: 16, Weight: 1
+DEBUG: Index1: 0, Index2: 17, Weight: 1
+DEBUG: Index1: 0, Index2: 18, Weight: 1
+DEBUG: Index1: 0, Index2: 19, Weight: 1
+DEBUG: Index1: 0, Index2: 20, Weight: 1
+DEBUG: Index1: 0, Index2: 21, Weight: 1
+DEBUG: Index1: 0, Index2: 22, Weight: 1
+DEBUG: Index1: 0, Index2: 23, Weight: 1
+DEBUG: Index1: 0, Index2: 24, Weight: 1
+DEBUG: Index1: 0, Index2: 25, Weight: 1
+DEBUG: Index1: 1, Index2: 0, Weight: 1
+DEBUG: Index1: 1, Index2: 2, Weight: 1
+DEBUG: Index1: 1, Index2: 3, Weight: 1
+DEBUG: Index1: 1, Index2: 4, Weight: 1
+DEBUG: Index1: 1, Index2: 5, Weight: 1
+DEBUG: Index1: 1, Index2: 6, Weight: 1
+DEBUG: Index1: 1, Index2: 7, Weight: 1
+DEBUG: Index1: 1, Index2: 8, Weight: 1
+DEBUG: Index1: 1, Index2: 9, Weight: 1
+DEBUG: Index1: 1, Index2: 10, Weight: 1
+DEBUG: Index1: 1, Index2: 11, Weight: 1
+DEBUG: Index1: 1, Index2: 12, Weight: 1
+DEBUG: Index1: 1, Index2: 13, Weight: 1
+DEBUG: Index1: 1, Index2: 14, Weight: 1
+DEBUG: Index1: 1, Index2: 15, Weight: 1
+DEBUG: Index1: 1, Index2: 16, Weight: 1
+DEBUG: Index1: 1, Index2: 17, Weight: 1
+DEBUG: Index1: 1, Index2: 18, Weight: 1
+DEBUG: Index1: 1, Index2: 19, Weight: 1
+DEBUG: Index1: 1, Index2: 20, Weight: 1
+DEBUG: Index1: 1, Index2: 21, Weight: 1
+DEBUG: Index1: 1, Index2: 22, Weight: 1
+DEBUG: Index1: 1, Index2: 23, Weight: 1
+DEBUG: Index1: 1, Index2: 24, Weight: 1
+DEBUG: Index1: 1, Index2: 25, Weight: 1
+DEBUG: Index1: 2, Index2: 0, Weight: 1
+DEBUG: Index1: 2, Index2: 1, Weight: 1
+DEBUG: Index1: 2, Index2: 3, Weight: 1
+DEBUG: Index1: 2, Index2: 4, Weight: 1
+DEBUG: Index1: 2, Index2: 5, Weight: 1
+DEBUG: Index1: 2, Index2: 6, Weight: 1
+DEBUG: Index1: 2, Index2: 7, Weight: 1
+DEBUG: Index1: 2, Index2: 8, Weight: 1
+DEBUG: Index1: 2, Index2: 9, Weight: 1
+DEBUG: Index1: 2, Index2: 10, Weight: 1
+DEBUG: Index1: 2, Index2: 11, Weight: 1
+DEBUG: Index1: 2, Index2: 12, Weight: 1
+DEBUG: Index1: 2, Index2: 13, Weight: 1
+DEBUG: Index1: 2, Index2: 14, Weight: 1
+DEBUG: Index1: 2, Index2: 15, Weight: 1
+DEBUG: Index1: 2, Index2: 16, Weight: 1
+DEBUG: Index1: 2, Index2: 17, Weight: 1
+DEBUG: Index1: 2, Index2: 18, Weight: 1
+DEBUG: Index1: 2, Index2: 19, Weight: 1
+DEBUG: Index1: 2, Index2: 20, Weight: 1
+DEBUG: Index1: 2, Index2: 21, Weight: 1
+DEBUG: Index1: 2, Index2: 22, Weight: 1
+DEBUG: Index1: 2, Index2: 23, Weight: 1
+DEBUG: Index1: 2, Index2: 24, Weight: 1
+DEBUG: Index1: 2, Index2: 25, Weight: 1
+DEBUG: Index1: 3, Index2: 0, Weight: 1
+DEBUG: Index1: 3, Index2: 1, Weight: 1
+DEBUG: Index1: 3, Index2: 2, Weight: 1
+DEBUG: Index1: 3, Index2: 4, Weight: 1
+DEBUG: Index1: 3, Index2: 5, Weight: 1
+DEBUG: Index1: 3, Index2: 6, Weight: 1
+DEBUG: Index1: 3, Index2: 7, Weight: 1
+DEBUG: Index1: 3, Index2: 8, Weight: 1
+DEBUG: Index1: 3, Index2: 9, Weight: 1
+DEBUG: Index1: 3, Index2: 10, Weight: 1
+DEBUG: Index1: 3, Index2: 11, Weight: 1
+DEBUG: Index1: 3, Index2: 12, Weight: 1
+DEBUG: Index1: 3, Index2: 13, Weight: 1
+DEBUG: Index1: 3, Index2: 14, Weight: 1
+DEBUG: Index1: 3, Index2: 15, Weight: 1
+DEBUG: Index1: 3, Index2: 16, Weight: 1
+DEBUG: Index1: 3, Index2: 17, Weight: 1
+DEBUG: Index1: 3, Index2: 18, Weight: 1
+DEBUG: Index1: 3, Index2: 19, Weight: 1
+DEBUG: Index1: 3, Index2: 20, Weight: 1
+DEBUG: Index1: 3, Index2: 21, Weight: 1
+DEBUG: Index1: 3, Index2: 22, Weight: 1
+DEBUG: Index1: 3, Index2: 23, Weight: 1
+DEBUG: Index1: 3, Index2: 24, Weight: 1
+DEBUG: Index1: 3, Index2: 25, Weight: 1
+DEBUG: Index1: 4, Index2: 0, Weight: 1
+DEBUG: Index1: 4, Index2: 1, Weight: 1
+DEBUG: Index1: 4, Index2: 2, Weight: 1
+DEBUG: Index1: 4, Index2: 3, Weight: 1
+DEBUG: Index1: 4, Index2: 5, Weight: 1
+DEBUG: Index1: 4, Index2: 6, Weight: 1
+DEBUG: Index1: 4, Index2: 7, Weight: 1
+DEBUG: Index1: 4, Index2: 8, Weight: 1
+DEBUG: Index1: 4, Index2: 9, Weight: 1
+DEBUG: Index1: 4, Index2: 10, Weight: 1
+DEBUG: Index1: 4, Index2: 11, Weight: 1
+DEBUG: Index1: 4, Index2: 12, Weight: 1
+DEBUG: Index1: 4, Index2: 13, Weight: 1
+DEBUG: Index1: 4, Index2: 14, Weight: 1
+DEBUG: Index1: 4, Index2: 15, Weight: 1
+DEBUG: Index1: 4, Index2: 16, Weight: 1
+DEBUG: Index1: 4, Index2: 17, Weight: 1
+DEBUG: Index1: 4, Index2: 18, Weight: 1
+DEBUG: Index1: 4, Index2: 19, Weight: 1
+DEBUG: Index1: 4, Index2: 20, Weight: 1
+DEBUG: Index1: 4, Index2: 21, Weight: 1
+DEBUG: Index1: 4, Index2: 22, Weight: 1
+DEBUG: Index1: 4, Index2: 23, Weight: 1
+DEBUG: Index1: 4, Index2: 24, Weight: 1
+DEBUG: Index1: 4, Index2: 25, Weight: 1
+DEBUG: Index1: 5, Index2: 0, Weight: 1
+DEBUG: Index1: 5, Index2: 1, Weight: 1
+DEBUG: Index1: 5, Index2: 2, Weight: 1
+DEBUG: Index1: 5, Index2: 3, Weight: 1
+DEBUG: Index1: 5, Index2: 4, Weight: 1
+DEBUG: Index1: 5, Index2: 6, Weight: 1
+DEBUG: Index1: 5, Index2: 7, Weight: 1
+DEBUG: Index1: 5, Index2: 8, Weight: 1
+DEBUG: Index1: 5, Index2: 9, Weight: 1
+DEBUG: Index1: 5, Index2: 10, Weight: 1
+DEBUG: Index1: 5, Index2: 11, Weight: 1
+DEBUG: Index1: 5, Index2: 12, Weight: 1
+DEBUG: Index1: 5, Index2: 13, Weight: 1
+DEBUG: Index1: 5, Index2: 14, Weight: 1
+DEBUG: Index1: 5, Index2: 15, Weight: 1
+DEBUG: Index1: 5, Index2: 16, Weight: 1
+DEBUG: Index1: 5, Index2: 17, Weight: 1
+DEBUG: Index1: 5, Index2: 18, Weight: 1
+DEBUG: Index1: 5, Index2: 19, Weight: 1
+DEBUG: Index1: 5, Index2: 20, Weight: 1
+DEBUG: Index1: 5, Index2: 21, Weight: 1
+DEBUG: Index1: 5, Index2: 22, Weight: 1
+DEBUG: Index1: 5, Index2: 23, Weight: 1
+DEBUG: Index1: 5, Index2: 24, Weight: 1
+DEBUG: Index1: 5, Index2: 25, Weight: 1
+DEBUG: Index1: 6, Index2: 0, Weight: 1
+DEBUG: Index1: 6, Index2: 1, Weight: 1
+DEBUG: Index1: 6, Index2: 2, Weight: 1
+DEBUG: Index1: 6, Index2: 3, Weight: 1
+DEBUG: Index1: 6, Index2: 4, Weight: 1
+DEBUG: Index1: 6, Index2: 5, Weight: 1
+DEBUG: Index1: 6, Index2: 7, Weight: 1
+DEBUG: Index1: 6, Index2: 8, Weight: 1
+DEBUG: Index1: 6, Index2: 9, Weight: 1
+DEBUG: Index1: 6, Index2: 10, Weight: 1
+DEBUG: Index1: 6, Index2: 11, Weight: 1
+DEBUG: Index1: 6, Index2: 12, Weight: 1
+DEBUG: Index1: 6, Index2: 13, Weight: 1
+DEBUG: Index1: 6, Index2: 14, Weight: 1
+DEBUG: Index1: 6, Index2: 15, Weight: 1
+DEBUG: Index1: 6, Index2: 16, Weight: 1
+DEBUG: Index1: 6, Index2: 17, Weight: 1
+DEBUG: Index1: 6, Index2: 18, Weight: 1
+DEBUG: Index1: 6, Index2: 19, Weight: 1
+DEBUG: Index1: 6, Index2: 20, Weight: 1
+DEBUG: Index1: 6, Index2: 21, Weight: 1
+DEBUG: Index1: 6, Index2: 22, Weight: 1
+DEBUG: Index1: 6, Index2: 23, Weight: 1
+DEBUG: Index1: 6, Index2: 24, Weight: 1
+DEBUG: Index1: 6, Index2: 25, Weight: 1
+DEBUG: Index1: 7, Index2: 0, Weight: 1
+DEBUG: Index1: 7, Index2: 1, Weight: 1
+DEBUG: Index1: 7, Index2: 2, Weight: 1
+DEBUG: Index1: 7, Index2: 3, Weight: 1
+DEBUG: Index1: 7, Index2: 4, Weight: 1
+DEBUG: Index1: 7, Index2: 5, Weight: 1
+DEBUG: Index1: 7, Index2: 6, Weight: 1
+DEBUG: Index1: 7, Index2: 8, Weight: 1
+DEBUG: Index1: 7, Index2: 9, Weight: 1
+DEBUG: Index1: 7, Index2: 10, Weight: 1
+DEBUG: Index1: 7, Index2: 11, Weight: 1
+DEBUG: Index1: 7, Index2: 12, Weight: 1
+DEBUG: Index1: 7, Index2: 13, Weight: 1
+DEBUG: Index1: 7, Index2: 14, Weight: 1
+DEBUG: Index1: 7, Index2: 15, Weight: 1
+DEBUG: Index1: 7, Index2: 16, Weight: 1
+DEBUG: Index1: 7, Index2: 17, Weight: 1
+DEBUG: Index1: 7, Index2: 18, Weight: 1
+DEBUG: Index1: 7, Index2: 19, Weight: 1
+DEBUG: Index1: 7, Index2: 20, Weight: 1
+DEBUG: Index1: 7, Index2: 21, Weight: 1
+DEBUG: Index1: 7, Index2: 22, Weight: 1
+DEBUG: Index1: 7, Index2: 23, Weight: 1
+DEBUG: Index1: 7, Index2: 24, Weight: 1
+DEBUG: Index1: 7, Index2: 25, Weight: 1
+DEBUG: Index1: 8, Index2: 0, Weight: 1
+DEBUG: Index1: 8, Index2: 1, Weight: 1
+DEBUG: Index1: 8, Index2: 2, Weight: 1
+DEBUG: Index1: 8, Index2: 3, Weight: 1
+DEBUG: Index1: 8, Index2: 4, Weight: 1
+DEBUG: Index1: 8, Index2: 5, Weight: 1
+DEBUG: Index1: 8, Index2: 6, Weight: 1
+DEBUG: Index1: 8, Index2: 7, Weight: 1
+DEBUG: Index1: 8, Index2: 9, Weight: 1
+DEBUG: Index1: 8, Index2: 10, Weight: 1
+DEBUG: Index1: 8, Index2: 11, Weight: 1
+DEBUG: Index1: 8, Index2: 12, Weight: 1
+DEBUG: Index1: 8, Index2: 13, Weight: 1
+DEBUG: Index1: 8, Index2: 14, Weight: 1
+DEBUG: Index1: 8, Index2: 15, Weight: 1
+DEBUG: Index1: 8, Index2: 16, Weight: 1
+DEBUG: Index1: 8, Index2: 17, Weight: 1
+DEBUG: Index1: 8, Index2: 18, Weight: 1
+DEBUG: Index1: 8, Index2: 19, Weight: 1
+DEBUG: Index1: 8, Index2: 20, Weight: 1
+DEBUG: Index1: 8, Index2: 21, Weight: 1
+DEBUG: Index1: 8, Index2: 22, Weight: 1
+DEBUG: Index1: 8, Index2: 23, Weight: 1
+DEBUG: Index1: 8, Index2: 24, Weight: 1
+DEBUG: Index1: 8, Index2: 25, Weight: 1
+DEBUG: Index1: 9, Index2: 0, Weight: 1
+DEBUG: Index1: 9, Index2: 1, Weight: 1
+DEBUG: Index1: 9, Index2: 2, Weight: 1
+DEBUG: Index1: 9, Index2: 3, Weight: 1
+DEBUG: Index1: 9, Index2: 4, Weight: 1
+DEBUG: Index1: 9, Index2: 5, Weight: 1
+DEBUG: Index1: 9, Index2: 6, Weight: 1
+DEBUG: Index1: 9, Index2: 7, Weight: 1
+DEBUG: Index1: 9, Index2: 8, Weight: 1
+DEBUG: Index1: 9, Index2: 10, Weight: 1
+DEBUG: Index1: 9, Index2: 11, Weight: 1
+DEBUG: Index1: 9, Index2: 12, Weight: 1
+DEBUG: Index1: 9, Index2: 13, Weight: 1
+DEBUG: Index1: 9, Index2: 14, Weight: 1
+DEBUG: Index1: 9, Index2: 15, Weight: 1
+DEBUG: Index1: 9, Index2: 16, Weight: 1
+DEBUG: Index1: 9, Index2: 17, Weight: 1
+DEBUG: Index1: 9, Index2: 18, Weight: 1
+DEBUG: Index1: 9, Index2: 19, Weight: 1
+DEBUG: Index1: 9, Index2: 20, Weight: 1
+DEBUG: Index1: 9, Index2: 21, Weight: 1
+DEBUG: Index1: 9, Index2: 22, Weight: 1
+DEBUG: Index1: 9, Index2: 23, Weight: 1
+DEBUG: Index1: 9, Index2: 24, Weight: 1
+DEBUG: Index1: 9, Index2: 25, Weight: 1
+DEBUG: Index1: 10, Index2: 0, Weight: 1
+DEBUG: Index1: 10, Index2: 1, Weight: 1
+DEBUG: Index1: 10, Index2: 2, Weight: 1
+DEBUG: Index1: 10, Index2: 3, Weight: 1
+DEBUG: Index1: 10, Index2: 4, Weight: 1
+DEBUG: Index1: 10, Index2: 5, Weight: 1
+DEBUG: Index1: 10, Index2: 6, Weight: 1
+DEBUG: Index1: 10, Index2: 7, Weight: 1
+DEBUG: Index1: 10, Index2: 8, Weight: 1
+DEBUG: Index1: 10, Index2: 9, Weight: 1
+DEBUG: Index1: 10, Index2: 11, Weight: 1
+DEBUG: Index1: 10, Index2: 12, Weight: 1
+DEBUG: Index1: 10, Index2: 13, Weight: 1
+DEBUG: Index1: 10, Index2: 14, Weight: 1
+DEBUG: Index1: 10, Index2: 15, Weight: 1
+DEBUG: Index1: 10, Index2: 16, Weight: 1
+DEBUG: Index1: 10, Index2: 17, Weight: 1
+DEBUG: Index1: 10, Index2: 18, Weight: 1
+DEBUG: Index1: 10, Index2: 19, Weight: 1
+DEBUG: Index1: 10, Index2: 20, Weight: 1
+DEBUG: Index1: 10, Index2: 21, Weight: 1
+DEBUG: Index1: 10, Index2: 22, Weight: 1
+DEBUG: Index1: 10, Index2: 23, Weight: 1
+DEBUG: Index1: 10, Index2: 24, Weight: 1
+DEBUG: Index1: 10, Index2: 25, Weight: 1
+DEBUG: Index1: 11, Index2: 0, Weight: 1
+DEBUG: Index1: 11, Index2: 1, Weight: 1
+DEBUG: Index1: 11, Index2: 2, Weight: 1
+DEBUG: Index1: 11, Index2: 3, Weight: 1
+DEBUG: Index1: 11, Index2: 4, Weight: 1
+DEBUG: Index1: 11, Index2: 5, Weight: 1
+DEBUG: Index1: 11, Index2: 6, Weight: 1
+DEBUG: Index1: 11, Index2: 7, Weight: 1
+DEBUG: Index1: 11, Index2: 8, Weight: 1
+DEBUG: Index1: 11, Index2: 9, Weight: 1
+DEBUG: Index1: 11, Index2: 10, Weight: 1
+DEBUG: Index1: 11, Index2: 12, Weight: 1
+DEBUG: Index1: 11, Index2: 13, Weight: 1
+DEBUG: Index1: 11, Index2: 14, Weight: 1
+DEBUG: Index1: 11, Index2: 15, Weight: 1
+DEBUG: Index1: 11, Index2: 16, Weight: 1
+DEBUG: Index1: 11, Index2: 17, Weight: 1
+DEBUG: Index1: 11, Index2: 18, Weight: 1
+DEBUG: Index1: 11, Index2: 19, Weight: 1
+DEBUG: Index1: 11, Index2: 20, Weight: 1
+DEBUG: Index1: 11, Index2: 21, Weight: 1
+DEBUG: Index1: 11, Index2: 22, Weight: 1
+DEBUG: Index1: 11, Index2: 23, Weight: 1
+DEBUG: Index1: 11, Index2: 24, Weight: 1
+DEBUG: Index1: 11, Index2: 25, Weight: 1
+DEBUG: Index1: 12, Index2: 0, Weight: 1
+DEBUG: Index1: 12, Index2: 1, Weight: 1
+DEBUG: Index1: 12, Index2: 2, Weight: 1
+DEBUG: Index1: 12, Index2: 3, Weight: 1
+DEBUG: Index1: 12, Index2: 4, Weight: 1
+DEBUG: Index1: 12, Index2: 5, Weight: 1
+DEBUG: Index1: 12, Index2: 6, Weight: 1
+DEBUG: Index1: 12, Index2: 7, Weight: 1
+DEBUG: Index1: 12, Index2: 8, Weight: 1
+DEBUG: Index1: 12, Index2: 9, Weight: 1
+DEBUG: Index1: 12, Index2: 10, Weight: 1
+DEBUG: Index1: 12, Index2: 11, Weight: 1
+DEBUG: Index1: 12, Index2: 13, Weight: 1
+DEBUG: Index1: 12, Index2: 14, Weight: 1
+DEBUG: Index1: 12, Index2: 15, Weight: 1
+DEBUG: Index1: 12, Index2: 16, Weight: 1
+DEBUG: Index1: 12, Index2: 17, Weight: 1
+DEBUG: Index1: 12, Index2: 18, Weight: 1
+DEBUG: Index1: 12, Index2: 19, Weight: 1
+DEBUG: Index1: 12, Index2: 20, Weight: 1
+DEBUG: Index1: 12, Index2: 21, Weight: 1
+DEBUG: Index1: 12, Index2: 22, Weight: 1
+DEBUG: Index1: 12, Index2: 23, Weight: 1
+DEBUG: Index1: 12, Index2: 24, Weight: 1
+DEBUG: Index1: 12, Index2: 25, Weight: 1
+DEBUG: Index1: 13, Index2: 0, Weight: 1
+DEBUG: Index1: 13, Index2: 1, Weight: 1
+DEBUG: Index1: 13, Index2: 2, Weight: 1
+DEBUG: Index1: 13, Index2: 3, Weight: 1
+DEBUG: Index1: 13, Index2: 4, Weight: 1
+DEBUG: Index1: 13, Index2: 5, Weight: 1
+DEBUG: Index1: 13, Index2: 6, Weight: 1
+DEBUG: Index1: 13, Index2: 7, Weight: 1
+DEBUG: Index1: 13, Index2: 8, Weight: 1
+DEBUG: Index1: 13, Index2: 9, Weight: 1
+DEBUG: Index1: 13, Index2: 10, Weight: 1
+DEBUG: Index1: 13, Index2: 11, Weight: 1
+DEBUG: Index1: 13, Index2: 12, Weight: 1
+DEBUG: Index1: 13, Index2: 14, Weight: 1
+DEBUG: Index1: 13, Index2: 15, Weight: 1
+DEBUG: Index1: 13, Index2: 16, Weight: 1
+DEBUG: Index1: 13, Index2: 17, Weight: 1
+DEBUG: Index1: 13, Index2: 18, Weight: 1
+DEBUG: Index1: 13, Index2: 19, Weight: 1
+DEBUG: Index1: 13, Index2: 20, Weight: 1
+DEBUG: Index1: 13, Index2: 21, Weight: 1
+DEBUG: Index1: 13, Index2: 22, Weight: 1
+DEBUG: Index1: 13, Index2: 23, Weight: 1
+DEBUG: Index1: 13, Index2: 24, Weight: 1
+DEBUG: Index1: 13, Index2: 25, Weight: 1
+DEBUG: Index1: 14, Index2: 0, Weight: 1
+DEBUG: Index1: 14, Index2: 1, Weight: 1
+DEBUG: Index1: 14, Index2: 2, Weight: 1
+DEBUG: Index1: 14, Index2: 3, Weight: 1
+DEBUG: Index1: 14, Index2: 4, Weight: 1
+DEBUG: Index1: 14, Index2: 5, Weight: 1
+DEBUG: Index1: 14, Index2: 6, Weight: 1
+DEBUG: Index1: 14, Index2: 7, Weight: 1
+DEBUG: Index1: 14, Index2: 8, Weight: 1
+DEBUG: Index1: 14, Index2: 9, Weight: 1
+DEBUG: Index1: 14, Index2: 10, Weight: 1
+DEBUG: Index1: 14, Index2: 11, Weight: 1
+DEBUG: Index1: 14, Index2: 12, Weight: 1
+DEBUG: Index1: 14, Index2: 13, Weight: 1
+DEBUG: Index1: 14, Index2: 15, Weight: 1
+DEBUG: Index1: 14, Index2: 16, Weight: 1
+DEBUG: Index1: 14, Index2: 17, Weight: 1
+DEBUG: Index1: 14, Index2: 18, Weight: 1
+DEBUG: Index1: 14, Index2: 19, Weight: 1
+DEBUG: Index1: 14, Index2: 20, Weight: 1
+DEBUG: Index1: 14, Index2: 21, Weight: 1
+DEBUG: Index1: 14, Index2: 22, Weight: 1
+DEBUG: Index1: 14, Index2: 23, Weight: 1
+DEBUG: Index1: 14, Index2: 24, Weight: 1
+DEBUG: Index1: 14, Index2: 25, Weight: 1
+DEBUG: Index1: 15, Index2: 0, Weight: 1
+DEBUG: Index1: 15, Index2: 1, Weight: 1
+DEBUG: Index1: 15, Index2: 2, Weight: 1
+DEBUG: Index1: 15, Index2: 3, Weight: 1
+DEBUG: Index1: 15, Index2: 4, Weight: 1
+DEBUG: Index1: 15, Index2: 5, Weight: 1
+DEBUG: Index1: 15, Index2: 6, Weight: 1
+DEBUG: Index1: 15, Index2: 7, Weight: 1
+DEBUG: Index1: 15, Index2: 8, Weight: 1
+DEBUG: Index1: 15, Index2: 9, Weight: 1
+DEBUG: Index1: 15, Index2: 10, Weight: 1
+DEBUG: Index1: 15, Index2: 11, Weight: 1
+DEBUG: Index1: 15, Index2: 12, Weight: 1
+DEBUG: Index1: 15, Index2: 13, Weight: 1
+DEBUG: Index1: 15, Index2: 14, Weight: 1
+DEBUG: Index1: 15, Index2: 16, Weight: 1
+DEBUG: Index1: 15, Index2: 17, Weight: 1
+DEBUG: Index1: 15, Index2: 18, Weight: 1
+DEBUG: Index1: 15, Index2: 19, Weight: 1
+DEBUG: Index1: 15, Index2: 20, Weight: 1
+DEBUG: Index1: 15, Index2: 21, Weight: 1
+DEBUG: Index1: 15, Index2: 22, Weight: 1
+DEBUG: Index1: 15, Index2: 23, Weight: 1
+DEBUG: Index1: 15, Index2: 24, Weight: 1
+DEBUG: Index1: 15, Index2: 25, Weight: 1
+DEBUG: Index1: 16, Index2: 0, Weight: 1
+DEBUG: Index1: 16, Index2: 1, Weight: 1
+DEBUG: Index1: 16, Index2: 2, Weight: 1
+DEBUG: Index1: 16, Index2: 3, Weight: 1
+DEBUG: Index1: 16, Index2: 4, Weight: 1
+DEBUG: Index1: 16, Index2: 5, Weight: 1
+DEBUG: Index1: 16, Index2: 6, Weight: 1
+DEBUG: Index1: 16, Index2: 7, Weight: 1
+DEBUG: Index1: 16, Index2: 8, Weight: 1
+DEBUG: Index1: 16, Index2: 9, Weight: 1
+DEBUG: Index1: 16, Index2: 10, Weight: 1
+DEBUG: Index1: 16, Index2: 11, Weight: 1
+DEBUG: Index1: 16, Index2: 12, Weight: 1
+DEBUG: Index1: 16, Index2: 13, Weight: 1
+DEBUG: Index1: 16, Index2: 14, Weight: 1
+DEBUG: Index1: 16, Index2: 15, Weight: 1
+DEBUG: Index1: 16, Index2: 17, Weight: 1
+DEBUG: Index1: 16, Index2: 18, Weight: 1
+DEBUG: Index1: 16, Index2: 19, Weight: 1
+DEBUG: Index1: 16, Index2: 20, Weight: 1
+DEBUG: Index1: 16, Index2: 21, Weight: 1
+DEBUG: Index1: 16, Index2: 22, Weight: 1
+DEBUG: Index1: 16, Index2: 23, Weight: 1
+DEBUG: Index1: 16, Index2: 24, Weight: 1
+DEBUG: Index1: 16, Index2: 25, Weight: 1
+DEBUG: Index1: 17, Index2: 0, Weight: 1
+DEBUG: Index1: 17, Index2: 1, Weight: 1
+DEBUG: Index1: 17, Index2: 2, Weight: 1
+DEBUG: Index1: 17, Index2: 3, Weight: 1
+DEBUG: Index1: 17, Index2: 4, Weight: 1
+DEBUG: Index1: 17, Index2: 5, Weight: 1
+DEBUG: Index1: 17, Index2: 6, Weight: 1
+DEBUG: Index1: 17, Index2: 7, Weight: 1
+DEBUG: Index1: 17, Index2: 8, Weight: 1
+DEBUG: Index1: 17, Index2: 9, Weight: 1
+DEBUG: Index1: 17, Index2: 10, Weight: 1
+DEBUG: Index1: 17, Index2: 11, Weight: 1
+DEBUG: Index1: 17, Index2: 12, Weight: 1
+DEBUG: Index1: 17, Index2: 13, Weight: 1
+DEBUG: Index1: 17, Index2: 14, Weight: 1
+DEBUG: Index1: 17, Index2: 15, Weight: 1
+DEBUG: Index1: 17, Index2: 16, Weight: 1
+DEBUG: Index1: 17, Index2: 18, Weight: 1
+DEBUG: Index1: 17, Index2: 19, Weight: 1
+DEBUG: Index1: 17, Index2: 20, Weight: 1
+DEBUG: Index1: 17, Index2: 21, Weight: 1
+DEBUG: Index1: 17, Index2: 22, Weight: 1
+DEBUG: Index1: 17, Index2: 23, Weight: 1
+DEBUG: Index1: 17, Index2: 24, Weight: 1
+DEBUG: Index1: 17, Index2: 25, Weight: 1
+DEBUG: Index1: 18, Index2: 0, Weight: 1
+DEBUG: Index1: 18, Index2: 1, Weight: 1
+DEBUG: Index1: 18, Index2: 2, Weight: 1
+DEBUG: Index1: 18, Index2: 3, Weight: 1
+DEBUG: Index1: 18, Index2: 4, Weight: 1
+DEBUG: Index1: 18, Index2: 5, Weight: 1
+DEBUG: Index1: 18, Index2: 6, Weight: 1
+DEBUG: Index1: 18, Index2: 7, Weight: 1
+DEBUG: Index1: 18, Index2: 8, Weight: 1
+DEBUG: Index1: 18, Index2: 9, Weight: 1
+DEBUG: Index1: 18, Index2: 10, Weight: 1
+DEBUG: Index1: 18, Index2: 11, Weight: 1
+DEBUG: Index1: 18, Index2: 12, Weight: 1
+DEBUG: Index1: 18, Index2: 13, Weight: 1
+DEBUG: Index1: 18, Index2: 14, Weight: 1
+DEBUG: Index1: 18, Index2: 15, Weight: 1
+DEBUG: Index1: 18, Index2: 16, Weight: 1
+DEBUG: Index1: 18, Index2: 17, Weight: 1
+DEBUG: Index1: 18, Index2: 19, Weight: 1
+DEBUG: Index1: 18, Index2: 20, Weight: 1
+DEBUG: Index1: 18, Index2: 21, Weight: 1
+DEBUG: Index1: 18, Index2: 22, Weight: 1
+DEBUG: Index1: 18, Index2: 23, Weight: 1
+DEBUG: Index1: 18, Index2: 24, Weight: 1
+DEBUG: Index1: 18, Index2: 25, Weight: 1
+DEBUG: Index1: 19, Index2: 0, Weight: 1
+DEBUG: Index1: 19, Index2: 1, Weight: 1
+DEBUG: Index1: 19, Index2: 2, Weight: 1
+DEBUG: Index1: 19, Index2: 3, Weight: 1
+DEBUG: Index1: 19, Index2: 4, Weight: 1
+DEBUG: Index1: 19, Index2: 5, Weight: 1
+DEBUG: Index1: 19, Index2: 6, Weight: 1
+DEBUG: Index1: 19, Index2: 7, Weight: 1
+DEBUG: Index1: 19, Index2: 8, Weight: 1
+DEBUG: Index1: 19, Index2: 9, Weight: 1
+DEBUG: Index1: 19, Index2: 10, Weight: 1
+DEBUG: Index1: 19, Index2: 11, Weight: 1
+DEBUG: Index1: 19, Index2: 12, Weight: 1
+DEBUG: Index1: 19, Index2: 13, Weight: 1
+DEBUG: Index1: 19, Index2: 14, Weight: 1
+DEBUG: Index1: 19, Index2: 15, Weight: 1
+DEBUG: Index1: 19, Index2: 16, Weight: 1
+DEBUG: Index1: 19, Index2: 17, Weight: 1
+DEBUG: Index1: 19, Index2: 18, Weight: 1
+DEBUG: Index1: 19, Index2: 20, Weight: 1
+DEBUG: Index1: 19, Index2: 21, Weight: 1
+DEBUG: Index1: 19, Index2: 22, Weight: 1
+DEBUG: Index1: 19, Index2: 23, Weight: 1
+DEBUG: Index1: 19, Index2: 24, Weight: 1
+DEBUG: Index1: 19, Index2: 25, Weight: 1
+DEBUG: Index1: 20, Index2: 0, Weight: 1
+DEBUG: Index1: 20, Index2: 1, Weight: 1
+DEBUG: Index1: 20, Index2: 2, Weight: 1
+DEBUG: Index1: 20, Index2: 3, Weight: 1
+DEBUG: Index1: 20, Index2: 4, Weight: 1
+DEBUG: Index1: 20, Index2: 5, Weight: 1
+DEBUG: Index1: 20, Index2: 6, Weight: 1
+DEBUG: Index1: 20, Index2: 7, Weight: 1
+DEBUG: Index1: 20, Index2: 8, Weight: 1
+DEBUG: Index1: 20, Index2: 9, Weight: 1
+DEBUG: Index1: 20, Index2: 10, Weight: 1
+DEBUG: Index1: 20, Index2: 11, Weight: 1
+DEBUG: Index1: 20, Index2: 12, Weight: 1
+DEBUG: Index1: 20, Index2: 13, Weight: 1
+DEBUG: Index1: 20, Index2: 14, Weight: 1
+DEBUG: Index1: 20, Index2: 15, Weight: 1
+DEBUG: Index1: 20, Index2: 16, Weight: 1
+DEBUG: Index1: 20, Index2: 17, Weight: 1
+DEBUG: Index1: 20, Index2: 18, Weight: 1
+DEBUG: Index1: 20, Index2: 19, Weight: 1
+DEBUG: Index1: 20, Index2: 21, Weight: 1
+DEBUG: Index1: 20, Index2: 22, Weight: 1
+DEBUG: Index1: 20, Index2: 23, Weight: 1
+DEBUG: Index1: 20, Index2: 24, Weight: 1
+DEBUG: Index1: 20, Index2: 25, Weight: 1
+DEBUG: Index1: 21, Index2: 0, Weight: 1
+DEBUG: Index1: 21, Index2: 1, Weight: 1
+DEBUG: Index1: 21, Index2: 2, Weight: 1
+DEBUG: Index1: 21, Index2: 3, Weight: 1
+DEBUG: Index1: 21, Index2: 4, Weight: 1
+DEBUG: Index1: 21, Index2: 5, Weight: 1
+DEBUG: Index1: 21, Index2: 6, Weight: 1
+DEBUG: Index1: 21, Index2: 7, Weight: 1
+DEBUG: Index1: 21, Index2: 8, Weight: 1
+DEBUG: Index1: 21, Index2: 9, Weight: 1
+DEBUG: Index1: 21, Index2: 10, Weight: 1
+DEBUG: Index1: 21, Index2: 11, Weight: 1
+DEBUG: Index1: 21, Index2: 12, Weight: 1
+DEBUG: Index1: 21, Index2: 13, Weight: 1
+DEBUG: Index1: 21, Index2: 14, Weight: 1
+DEBUG: Index1: 21, Index2: 15, Weight: 1
+DEBUG: Index1: 21, Index2: 16, Weight: 1
+DEBUG: Index1: 21, Index2: 17, Weight: 1
+DEBUG: Index1: 21, Index2: 18, Weight: 1
+DEBUG: Index1: 21, Index2: 19, Weight: 1
+DEBUG: Index1: 21, Index2: 20, Weight: 1
+DEBUG: Index1: 21, Index2: 22, Weight: 1
+DEBUG: Index1: 21, Index2: 23, Weight: 1
+DEBUG: Index1: 21, Index2: 24, Weight: 1
+DEBUG: Index1: 21, Index2: 25, Weight: 1
+DEBUG: Index1: 22, Index2: 0, Weight: 1
+DEBUG: Index1: 22, Index2: 1, Weight: 1
+DEBUG: Index1: 22, Index2: 2, Weight: 1
+DEBUG: Index1: 22, Index2: 3, Weight: 1
+DEBUG: Index1: 22, Index2: 4, Weight: 1
+DEBUG: Index1: 22, Index2: 5, Weight: 1
+DEBUG: Index1: 22, Index2: 6, Weight: 1
+DEBUG: Index1: 22, Index2: 7, Weight: 1
+DEBUG: Index1: 22, Index2: 8, Weight: 1
+DEBUG: Index1: 22, Index2: 9, Weight: 1
+DEBUG: Index1: 22, Index2: 10, Weight: 1
+DEBUG: Index1: 22, Index2: 11, Weight: 1
+DEBUG: Index1: 22, Index2: 12, Weight: 1
+DEBUG: Index1: 22, Index2: 13, Weight: 1
+DEBUG: Index1: 22, Index2: 14, Weight: 1
+DEBUG: Index1: 22, Index2: 15, Weight: 1
+DEBUG: Index1: 22, Index2: 16, Weight: 1
+DEBUG: Index1: 22, Index2: 17, Weight: 1
+DEBUG: Index1: 22, Index2: 18, Weight: 1
+DEBUG: Index1: 22, Index2: 19, Weight: 1
+DEBUG: Index1: 22, Index2: 20, Weight: 1
+DEBUG: Index1: 22, Index2: 21, Weight: 1
+DEBUG: Index1: 22, Index2: 23, Weight: 1
+DEBUG: Index1: 22, Index2: 24, Weight: 1
+DEBUG: Index1: 22, Index2: 25, Weight: 1
+DEBUG: Index1: 23, Index2: 0, Weight: 1
+DEBUG: Index1: 23, Index2: 1, Weight: 1
+DEBUG: Index1: 23, Index2: 2, Weight: 1
+DEBUG: Index1: 23, Index2: 3, Weight: 1
+DEBUG: Index1: 23, Index2: 4, Weight: 1
+DEBUG: Index1: 23, Index2: 5, Weight: 1
+DEBUG: Index1: 23, Index2: 6, Weight: 1
+DEBUG: Index1: 23, Index2: 7, Weight: 1
+DEBUG: Index1: 23, Index2: 8, Weight: 1
+DEBUG: Index1: 23, Index2: 9, Weight: 1
+DEBUG: Index1: 23, Index2: 10, Weight: 1
+DEBUG: Index1: 23, Index2: 11, Weight: 1
+DEBUG: Index1: 23, Index2: 12, Weight: 1
+DEBUG: Index1: 23, Index2: 13, Weight: 1
+DEBUG: Index1: 23, Index2: 14, Weight: 1
+DEBUG: Index1: 23, Index2: 15, Weight: 1
+DEBUG: Index1: 23, Index2: 16, Weight: 1
+DEBUG: Index1: 23, Index2: 17, Weight: 1
+DEBUG: Index1: 23, Index2: 18, Weight: 1
+DEBUG: Index1: 23, Index2: 19, Weight: 1
+DEBUG: Index1: 23, Index2: 20, Weight: 1
+DEBUG: Index1: 23, Index2: 21, Weight: 1
+DEBUG: Index1: 23, Index2: 22, Weight: 1
+DEBUG: Index1: 23, Index2: 24, Weight: 1
+DEBUG: Index1: 23, Index2: 25, Weight: 1
+DEBUG: Index1: 24, Index2: 0, Weight: 1
+DEBUG: Index1: 24, Index2: 1, Weight: 1
+DEBUG: Index1: 24, Index2: 2, Weight: 1
+DEBUG: Index1: 24, Index2: 3, Weight: 1
+DEBUG: Index1: 24, Index2: 4, Weight: 1
+DEBUG: Index1: 24, Index2: 5, Weight: 1
+DEBUG: Index1: 24, Index2: 6, Weight: 1
+DEBUG: Index1: 24, Index2: 7, Weight: 1
+DEBUG: Index1: 24, Index2: 8, Weight: 1
+DEBUG: Index1: 24, Index2: 9, Weight: 1
+DEBUG: Index1: 24, Index2: 10, Weight: 1
+DEBUG: Index1: 24, Index2: 11, Weight: 1
+DEBUG: Index1: 24, Index2: 12, Weight: 1
+DEBUG: Index1: 24, Index2: 13, Weight: 1
+DEBUG: Index1: 24, Index2: 14, Weight: 1
+DEBUG: Index1: 24, Index2: 15, Weight: 1
+DEBUG: Index1: 24, Index2: 16, Weight: 1
+DEBUG: Index1: 24, Index2: 17, Weight: 1
+DEBUG: Index1: 24, Index2: 18, Weight: 1
+DEBUG: Index1: 24, Index2: 19, Weight: 1
+DEBUG: Index1: 24, Index2: 20, Weight: 1
+DEBUG: Index1: 24, Index2: 21, Weight: 1
+DEBUG: Index1: 24, Index2: 22, Weight: 1
+DEBUG: Index1: 24, Index2: 23, Weight: 1
+DEBUG: Index1: 24, Index2: 25, Weight: 1
+DEBUG: Index1: 25, Index2: 0, Weight: 1
+DEBUG: Index1: 25, Index2: 1, Weight: 1
+DEBUG: Index1: 25, Index2: 2, Weight: 1
+DEBUG: Index1: 25, Index2: 3, Weight: 1
+DEBUG: Index1: 25, Index2: 4, Weight: 1
+DEBUG: Index1: 25, Index2: 5, Weight: 1
+DEBUG: Index1: 25, Index2: 6, Weight: 1
+DEBUG: Index1: 25, Index2: 7, Weight: 1
+DEBUG: Index1: 25, Index2: 8, Weight: 1
+DEBUG: Index1: 25, Index2: 9, Weight: 1
+DEBUG: Index1: 25, Index2: 10, Weight: 1
+DEBUG: Index1: 25, Index2: 11, Weight: 1
+DEBUG: Index1: 25, Index2: 12, Weight: 1
+DEBUG: Index1: 25, Index2: 13, Weight: 1
+DEBUG: Index1: 25, Index2: 14, Weight: 1
+DEBUG: Index1: 25, Index2: 15, Weight: 1
+DEBUG: Index1: 25, Index2: 16, Weight: 1
+DEBUG: Index1: 25, Index2: 17, Weight: 1
+DEBUG: Index1: 25, Index2: 18, Weight: 1
+DEBUG: Index1: 25, Index2: 19, Weight: 1
+DEBUG: Index1: 25, Index2: 20, Weight: 1
+DEBUG: Index1: 25, Index2: 21, Weight: 1
+DEBUG: Index1: 25, Index2: 22, Weight: 1
+DEBUG: Index1: 25, Index2: 23, Weight: 1
+DEBUG: Index1: 25, Index2: 24, Weight: 1
+DEBUG: Index: 0
+a b c d e f g h i j k l m n o p q r s t u v w x y z
 Found back edge: z -> a
 Found back edge: z -> b
 Found back edge: z -> c
@@ -1682,5 +1003,3 @@ Found back edge: d -> c
 Found back edge: c -> a
 Found back edge: c -> b
 Found back edge: b -> a
-
-> 

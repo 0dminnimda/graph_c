@@ -1,10 +1,7 @@
 Welcome to example graph program!
-
-> Debug mode: turned on
-
-> DEBUG: Name: 'b', Index: 0
-
-> DEBUG: Current graph state:
+Debug mode: turned on
+DEBUG: Name: 'b', Index: 0
+DEBUG: Current graph state:
 Names(1):
 [0] = b
 Graph(1 nodes, 0 edges):
@@ -12,10 +9,8 @@ edges:
 nodes:
 0  in:
 0 out:
-
-> DEBUG: Name: 'a', Index: 1
-
-> DEBUG: Current graph state:
+DEBUG: Name: 'a', Index: 1
+DEBUG: Current graph state:
 Names(2):
 [0] = b
 [1] = a
@@ -26,10 +21,8 @@ nodes:
 0 out:
 1  in:
 1 out:
-
-> DEBUG: Name: 'c', Index: 2
-
-> DEBUG: Current graph state:
+DEBUG: Name: 'c', Index: 2
+DEBUG: Current graph state:
 Names(3):
 [0] = b
 [1] = a
@@ -43,10 +36,8 @@ nodes:
 1 out:
 2  in:
 2 out:
-
-> DEBUG: Index1: 0, Index2: 0, Weight: 1
-
-> DEBUG: Current graph state:
+DEBUG: Index1: 0, Index2: 0, Weight: 1
+DEBUG: Current graph state:
 Names(3):
 [0] = b
 [1] = a
@@ -61,10 +52,8 @@ nodes:
 1 out:
 2  in:
 2 out:
-
-> DEBUG: Index1: 1, Index2: 0, Weight: 1
-
-> DEBUG: Current graph state:
+DEBUG: Index1: 1, Index2: 0, Weight: 1
+DEBUG: Current graph state:
 Names(3):
 [0] = b
 [1] = a
@@ -80,10 +69,8 @@ nodes:
 1 out: [1] 0 (1),
 2  in:
 2 out:
-
-> DEBUG: Index1: 0, Index2: 2, Weight: 1
-
-> DEBUG: Current graph state:
+DEBUG: Index1: 0, Index2: 2, Weight: 1
+DEBUG: Current graph state:
 Names(3):
 [0] = b
 [1] = a
@@ -100,10 +87,8 @@ nodes:
 1 out: [1] 0 (1),
 2  in: [2] 0 (1),
 2 out:
-
-> DEBUG: Index1: 2, Index2: 1, Weight: 1
-
-> DEBUG: Current graph state:
+DEBUG: Index1: 2, Index2: 1, Weight: 1
+DEBUG: Current graph state:
 Names(3):
 [0] = b
 [1] = a
@@ -121,10 +106,8 @@ nodes:
 1 out: [1] 0 (1),
 2  in: [2] 0 (1),
 2 out: [3] 1 (1),
-
-> DEBUG: Index: 0
-
-> DEBUG: Current graph state:
+DEBUG: Index: 0
+DEBUG: Current graph state:
 Names(2):
 [0] = c
 [1] = a
@@ -136,5 +119,3 @@ nodes:
 0 out: [0] 1 (1),
 1  in: [0] 0 (1),
 1 out:
-
-> 

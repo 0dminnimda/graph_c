@@ -1,39 +1,20 @@
 Welcome to example graph program!
-
-> Debug mode: turned on
-
-> DEBUG: Name: 'Start', Index: 0
-
-> DEBUG: Name: 'A', Index: 1
-
-> DEBUG: Name: 'B', Index: 2
-
-> DEBUG: Name: 'C', Index: 3
-
-> DEBUG: Name: 'D', Index: 4
-
-> DEBUG: Name: 'Stop', Index: 5
-
-> WARNING: Node 'A' already exists
+Debug mode: turned on
+DEBUG: Name: 'Start', Index: 0
 DEBUG: Name: 'A', Index: 1
-
-> DEBUG: Index1: 0, Index2: 1, Weight: 1
-
-> DEBUG: Index1: 1, Index2: 2, Weight: 1
-
-> DEBUG: Index1: 1, Index2: 3, Weight: 1
-
-> DEBUG: Index1: 2, Index2: 4, Weight: 1
-
-> DEBUG: Index1: 4, Index2: 2, Weight: 1
-
-> DEBUG: Index1: 4, Index2: 5, Weight: 1
-
-> DEBUG: Index1: 3, Index2: 5, Weight: 1
-
-> DEBUG: Index: 0
-
-> Start A B D C Stop
+DEBUG: Name: 'B', Index: 2
+DEBUG: Name: 'C', Index: 3
+DEBUG: Name: 'D', Index: 4
+DEBUG: Name: 'Stop', Index: 5
+WARNING: Node 'A' already exists
+DEBUG: Name: 'A', Index: 1
+DEBUG: Index1: 0, Index2: 1, Weight: 1
+DEBUG: Index1: 1, Index2: 2, Weight: 1
+DEBUG: Index1: 1, Index2: 3, Weight: 1
+DEBUG: Index1: 2, Index2: 4, Weight: 1
+DEBUG: Index1: 4, Index2: 2, Weight: 1
+DEBUG: Index1: 4, Index2: 5, Weight: 1
+DEBUG: Index1: 3, Index2: 5, Weight: 1
+DEBUG: Index: 0
+Start A B D C Stop
 Found back edge: D -> B
-
-> 

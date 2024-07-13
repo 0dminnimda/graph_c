@@ -1,138 +1,17 @@
 Welcome to example graph program!
-
-> 
-> 
-> WARNING: Node 'a' already exists
-
-> WARNING: Node 'a' already exists
-
-> 
-> 
-> WARNING: Node 'b' already exists
-
-> WARNING: Node 'b' already exists
-
-> 
-> ERROR: weight must be in range [0, 65535]
-
-> ERROR: failed to parse weight '-65535' as a number
-
-> 
-> 
-> 
-> 
-> 
-> 
-> 
-> 
-> 
-> 
-> 
-> 
-> WARNING: edge between nodes 'a' and 'b' already exists
-
-> 
-> WARNING: edge between nodes 'b' and 'b' already exists
-
-> 
-> 
-> 
-> 
-> 
-> 
-> 
-> 
-> 
-> 
-> 
-> 
-> 
-> WARNING: edge between nodes 'a' and 'b' already exists
-
-> 
-> 
-> 
-> 
-> 
-> 
-> 
-> 
-> 
-> 
-> 
-> 
-> 
-> 
-> 
-> ERROR: Node #1 'a' does not exist
-
-> 
-> 
-> 
-> 
-> 
-> 
-> 
-> 
-> 
-> 
-> 
-> 
-> 
-> ERROR: Node #2 'b' does not exist
-
-> 
-> 
-> 
-> ERROR: Node #1 'b' does not exist
-
-> 
-> 
-> 
-> 
-> 
-> Node with num 1 is not exist
-
-> 
-> 
-> 
-> 
-> 
-> 
-> 
-> 
-> 
-> 
-> 
-> 
-> 
-> 
-> 
-> WARNING: edge between nodes 'c' and 'a' already exists
-
-> 
-> 
-> 
-> 
-> 
-> 
-> 
-> 
-> 
-> 
-> 
-> 
-> 
-> ERROR: root node needs to be set
-
-> 
-> 
-> 
-> 
-> 
-> 
-> 
-> ERROR: root node is outdated and needs to be reset
-
-> 
-> 
+WARNING: Node 'a' already exists
+WARNING: Node 'a' already exists
+WARNING: Node 'b' already exists
+WARNING: Node 'b' already exists
+ERROR: weight must be in range [0, 65535]
+ERROR: failed to parse weight '-65535' as a number
+WARNING: edge between nodes 'a' and 'b' already exists
+WARNING: edge between nodes 'b' and 'b' already exists
+WARNING: edge between nodes 'a' and 'b' already exists
+ERROR: Node #1 'a' does not exist
+ERROR: Node #2 'b' does not exist
+ERROR: Node #1 'b' does not exist
+Node with num 1 is not exist
+WARNING: edge between nodes 'c' and 'a' already exists
+ERROR: root node needs to be set
+ERROR: root node is outdated and needs to be reset

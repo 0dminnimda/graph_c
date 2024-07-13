@@ -1,22 +1,16 @@
 Welcome to example graph program!
-
-> Debug mode: turned on
-
-> DEBUG: Current graph state:
+Debug mode: turned on
+DEBUG: Current graph state:
 Names(0):
 Graph(0 nodes, 0 edges):
 edges:
 nodes:
-
-> DEBUG: Name: 'a', Index: 0
-
-> WARNING: Node 'a' already exists
 DEBUG: Name: 'a', Index: 0
-
-> WARNING: Node 'a' already exists
+WARNING: Node 'a' already exists
 DEBUG: Name: 'a', Index: 0
-
-> DEBUG: Current graph state:
+WARNING: Node 'a' already exists
+DEBUG: Name: 'a', Index: 0
+DEBUG: Current graph state:
 Names(1):
 [0] = a
 Graph(1 nodes, 0 edges):
@@ -24,16 +18,12 @@ edges:
 nodes:
 0  in:
 0 out:
-
-> DEBUG: Name: 'b', Index: 1
-
-> WARNING: Node 'b' already exists
 DEBUG: Name: 'b', Index: 1
-
-> WARNING: Node 'b' already exists
+WARNING: Node 'b' already exists
 DEBUG: Name: 'b', Index: 1
-
-> DEBUG: Current graph state:
+WARNING: Node 'b' already exists
+DEBUG: Name: 'b', Index: 1
+DEBUG: Current graph state:
 Names(2):
 [0] = a
 [1] = b
@@ -44,14 +34,10 @@ nodes:
 0 out:
 1  in:
 1 out:
-
-> ERROR: weight must be in range [0, 65535]
-
-> ERROR: failed to parse weight '-65535' as a number
-
-> DEBUG: Index1: 0, Index2: 1, Weight: 65535
-
-> DEBUG: Current graph state:
+ERROR: weight must be in range [0, 65535]
+ERROR: failed to parse weight '-65535' as a number
+DEBUG: Index1: 0, Index2: 1, Weight: 65535
+DEBUG: Current graph state:
 Names(2):
 [0] = a
 [1] = b
@@ -63,10 +49,8 @@ nodes:
 0 out: [0] 1 (65535),
 1  in: [0] 0 (65535),
 1 out:
-
-> DEBUG: Index1: 1, Index2: 0, Weight: 4
-
-> DEBUG: Current graph state:
+DEBUG: Index1: 1, Index2: 0, Weight: 4
+DEBUG: Current graph state:
 Names(2):
 [0] = a
 [1] = b
@@ -79,10 +63,8 @@ nodes:
 0 out: [0] 1 (65535),
 1  in: [0] 0 (65535),
 1 out: [1] 0 (4),
-
-> DEBUG: Index1: 0, Index2: 0, Weight: 9
-
-> DEBUG: Current graph state:
+DEBUG: Index1: 0, Index2: 0, Weight: 9
+DEBUG: Current graph state:
 Names(2):
 [0] = a
 [1] = b
@@ -96,10 +78,8 @@ nodes:
 0 out: [0] 1 (65535), [2] 0 (9),
 1  in: [0] 0 (65535),
 1 out: [1] 0 (4),
-
-> DEBUG: Index1: 1, Index2: 1, Weight: 6
-
-> DEBUG: Current graph state:
+DEBUG: Index1: 1, Index2: 1, Weight: 6
+DEBUG: Current graph state:
 Names(2):
 [0] = a
 [1] = b
@@ -114,10 +94,8 @@ nodes:
 0 out: [0] 1 (65535), [2] 0 (9),
 1  in: [0] 0 (65535), [3] 1 (6),
 1 out: [1] 0 (4), [3] 1 (6),
-
-> DEBUG: Index1: 0, Index2: 1
-
-> DEBUG: Current graph state:
+DEBUG: Index1: 0, Index2: 1
+DEBUG: Current graph state:
 Names(2):
 [0] = a
 [1] = b
@@ -131,44 +109,8 @@ nodes:
 0 out: [2] 0 (9),
 1  in: [0] 1 (6),
 1 out: [1] 0 (4), [0] 1 (6),
-
-> DEBUG: Index1: 1, Index2: 1
-
-> DEBUG: Current graph state:
-Names(2):
-[0] = a
-[1] = b
-Graph(2 nodes, 2 edges):
-edges:
-[0] = 0 -> 0 (9)
-[1] = 1 -> 0 (4)
-nodes:
-0  in: [1] 1 (4), [0] 0 (9),
-0 out: [0] 0 (9),
-1  in:
-1 out: [1] 0 (4),
-
-> WARNING: edge between nodes 'a' and 'b' already exists
-DEBUG: Index1: 0, Index2: 1
-
-> DEBUG: Current graph state:
-Names(2):
-[0] = a
-[1] = b
-Graph(2 nodes, 2 edges):
-edges:
-[0] = 0 -> 0 (9)
-[1] = 1 -> 0 (4)
-nodes:
-0  in: [1] 1 (4), [0] 0 (9),
-0 out: [0] 0 (9),
-1  in:
-1 out: [1] 0 (4),
-
-> WARNING: edge between nodes 'b' and 'b' already exists
 DEBUG: Index1: 1, Index2: 1
-
-> DEBUG: Current graph state:
+DEBUG: Current graph state:
 Names(2):
 [0] = a
 [1] = b
@@ -181,10 +123,38 @@ nodes:
 0 out: [0] 0 (9),
 1  in:
 1 out: [1] 0 (4),
-
-> DEBUG: Index1: 0, Index2: 1, Weight: 655
-
-> DEBUG: Current graph state:
+WARNING: edge between nodes 'a' and 'b' already exists
+DEBUG: Index1: 0, Index2: 1
+DEBUG: Current graph state:
+Names(2):
+[0] = a
+[1] = b
+Graph(2 nodes, 2 edges):
+edges:
+[0] = 0 -> 0 (9)
+[1] = 1 -> 0 (4)
+nodes:
+0  in: [1] 1 (4), [0] 0 (9),
+0 out: [0] 0 (9),
+1  in:
+1 out: [1] 0 (4),
+WARNING: edge between nodes 'b' and 'b' already exists
+DEBUG: Index1: 1, Index2: 1
+DEBUG: Current graph state:
+Names(2):
+[0] = a
+[1] = b
+Graph(2 nodes, 2 edges):
+edges:
+[0] = 0 -> 0 (9)
+[1] = 1 -> 0 (4)
+nodes:
+0  in: [1] 1 (4), [0] 0 (9),
+0 out: [0] 0 (9),
+1  in:
+1 out: [1] 0 (4),
+DEBUG: Index1: 0, Index2: 1, Weight: 655
+DEBUG: Current graph state:
 Names(2):
 [0] = a
 [1] = b
@@ -198,10 +168,8 @@ nodes:
 0 out: [0] 0 (9), [2] 1 (655),
 1  in: [2] 0 (655),
 1 out: [1] 0 (4),
-
-> DEBUG: Index1: 0, Index2: 1
-
-> DEBUG: Current graph state:
+DEBUG: Index1: 0, Index2: 1
+DEBUG: Current graph state:
 Names(2):
 [0] = a
 [1] = b
@@ -214,10 +182,8 @@ nodes:
 0 out: [0] 0 (9),
 1  in:
 1 out: [1] 0 (4),
-
-> DEBUG: Index1: 0, Index2: 1, Weight: 65
-
-> DEBUG: Current graph state:
+DEBUG: Index1: 0, Index2: 1, Weight: 65
+DEBUG: Current graph state:
 Names(2):
 [0] = a
 [1] = b
@@ -231,10 +197,8 @@ nodes:
 0 out: [0] 0 (9), [2] 1 (65),
 1  in: [2] 0 (65),
 1 out: [1] 0 (4),
-
-> DEBUG: Index1: 0, Index2: 1
-
-> DEBUG: Current graph state:
+DEBUG: Index1: 0, Index2: 1
+DEBUG: Current graph state:
 Names(2):
 [0] = a
 [1] = b
@@ -247,10 +211,8 @@ nodes:
 0 out: [0] 0 (9),
 1  in:
 1 out: [1] 0 (4),
-
-> DEBUG: Index1: 0, Index2: 1, Weight: 855
-
-> DEBUG: Current graph state:
+DEBUG: Index1: 0, Index2: 1, Weight: 855
+DEBUG: Current graph state:
 Names(2):
 [0] = a
 [1] = b
@@ -264,27 +226,8 @@ nodes:
 0 out: [0] 0 (9), [2] 1 (855),
 1  in: [2] 0 (855),
 1 out: [1] 0 (4),
-
-> DEBUG: Index1: 0, Index2: 1
-
-> DEBUG: Current graph state:
-Names(2):
-[0] = a
-[1] = b
-Graph(2 nodes, 2 edges):
-edges:
-[0] = 0 -> 0 (9)
-[1] = 1 -> 0 (4)
-nodes:
-0  in: [1] 1 (4), [0] 0 (9),
-0 out: [0] 0 (9),
-1  in:
-1 out: [1] 0 (4),
-
-> WARNING: edge between nodes 'a' and 'b' already exists
 DEBUG: Index1: 0, Index2: 1
-
-> DEBUG: Current graph state:
+DEBUG: Current graph state:
 Names(2):
 [0] = a
 [1] = b
@@ -297,10 +240,23 @@ nodes:
 0 out: [0] 0 (9),
 1  in:
 1 out: [1] 0 (4),
-
-> DEBUG: Index1: 0, Index2: 0
-
-> DEBUG: Current graph state:
+WARNING: edge between nodes 'a' and 'b' already exists
+DEBUG: Index1: 0, Index2: 1
+DEBUG: Current graph state:
+Names(2):
+[0] = a
+[1] = b
+Graph(2 nodes, 2 edges):
+edges:
+[0] = 0 -> 0 (9)
+[1] = 1 -> 0 (4)
+nodes:
+0  in: [1] 1 (4), [0] 0 (9),
+0 out: [0] 0 (9),
+1  in:
+1 out: [1] 0 (4),
+DEBUG: Index1: 0, Index2: 0
+DEBUG: Current graph state:
 Names(2):
 [0] = a
 [1] = b
@@ -312,10 +268,8 @@ nodes:
 0 out:
 1  in:
 1 out: [0] 0 (4),
-
-> DEBUG: Index1: 1, Index2: 1, Weight: 1
-
-> DEBUG: Current graph state:
+DEBUG: Index1: 1, Index2: 1, Weight: 1
+DEBUG: Current graph state:
 Names(2):
 [0] = a
 [1] = b
@@ -328,10 +282,8 @@ nodes:
 0 out:
 1  in: [1] 1 (1),
 1 out: [0] 0 (4), [1] 1 (1),
-
-> DEBUG: Index1: 1, Index2: 0
-
-> DEBUG: Current graph state:
+DEBUG: Index1: 1, Index2: 0
+DEBUG: Current graph state:
 Names(2):
 [0] = a
 [1] = b
@@ -343,10 +295,8 @@ nodes:
 0 out:
 1  in: [0] 1 (1),
 1 out: [0] 1 (1),
-
-> DEBUG: Index1: 0, Index2: 0, Weight: 1
-
-> DEBUG: Current graph state:
+DEBUG: Index1: 0, Index2: 0, Weight: 1
+DEBUG: Current graph state:
 Names(2):
 [0] = a
 [1] = b
@@ -359,10 +309,8 @@ nodes:
 0 out: [1] 0 (1),
 1  in: [0] 1 (1),
 1 out: [0] 1 (1),
-
-> DEBUG: Index1: 0, Index2: 1, Weight: 1
-
-> DEBUG: Current graph state:
+DEBUG: Index1: 0, Index2: 1, Weight: 1
+DEBUG: Current graph state:
 Names(2):
 [0] = a
 [1] = b
@@ -376,10 +324,8 @@ nodes:
 0 out: [1] 0 (1), [2] 1 (1),
 1  in: [0] 1 (1), [2] 0 (1),
 1 out: [0] 1 (1),
-
-> DEBUG: Index1: 1, Index2: 0, Weight: 1
-
-> DEBUG: Current graph state:
+DEBUG: Index1: 1, Index2: 0, Weight: 1
+DEBUG: Current graph state:
 Names(2):
 [0] = a
 [1] = b
@@ -394,10 +340,8 @@ nodes:
 0 out: [1] 0 (1), [2] 1 (1),
 1  in: [0] 1 (1), [2] 0 (1),
 1 out: [0] 1 (1), [3] 0 (1),
-
-> DEBUG: Index: 0
-
-> DEBUG: Current graph state:
+DEBUG: Index: 0
+DEBUG: Current graph state:
 Names(1):
 [0] = b
 Graph(1 nodes, 1 edges):
@@ -406,10 +350,8 @@ edges:
 nodes:
 0  in: [0] 0 (1),
 0 out: [0] 0 (1),
-
-> ERROR: Node #1 'a' does not exist
-
-> DEBUG: Current graph state:
+ERROR: Node #1 'a' does not exist
+DEBUG: Current graph state:
 Names(1):
 [0] = b
 Graph(1 nodes, 1 edges):
@@ -418,10 +360,8 @@ edges:
 nodes:
 0  in: [0] 0 (1),
 0 out: [0] 0 (1),
-
-> DEBUG: Name: 'a', Index: 1
-
-> DEBUG: Current graph state:
+DEBUG: Name: 'a', Index: 1
+DEBUG: Current graph state:
 Names(2):
 [0] = b
 [1] = a
@@ -433,10 +373,8 @@ nodes:
 0 out: [0] 0 (1),
 1  in:
 1 out:
-
-> DEBUG: Name: 'c', Index: 2
-
-> DEBUG: Current graph state:
+DEBUG: Name: 'c', Index: 2
+DEBUG: Current graph state:
 Names(3):
 [0] = b
 [1] = a
@@ -451,10 +389,8 @@ nodes:
 1 out:
 2  in:
 2 out:
-
-> DEBUG: Index1: 1, Index2: 0, Weight: 1
-
-> DEBUG: Current graph state:
+DEBUG: Index1: 1, Index2: 0, Weight: 1
+DEBUG: Current graph state:
 Names(3):
 [0] = b
 [1] = a
@@ -470,10 +406,8 @@ nodes:
 1 out: [1] 0 (1),
 2  in:
 2 out:
-
-> DEBUG: Index1: 0, Index2: 2, Weight: 1
-
-> DEBUG: Current graph state:
+DEBUG: Index1: 0, Index2: 2, Weight: 1
+DEBUG: Current graph state:
 Names(3):
 [0] = b
 [1] = a
@@ -490,10 +424,8 @@ nodes:
 1 out: [1] 0 (1),
 2  in: [2] 0 (1),
 2 out:
-
-> DEBUG: Index1: 2, Index2: 1, Weight: 1
-
-> DEBUG: Current graph state:
+DEBUG: Index1: 2, Index2: 1, Weight: 1
+DEBUG: Current graph state:
 Names(3):
 [0] = b
 [1] = a
@@ -511,10 +443,8 @@ nodes:
 1 out: [1] 0 (1),
 2  in: [2] 0 (1),
 2 out: [3] 1 (1),
-
-> DEBUG: Index: 0
-
-> DEBUG: Current graph state:
+DEBUG: Index: 0
+DEBUG: Current graph state:
 Names(2):
 [0] = c
 [1] = a
@@ -526,10 +456,8 @@ nodes:
 0 out: [0] 1 (1),
 1  in: [0] 0 (1),
 1 out:
-
-> ERROR: Node #2 'b' does not exist
-
-> DEBUG: Current graph state:
+ERROR: Node #2 'b' does not exist
+DEBUG: Current graph state:
 Names(2):
 [0] = c
 [1] = a
@@ -541,10 +469,8 @@ nodes:
 0 out: [0] 1 (1),
 1  in: [0] 0 (1),
 1 out:
-
-> DEBUG: Index1: 0, Index2: 0, Weight: 4
-
-> DEBUG: Current graph state:
+DEBUG: Index1: 0, Index2: 0, Weight: 4
+DEBUG: Current graph state:
 Names(2):
 [0] = c
 [1] = a
@@ -557,10 +483,8 @@ nodes:
 0 out: [0] 1 (1), [1] 0 (4),
 1  in: [0] 0 (1),
 1 out:
-
-> ERROR: Node #1 'b' does not exist
-
-> DEBUG: Current graph state:
+ERROR: Node #1 'b' does not exist
+DEBUG: Current graph state:
 Names(2):
 [0] = c
 [1] = a
@@ -573,10 +497,8 @@ nodes:
 0 out: [0] 1 (1), [1] 0 (4),
 1  in: [0] 0 (1),
 1 out:
-
-> DEBUG: Name: 'd', Index: 2
-
-> DEBUG: Current graph state:
+DEBUG: Name: 'd', Index: 2
+DEBUG: Current graph state:
 Names(3):
 [0] = c
 [1] = a
@@ -592,10 +514,8 @@ nodes:
 1 out:
 2  in:
 2 out:
-
-> DEBUG: Index: 2
-
-> DEBUG: Current graph state:
+DEBUG: Index: 2
+DEBUG: Current graph state:
 Names(2):
 [0] = c
 [1] = a
@@ -608,10 +528,8 @@ nodes:
 0 out: [0] 1 (1), [1] 0 (4),
 1  in: [0] 0 (1),
 1 out:
-
-> Node with num 1 is not exist
-
-> DEBUG: Current graph state:
+Node with num 1 is not exist
+DEBUG: Current graph state:
 Names(2):
 [0] = c
 [1] = a
@@ -624,10 +542,8 @@ nodes:
 0 out: [0] 1 (1), [1] 0 (4),
 1  in: [0] 0 (1),
 1 out:
-
-> DEBUG: Name: 'd', Index: 2
-
-> DEBUG: Current graph state:
+DEBUG: Name: 'd', Index: 2
+DEBUG: Current graph state:
 Names(3):
 [0] = c
 [1] = a
@@ -643,10 +559,8 @@ nodes:
 1 out:
 2  in:
 2 out:
-
-> DEBUG: Index1: 2, Index2: 2, Weight: 67
-
-> DEBUG: Current graph state:
+DEBUG: Index1: 2, Index2: 2, Weight: 67
+DEBUG: Current graph state:
 Names(3):
 [0] = c
 [1] = a
@@ -663,10 +577,8 @@ nodes:
 1 out:
 2  in: [2] 2 (67),
 2 out: [2] 2 (67),
-
-> DEBUG: Index1: 2, Index2: 0, Weight: 87
-
-> DEBUG: Current graph state:
+DEBUG: Index1: 2, Index2: 0, Weight: 87
+DEBUG: Current graph state:
 Names(3):
 [0] = c
 [1] = a
@@ -684,10 +596,8 @@ nodes:
 1 out:
 2  in: [2] 2 (67),
 2 out: [2] 2 (67), [3] 0 (87),
-
-> DEBUG: Index1: 2, Index2: 1, Weight: 23
-
-> DEBUG: Current graph state:
+DEBUG: Index1: 2, Index2: 1, Weight: 23
+DEBUG: Current graph state:
 Names(3):
 [0] = c
 [1] = a
@@ -706,10 +616,8 @@ nodes:
 1 out:
 2  in: [2] 2 (67),
 2 out: [2] 2 (67), [3] 0 (87), [4] 1 (23),
-
-> DEBUG: Index1: 1, Index2: 1, Weight: 76
-
-> DEBUG: Current graph state:
+DEBUG: Index1: 1, Index2: 1, Weight: 76
+DEBUG: Current graph state:
 Names(3):
 [0] = c
 [1] = a
@@ -729,10 +637,8 @@ nodes:
 1 out: [5] 1 (76),
 2  in: [2] 2 (67),
 2 out: [2] 2 (67), [3] 0 (87), [4] 1 (23),
-
-> DEBUG: Index1: 1, Index2: 2, Weight: 654
-
-> DEBUG: Current graph state:
+DEBUG: Index1: 1, Index2: 2, Weight: 654
+DEBUG: Current graph state:
 Names(3):
 [0] = c
 [1] = a
@@ -753,10 +659,8 @@ nodes:
 1 out: [5] 1 (76), [6] 2 (654),
 2  in: [2] 2 (67), [6] 1 (654),
 2 out: [2] 2 (67), [3] 0 (87), [4] 1 (23),
-
-> DEBUG: Index1: 1, Index2: 0, Weight: 234
-
-> DEBUG: Current graph state:
+DEBUG: Index1: 1, Index2: 0, Weight: 234
+DEBUG: Current graph state:
 Names(3):
 [0] = c
 [1] = a
@@ -778,11 +682,9 @@ nodes:
 1 out: [5] 1 (76), [6] 2 (654), [7] 0 (234),
 2  in: [2] 2 (67), [6] 1 (654),
 2 out: [2] 2 (67), [3] 0 (87), [4] 1 (23),
-
-> WARNING: edge between nodes 'c' and 'a' already exists
+WARNING: edge between nodes 'c' and 'a' already exists
 DEBUG: Index1: 0, Index2: 1, Weight: 75
-
-> DEBUG: Current graph state:
+DEBUG: Current graph state:
 Names(3):
 [0] = c
 [1] = a
@@ -804,10 +706,8 @@ nodes:
 1 out: [5] 1 (76), [6] 2 (654), [7] 0 (234),
 2  in: [2] 2 (67), [6] 1 (654),
 2 out: [2] 2 (67), [3] 0 (87), [4] 1 (23),
-
-> DEBUG: Index: 0
-
-> DEBUG: Current graph state:
+DEBUG: Index: 0
+DEBUG: Current graph state:
 Names(2):
 [0] = d
 [1] = a
@@ -822,10 +722,8 @@ nodes:
 0 out: [2] 0 (67), [0] 1 (23),
 1  in: [1] 1 (76), [0] 0 (23),
 1 out: [1] 1 (76), [3] 0 (654),
-
-> DEBUG: Name: 'j', Index: 2
-
-> DEBUG: Current graph state:
+DEBUG: Name: 'j', Index: 2
+DEBUG: Current graph state:
 Names(3):
 [0] = d
 [1] = a
@@ -843,10 +741,8 @@ nodes:
 1 out: [1] 1 (76), [3] 0 (654),
 2  in:
 2 out:
-
-> DEBUG: Index1: 2, Index2: 1, Weight: 1
-
-> DEBUG: Current graph state:
+DEBUG: Index1: 2, Index2: 1, Weight: 1
+DEBUG: Current graph state:
 Names(3):
 [0] = d
 [1] = a
@@ -865,10 +761,8 @@ nodes:
 1 out: [1] 1 (76), [3] 0 (654),
 2  in:
 2 out: [4] 1 (1),
-
-> DEBUG: Index: 1
-
-> DEBUG: Current graph state:
+DEBUG: Index: 1
+DEBUG: Current graph state:
 Names(2):
 [0] = d
 [1] = j
@@ -880,10 +774,8 @@ nodes:
 0 out: [0] 0 (67),
 1  in:
 1 out:
-
-> DEBUG: Name: 'l', Index: 2
-
-> DEBUG: Current graph state:
+DEBUG: Name: 'l', Index: 2
+DEBUG: Current graph state:
 Names(3):
 [0] = d
 [1] = j
@@ -898,10 +790,8 @@ nodes:
 1 out:
 2  in:
 2 out:
-
-> DEBUG: Index: 2
-
-> DEBUG: Current graph state:
+DEBUG: Index: 2
+DEBUG: Current graph state:
 Names(2):
 [0] = d
 [1] = j
@@ -913,10 +803,8 @@ nodes:
 0 out: [0] 0 (67),
 1  in:
 1 out:
-
-> ERROR: root node needs to be set
-
-> DEBUG: Current graph state:
+ERROR: root node needs to be set
+DEBUG: Current graph state:
 Names(2):
 [0] = d
 [1] = j
@@ -928,10 +816,8 @@ nodes:
 0 out: [0] 0 (67),
 1  in:
 1 out:
-
-> DEBUG: Name: 'l', Index: 2
-
-> DEBUG: Current graph state:
+DEBUG: Name: 'l', Index: 2
+DEBUG: Current graph state:
 Names(3):
 [0] = d
 [1] = j
@@ -946,10 +832,8 @@ nodes:
 1 out:
 2  in:
 2 out:
-
-> DEBUG: Index: 2
-
-> DEBUG: Current graph state:
+DEBUG: Index: 2
+DEBUG: Current graph state:
 Names(3):
 [0] = d
 [1] = j
@@ -964,10 +848,8 @@ nodes:
 1 out:
 2  in:
 2 out:
-
-> DEBUG: Index: 2
-
-> DEBUG: Current graph state:
+DEBUG: Index: 2
+DEBUG: Current graph state:
 Names(2):
 [0] = d
 [1] = j
@@ -979,10 +861,8 @@ nodes:
 0 out: [0] 0 (67),
 1  in:
 1 out:
-
-> ERROR: root node is outdated and needs to be reset
-
-> DEBUG: Current graph state:
+ERROR: root node is outdated and needs to be reset
+DEBUG: Current graph state:
 Names(2):
 [0] = d
 [1] = j
@@ -994,5 +874,3 @@ nodes:
 0 out: [0] 0 (67),
 1  in:
 1 out:
-
-> 
