@@ -239,11 +239,134 @@ void graph_reverse_post_order(const Graph *self, u32 root, array_u32 *ordering, 
     array_deinit(&states);
 }
 
+
 bool longest_path_in_acyclic_graph(const Graph *self, array_u32 *path) {
-    (void)self;
-    (void)path;
+/*
+    u32 length = self->nodes.length;
+
+    array(u32) stack;
+    array_init_with_capacity(&stack, length);
+
+    array(u32) distances;
+    array_init_with_capacity(&distances, length);
+
+    array(bool) visited;
+    array_init_with_capacity_and_length(&visited, length, length);
+
+    for (size_t i = 0; i < length; ++i) {
+        visited.data[i] = false;
+    }
+
+    for (int i = 0; i < V; i++) {
+        if (visited[i] == false)
+            topologicalSortUtil(i, visited, Stack);
+    }
+
+    for (int i = 0; i < V; i++)
+        distances[i] = NINF;
+    distances[s] = 0;
+
+    while (Stack.empty() == false) {
+        // Get the next vertex from topological order
+        int u = Stack.top();
+        Stack.pop();
+
+        // Update distances of all adjacent vertices
+        list<AdjListNode>::iterator i;
+        if (distances[u] != NINF) {
+            for (i = adj[u].begin(); i != adj[u].end(); ++i){
+
+                if (distances[i->getV()] < distances[u] + i->getWeight())
+                    distances[i->getV()] = distances[u] + i->getWeight();
+            }
+        }
+    }
+
+    for (int i = 0; i < V; i++)
+        (distances[i] == NINF) ? cout << "INF " : cout << distances[i] << " ";
+
+    delete [] visited;
+*/
+
+    if (self == NULL || path == NULL || self->nodes.length == 0) {
+        return false;
+    }
+
+    /* Initialize arrays for storing distances and predecessors */
+    array_u32 distances;
+    array_u32 predecessors;
+    array_init(&distances);
+    array_init(&predecessors);
+
+    /* Initialize distances and predecessors */
+    for (u32 i = 0; i < self->nodes.length; i++) {
+        *array_add(&distances) = 0;
+        *array_add(&predecessors) = U32_MAX;
+    }
+
+    /* Topological sort */
+    array_u32 topo_order;
+    array_u32 back_edges;
+    array_init(&topo_order);
+    array_init(&back_edges);
+    graph_reverse_post_order(self, 0, &topo_order, &back_edges);
+
+    /* If there are back edges, the graph is not acyclic */
+    if (back_edges.length > 0) {
+        array_deinit(&distances);
+        array_deinit(&predecessors);
+        array_deinit(&topo_order);
+        array_deinit(&back_edges);
+        return false;
+    }
+
+    u32 max_dist = 0;
+    u32 end_node = 0;
+
+    /* Compute longest path */
+    for (u32 i = 0; i < topo_order.length; i++) {
+        u32 node = topo_order.data[i];
+        u32 dist = distances.data[node];
+
+        if (dist > max_dist) {
+            max_dist = dist;
+            end_node = node;
+        }
+
+        const GraphNode *gnode = &self->nodes.data[node];
+        for (u32 j = 0; j < gnode->out.length; j++) {
+            u32 edge_idx = gnode->out.data[j];
+            const GraphEdge *edge = &self->edges.data[edge_idx];
+            u32 new_dist = dist + edge->weight;
+
+            if (new_dist > distances.data[edge->target]) {
+                distances.data[edge->target] = new_dist;
+                predecessors.data[edge->target] = node;
+            }
+        }
+    }
+
+    /* Reconstruct the critical path */
+    array_deinit(path);
+    array_init(path);
+    u32 current = end_node;
+    while (current != U32_MAX) {
+        *array_add(path) = current;
+        current = predecessors.data[current];
+    }
+
+    /* Reverse the path (it's currently in reverse order) */
+    array_reverse(path, u32);
+
+    /* Clean up */
+    array_deinit(&distances);
+    array_deinit(&predecessors);
+    array_deinit(&topo_order);
+    array_deinit(&back_edges);
+
     return true;
 }
+
 
 void graph_fprint_debug(const Graph *self, FILE *stream) {
     fprintf(stream, "Graph(%zu nodes, %zu edges):\n",
