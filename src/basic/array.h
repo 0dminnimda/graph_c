@@ -6,6 +6,7 @@
 #include <stddef.h>
 #include <stdlib.h>
 #include <string.h>
+#include <assert.h>
 #include "macros.h"
 
 #define array(T) struct { \
@@ -92,7 +93,10 @@
     &(self)->data[(self)->length++] \
 )
 
-#define array_pop(self) (self)->data[--(self)->length]
+#define array_pop(self) ( \
+    assert((self)->length && "pop from an empty array"), \
+    (self)->data[--(self)->length] \
+)
 
 #define array_extend_from(self, other) ( \
     (other)->length? ( \
