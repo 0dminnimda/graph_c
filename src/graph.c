@@ -192,7 +192,7 @@ void graph_reverse_post_order(const Graph *self, u32 root, array_u32 *ordering, 
     /* Same reasoning as in graph_add_edge */
     assert(root < self->nodes.length && "invalid root");
 
-    s64 length = self->nodes.length;
+    u64 length = self->nodes.length;
 
     array_reserve(ordering, length);
 
