@@ -239,7 +239,6 @@ Result handle_command(Context *ctx, Command cmd, str args) {
     } else if (cmd == PRINT_RPO) {
         /* PRINT_RPO */
 
-
         if (ctx->root_node == (u32)-1) {
             printf(ERROR("root node needs to be set\n"));
             return OK;
@@ -250,6 +249,9 @@ Result handle_command(Context *ctx, Command cmd, str args) {
         }
 
         array_u32 ordering, back_edges;
+        array_init(&ordering);
+        array_init(&back_edges);
+
         graph_reverse_post_order(&ctx->graph, ctx->root_node, &ordering, &back_edges);
 
         u32 *it;

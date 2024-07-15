@@ -194,10 +194,10 @@ void graph_reverse_post_order(const Graph *self, u32 root, array_u32 *ordering, 
 
     s64 length = self->nodes.length;
 
+    array_reserve(ordering, length);
+
     array(RPO_State) states;
     array_init_with_capacity_and_length(&states, length, length);
-    array_init_with_capacity(ordering, length);
-    array_init(back_edges);
 
     array(s64) stack;
     /* Large upper bound. Once for all of the nodes,
