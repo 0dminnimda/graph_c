@@ -112,6 +112,10 @@
     ((index) != (self)->length)? \
         ((self)->data[(index)] = (self)->data[(self)->length], 0): 0 \
 )
+#define array_deinit_item_and_replace_by_last(self, T, index) do { \
+    T##_deinit(&(self)->data[index]); \
+    array_replace_by_last((self), (index)); \
+} while(0)
 
 /* result is a pointer to the item in the array */
 #define array_find(self, T, item, op, result) do { \
