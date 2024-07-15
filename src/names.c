@@ -1,4 +1,5 @@
 #include "names.h"
+#include "basic/array.h"
 
 bool names_find(const Names *self, const str *string, size_t *index) {
     str *result;
@@ -23,6 +24,10 @@ bool names_insert(Names *self, const str *string, size_t *index) {
 
 void names_copy(const Names *self, Names *copy) {
     array_copy_with_item(self, str, copy);
+}
+
+void names_del_and_replace_by_last(Names *self, size_t index) {
+    array_deinit_item_and_replace_by_last(self, str, index);
 }
 
 void names_fprint_debug(const Names *self, FILE *stream) {

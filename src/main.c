@@ -193,7 +193,7 @@ Result handle_command(Context *ctx, Command cmd, str args) {
             return result;
         }
 
-        array_replace_by_last(&ctx->names, id);
+        names_del_and_replace_by_last(&ctx->names, id);
         graph_del_node_and_replace_by_last(&ctx->graph, id);
 
         if (ctx->names.length != ctx->graph.nodes.length) {
