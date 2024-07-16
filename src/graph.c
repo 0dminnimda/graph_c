@@ -322,11 +322,11 @@ LP_Result critical_path_in_acyclic_graph(const Graph *self, u32 source, u32 targ
     }
 
     u32 current = target;
+    *array_add(path) = target;
     while (current != source) {
-        *array_add(path) = current;
         current = prev.data[current];
+        *array_add(path) = current;
     }
-    *array_add(path) = source;
 
     array_reverse(path, u32);
 
