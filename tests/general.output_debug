@@ -874,7 +874,7 @@ nodes:
 0 out: [0] 0 (67),
 1  in:
 1 out:
-
+ERROR: graph contains cycles
 DEBUG: Current graph state:
 Names(2):
 [0] = d

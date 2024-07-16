@@ -15,6 +15,6 @@ Node with num 1 is not exist
 WARNING: edge between nodes 'c' and 'a' already exists
 ERROR: root node needs to be set
 ERROR: root node is outdated and needs to be reset
-
+ERROR: graph contains cycles
 ERROR: graph contains cycles
 ERROR: source and target are not connected

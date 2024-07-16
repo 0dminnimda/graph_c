@@ -258,9 +258,7 @@ void graph_reverse_post_order(const Graph *self, u32 root, array_u32 *ordering, 
 }
 
 
-LP_Result longest_path_in_acyclic_graph(const Graph *self, u32 source, u32 target, array_u32 *path) {
-    if (source == target) return LP_OK;
-
+LP_Result critical_path_in_acyclic_graph(const Graph *self, u32 source, u32 target, bool longest, array_u32 *path) {
     u64 length = self->nodes.length;
 
     array_u32 ordering, back_edges;
@@ -275,14 +273,18 @@ LP_Result longest_path_in_acyclic_graph(const Graph *self, u32 source, u32 targe
         return LP_CYCLES;
     }
 
-    array(u16) distances;
+    array(s32) distances;
     array_u32 prev;
     array_init_with_capacity_and_length(&distances, length, length);
     array_init_with_capacity_and_length(&prev, length, length);
 
-    u16 *it;
+    s32 *it;
     array_for(&distances, it) {
-        *it = U16_MAX;
+        if (longest) {
+            *it = S32_MIN;
+        } else {
+            *it = S32_MAX;
+        }
     }
     distances.data[source] = 0;
 
@@ -295,10 +297,17 @@ LP_Result longest_path_in_acyclic_graph(const Graph *self, u32 source, u32 targe
         u32 *edge_id;
         array_for(&self->nodes.data[*node].in, edge_id) {
             GraphEdge *edge = &self->edges.data[*edge_id];
-            u16 next = distances.data[edge->source] + edge->weight;
-            if (next < distances.data[edge->target]) {
-                distances.data[edge->target] = next;
-                prev.data[edge->target] = edge->source;
+            s32 next = distances.data[edge->source] + edge->weight;
+            if (longest) {
+                if (next > distances.data[edge->target]) {
+                    distances.data[edge->target] = next;
+                    prev.data[edge->target] = edge->source;
+                }
+            } else {
+                if (next < distances.data[edge->target]) {
+                    distances.data[edge->target] = next;
+                    prev.data[edge->target] = edge->source;
+                }
             }
         }
     }

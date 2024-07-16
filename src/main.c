@@ -285,7 +285,7 @@ Result handle_command(Context *ctx, Command cmd, str args) {
         array_u32 path;
         array_init(&path);
 
-        LP_Result res = longest_path_in_acyclic_graph(&ctx->graph, id1, id2, &path);
+        LP_Result res = critical_path_in_acyclic_graph(&ctx->graph, id1, id2, /*longest=*/true, &path);
         if (res != LP_OK) {
             if (res == LP_CYCLES) {
                 printf(ERROR("graph contains cycles\n"));
