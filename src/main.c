@@ -271,7 +271,34 @@ Result handle_command(Context *ctx, Command cmd, str args) {
         array_deinit(&ordering);
         array_deinit(&back_edges);
     } else if (cmd == FIND_CRITICAL_PATH) {
+        /* FIND_CRITICAL_PATH <name1> <name2> */
 
+        u32 id1, id2;
+        str name1, name2;
+        if (str_to_node(ctx, &args, &name1, 1, false, false, &id1, &result)) {
+            return result;
+        }
+        if (str_to_node(ctx, &args, &name2, 2, false, false, &id2, &result)) {
+            return result;
+        }
+
+        array_u32 path;
+        array_init(&path);
+
+        if (!longest_path_in_acyclic_graph(&ctx->graph, id1, id2, &path)) {
+            printf(ERROR("graph contains cycles or source and target are not connected\n"));
+            array_deinit(&path);
+            return OK;
+        }
+
+        u32 *it;
+        array_for(&path, it) {
+            if (it_index) printf("->");
+            printf(PRI_str, FMT_str(&ctx->names.data[*it]));
+        }
+        printf("\n");
+
+        array_deinit(&path);
     }
 
     if (args.length != 0) {

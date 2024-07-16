@@ -874,3 +874,53 @@ nodes:
 0 out: [0] 0 (67),
 1  in:
 1 out:
+
+DEBUG: Current graph state:
+Names(2):
+[0] = d
+[1] = j
+Graph(2 nodes, 1 edges):
+edges:
+[0] = 0 -> 0 (67)
+nodes:
+0  in: [0] 0 (67),
+0 out: [0] 0 (67),
+1  in:
+1 out:
+ERROR: graph contains cycles or source and target are not connected
+DEBUG: Current graph state:
+Names(2):
+[0] = d
+[1] = j
+Graph(2 nodes, 1 edges):
+edges:
+[0] = 0 -> 0 (67)
+nodes:
+0  in: [0] 0 (67),
+0 out: [0] 0 (67),
+1  in:
+1 out:
+DEBUG: Index1: 0, Index2: 0
+DEBUG: Current graph state:
+Names(2):
+[0] = d
+[1] = j
+Graph(2 nodes, 0 edges):
+edges:
+nodes:
+0  in:
+0 out:
+1  in:
+1 out:
+ERROR: graph contains cycles or source and target are not connected
+DEBUG: Current graph state:
+Names(2):
+[0] = d
+[1] = j
+Graph(2 nodes, 0 edges):
+edges:
+nodes:
+0  in:
+0 out:
+1  in:
+1 out:

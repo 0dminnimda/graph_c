@@ -23,3 +23,4 @@ DEBUG: Index: 0
 X T C E M B D G
 Found back edge: G -> D
 Found back edge: M -> C
+ERROR: graph contains cycles or source and target are not connected

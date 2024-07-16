@@ -1,0 +1,17 @@
+Welcome to example graph program!
+Debug mode: turned on
+DEBUG: Name: 'a', Index: 0
+DEBUG: Name: 'b', Index: 1
+DEBUG: Name: 'c', Index: 2
+DEBUG: Name: 'd', Index: 3
+DEBUG: Name: 'e', Index: 4
+DEBUG: Name: 'f', Index: 5
+DEBUG: Index1: 0, Index2: 1, Weight: 2
+DEBUG: Index1: 1, Index2: 2, Weight: 3
+DEBUG: Index1: 2, Index2: 3, Weight: 4
+DEBUG: Index1: 3, Index2: 5, Weight: 5
+DEBUG: Index1: 4, Index2: 5, Weight: 50
+a->b->c->d->f
+DEBUG: Index1: 4, Index2: 5
+DEBUG: Index1: 4, Index2: 5, Weight: 2
+a->e->f
