@@ -18,4 +18,4 @@ DEBUG: Index1: 3, Index2: 5, Weight: 1
 DEBUG: Index: 0
 Start A B D C Stop
 Found back edge: D -> B
-ERROR: graph contains cycles or source and target are not connected
+ERROR: graph contains cycles

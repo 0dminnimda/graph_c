@@ -258,8 +258,8 @@ void graph_reverse_post_order(const Graph *self, u32 root, array_u32 *ordering, 
 }
 
 
-bool longest_path_in_acyclic_graph(const Graph *self, u32 source, u32 target, array_u32 *path) {
-    if (source == target) return true;
+LP_Result longest_path_in_acyclic_graph(const Graph *self, u32 source, u32 target, array_u32 *path) {
+    if (source == target) return LP_OK;
 
     u64 length = self->nodes.length;
 
@@ -272,7 +272,7 @@ bool longest_path_in_acyclic_graph(const Graph *self, u32 source, u32 target, ar
     if (back_edges.length > 0) {
         array_deinit(&back_edges);
         array_deinit(&ordering);
-        return false;
+        return LP_CYCLES;
     }
 
     array(u16) distances;
@@ -309,7 +309,7 @@ bool longest_path_in_acyclic_graph(const Graph *self, u32 source, u32 target, ar
     if (!found_target) {
         array_deinit(&prev);
         array_deinit(&distances);
-        return false;
+        return LP_DISCONNECTED;
     }
 
     u32 current = target;
@@ -324,7 +324,7 @@ bool longest_path_in_acyclic_graph(const Graph *self, u32 source, u32 target, ar
     array_deinit(&prev);
     array_deinit(&distances);
 
-    return true;
+    return LP_OK;
 }
 
 void graph_fprint_debug(const Graph *self, FILE *stream) {

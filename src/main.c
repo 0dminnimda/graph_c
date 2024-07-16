@@ -285,8 +285,13 @@ Result handle_command(Context *ctx, Command cmd, str args) {
         array_u32 path;
         array_init(&path);
 
-        if (!longest_path_in_acyclic_graph(&ctx->graph, id1, id2, &path)) {
-            printf(ERROR("graph contains cycles or source and target are not connected\n"));
+        LP_Result res = longest_path_in_acyclic_graph(&ctx->graph, id1, id2, &path);
+        if (res != LP_OK) {
+            if (res == LP_CYCLES) {
+                printf(ERROR("graph contains cycles\n"));
+            } else if (res == LP_DISCONNECTED) {
+                printf(ERROR("source and target are not connected\n"));
+            }
             array_deinit(&path);
             return OK;
         }

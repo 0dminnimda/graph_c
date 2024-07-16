@@ -2,4 +2,4 @@ Welcome to example graph program!
 X T C E M B D G
 Found back edge: G -> D
 Found back edge: M -> C
-ERROR: graph contains cycles or source and target are not connected
+ERROR: graph contains cycles

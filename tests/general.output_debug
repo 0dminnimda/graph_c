@@ -887,7 +887,7 @@ nodes:
 0 out: [0] 0 (67),
 1  in:
 1 out:
-ERROR: graph contains cycles or source and target are not connected
+ERROR: graph contains cycles
 DEBUG: Current graph state:
 Names(2):
 [0] = d
@@ -912,7 +912,7 @@ nodes:
 0 out:
 1  in:
 1 out:
-ERROR: graph contains cycles or source and target are not connected
+ERROR: source and target are not connected
 DEBUG: Current graph state:
 Names(2):
 [0] = d
