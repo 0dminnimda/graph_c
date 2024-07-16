@@ -307,6 +307,8 @@ bool longest_path_in_acyclic_graph(const Graph *self, u32 source, u32 target, ar
     array_deinit(&back_edges);
 
     if (!found_target) {
+        array_deinit(&prev);
+        array_deinit(&distances);
         return false;
     }
 
