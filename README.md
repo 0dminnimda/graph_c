@@ -8,6 +8,8 @@ Also contains usefull simple suit of file, see [basic](./src/basic/)
 
 Written with presumption that the degree of nodes is not large, this mostly affects removal of the nodes.
 
+Edges are assumed to be unordered.
+
 Nodes are u32 integers, this way graph implementation does not depend on the actual type of the node, thus you have to manage an array of actual nodes.
 
 Operations:
