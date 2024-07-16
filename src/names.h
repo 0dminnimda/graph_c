@@ -14,7 +14,7 @@ typedef array(str) Names;
 bool names_find(const Names *self, const str *string, size_t *index);
 bool names_insert(Names *self, const str *string, size_t *index);
 void names_copy(const Names *self, Names *copy);
-void names_fprint_debug(const Names *self, FILE *stream);
 void names_del_and_replace_by_last(Names *self, size_t index);
+void names_fprint_debug(const Names *self, FILE *stream);
 
 #endif // NAMES_H
