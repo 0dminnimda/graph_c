@@ -20,10 +20,7 @@ class TreeNode:
 
 
 def postorder_3color_recursive(root):
-    """Return a post-order ordering of nodes in the graph.
-
-    Prints CYCLE notifications when graph cycles ("back edges") are discovered.
-    """
+    """Return a post-order ordering of nodes in the graph alongside the "back edges"."""
 
     NEW = 0
     SEEN = 1
@@ -35,7 +32,7 @@ def postorder_3color_recursive(root):
     def dfs_walk(node):
         color[node] = SEEN
 
-        for child in node.children:
+        for child in reversed(node.children):
             col = color.get(child, NEW)
             if col == SEEN:
                 back_edges.append((node, child))
@@ -59,7 +56,7 @@ class PostOrder:
 
 
 def postorder_3color_iterative(root):
-    """Return a post-order ordering of nodes in the graph using iteration instead of recursion.
+    """Return a post-order ordering of nodes in the graph and "back edges" using iteration instead of recursion.
     Here the fourth color was added (compared to the recursive implementation),
     because we must know what was already added on stack and waits to be processed, to avoid duplication.
     Recursive approach does not need it because it can wait to execute the walk, since it stores information in the stack frames formed by function calls."""
@@ -164,4 +161,29 @@ c5_1.children = c5_2.children = c5_3.children = c5_4.children = c5_5.children = 
 
 print(postorder_3color_recursive(c5_1))
 print(postorder_3color_iterative(c5_1))
+
+
+n1 = TreeNode("1")
+n2 = TreeNode("2")
+n3 = TreeNode("3")
+n4 = TreeNode("4")
+n5 = TreeNode("5")
+n6 = TreeNode("6")
+n7 = TreeNode("7")
+n8 = TreeNode("8")
+
+n1.children = [n2]
+n2.children = [n3, n7]
+n3.children = [n5, n4]
+n4.children = [n6]
+n5.children = [n6]
+n6.children = [n3]
+n7.children = [n8]
+
+print(postorder_3color_recursive(n1))
+print(postorder_3color_iterative(n1))
+
+
+
+
 
